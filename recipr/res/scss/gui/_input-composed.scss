@@ -1,0 +1,32 @@
+.inputComposed {
+    padding: 0;
+    border: 1px solid $border-color;
+    border-radius: 10px;
+    margin: 0;
+    width: 100%;
+
+    @include default-inset-shadow;
+    @include clear-fix;
+
+    .input {
+        border-radius: 0;
+        height: 38px;
+        display: block;
+        border: none;
+        border-right: 1px solid $border-color;
+        background-color: transparent;
+        box-shadow: none;
+
+        &:last-of-type {
+            border-right: none;
+        }
+
+        &.iSmall {
+            height: 28px;
+        }
+
+        &.iBig {
+            height: 48px;
+        }
+    }
+}

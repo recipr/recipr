@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>GUIKit - recipr (dev)</title>
+    <link rel="stylesheet" href="res/css/main.css">
+
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1,
+                   maximum-scale=1,
+                   user-scalable=no">
+
+    <!-- Components -->
+    <link rel="import" href="packages/polymer/polymer.html">
+    <link rel="import" href="packages/recipr/components/ingredient/index.html">
+  </head>
+  <body>
+    <div id="container" class="wrap">
+        <h1>Recipr GUIKit</h1>
+        <h2>Buttons</h2>
+        <div class="example">
+            <div class="preview">
+                <div class="formRow">
+                    <button class="btn bBig">Default big</button>
+                </div>
+                <div class="formRow">
+                    <button class="btn">Default</button>
+                </div>
+                <div class="formRow">
+                    <button class="btn bSmall">Default small</button>
+                </div>
+            </div>
+        </div>
+
+        <h2>Inputs</h2>
+        <div class="example">
+            <div class="preview">
+                <div class="formRow">
+                    <input class="input iBig" value="default big" placeholder="placeholder">
+                </div>
+                <div class="formRow">
+                    <input class="input" value="default" placeholder="placeholder">
+                </div>
+                <div class="formRow">
+                    <input class="input iSmall" value="default small" placeholder="placeholder">
+                </div>
+            </div>
+        </div>
+
+        <h2>Composed Input</h2>
+        <div class="example">
+            <div class="preview">
+                <div class="inputComposed">
+                    <input class="input iBig" value="default" placeholder="placeholder">
+                    <input class="input" value="default" placeholder="placeholder">
+                    <input class="input" value="default" placeholder="placeholder">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="application/dart">export 'package:polymer/init.dart';</script>
+  </body>
+</html>

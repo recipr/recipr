@@ -1,0 +1,8 @@
+@import "../../../res/scss/configs";
+@import "../../../res/scss/mixins";
+
+:host * {
+  @include box-sizing(border-box);
+}
+
+:host {}
