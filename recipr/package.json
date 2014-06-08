@@ -1,0 +1,16 @@
+{
+  "name": "recipr",
+  "version": "0.1.0",
+  "description": "recipr (dev)",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/recipr/recipr.git"
+  },
+  "main": "index.html",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-sass": "~0.13.1",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-shell": "~0.7.0"
+  }
+}

@@ -11,3 +11,13 @@ packages/
 
 # Include when developing application packages.
 pubspec.lock
+
+# Grunt / npm
+node_modules
+
+# Configs. Prevent config overwrite
+.deploy.json
+.config.json
+
+# Build folders
+/web/res/css

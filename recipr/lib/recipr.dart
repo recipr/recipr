@@ -1,0 +1,5 @@
+library recipr;
+
+class Recipr {
+
+}
