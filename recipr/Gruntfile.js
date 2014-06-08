@@ -10,6 +10,7 @@ module.exports = function(grunt) {
         },
         files: {
           'web/res/css/main.css': 'res/scss/main.scss',
+          'lib/components/ingredient/main.css': 'lib/components/ingredient/main.scss'
         }
       },
       live: {
@@ -34,7 +35,7 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['res/scss/**/*'],
+      files: ['res/scss/**/*.scss', 'lib/components/**/*.scss'],
       tasks: ['sass:dev']
     }
   });
