@@ -1,21 +1,29 @@
-.inputComposed {
+.inputGroup {
     padding: 0;
     border: 1px solid $border-color;
     border-radius: 10px;
     margin: 0;
     width: 100%;
+    position: relative;
+    display: table;
+    border-collapse: separate;
 
     @include default-inset-shadow;
     @include clear-fix;
 
     .input {
+        display: table-cell;
         border-radius: 0;
         height: 38px;
-        display: block;
         border: none;
-        border-right: 1px solid $border-color;
         background-color: transparent;
         box-shadow: none;
+        position: relative;
+        z-index: 2;
+        float: left;
+        width: auto;
+        vertical-align: middle;
+        border-right: 1px solid $border-color;
 
         &:last-of-type {
             border-right: none;
