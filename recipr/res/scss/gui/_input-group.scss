@@ -1,4 +1,4 @@
-.inputGroup {
+@mixin inputGroup {
     padding: 0;
     border: 1px solid $border-color;
     border-radius: 10px;

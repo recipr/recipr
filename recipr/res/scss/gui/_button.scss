@@ -1,9 +1,10 @@
-.btn {
+@mixin btn() {
     height: 40px;
     padding: 10px 20px;
     font-size: 18px;
     line-height: 20px;
     font-weight: bold;
+    text-align: center;
     border: 1px solid $border-color;
     border-radius: 10px;
     color: $main-text-color;
@@ -25,5 +26,11 @@
         padding: 10px 20px;
         font-size: 30px;
         line-height: 30px;
+    }
+
+    &:hover,
+    &.active {
+        background-color: $header-background-color;
+        color: $header-color;
     }
 }

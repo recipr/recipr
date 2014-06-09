@@ -1,11 +1,4 @@
-@import "configs";
-@import "mixins";
-
-@import "gui/_layout";
-@import "gui/_button";
-@import "gui/_input";
-@import "gui/_input-group";
-@import "gui/_form";
+@import "recipr";
 
 
 * {
@@ -16,4 +9,21 @@ html,
 body {
   margin: 0;
   padding: 0;
+}
+
+.btn {
+    @include btn;
+}
+
+.input {
+    @include input;
+}
+
+.inputGroup {
+    @include inputGroup;
+}
+
+.row {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

@@ -53,3 +53,7 @@
 @mixin default-inset-shadow(){
     @include inset-shadow(0, 4px, 4px, -2px);
 }
+
+@mixin no-shadow(){
+    @include drop-shadow(0, 0, 0, 0, 0);
+}

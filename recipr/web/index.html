@@ -13,11 +13,21 @@
 
     <!-- Components -->
     <link rel="import" href="packages/polymer/polymer.html">
+    <link rel="import" href="packages/recipr/components/header/index.html">
+    <link rel="import" href="packages/recipr/components/toggle/index.html">
+
     <link rel="import" href="packages/recipr/components/ingredient/index.html">
   </head>
   <body>
     <div id="container">
-        <recipr-ingredient class="ingredient"></recipr-ingredient>
+        <recipr-header>Recipr</recipr-header>
+        <div class="wrap row">
+            <input class="input iBig" name="name" placeholder="Recipe name" value="">
+        </div>
+        <hr>
+        <div class="wrap row">
+            <recipr-toggle options="Ingredients,Preparation"></recipr-toggle>
+        </div>
     </div>
     <script type="application/dart">export 'package:polymer/init.dart';</script>
   </body>

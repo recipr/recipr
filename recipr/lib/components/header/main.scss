@@ -1,0 +1,15 @@
+@import "../../../res/scss/recipr";
+
+host * {
+  @include box-sizing(border-box);
+}
+
+:host {
+    background-color: $header-background-color;
+    color: $header-color;
+    width: 100%;
+    display: block;
+    font-size: 30px;
+    line-height: 40px;
+    padding: 10px 10px;
+}
