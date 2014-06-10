@@ -9,8 +9,7 @@
     display: block;
     @include default-shadow;
 
-
-    span {
+    ::content span {
         @include btn;
         @include no-shadow;
         display: block;

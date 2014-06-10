@@ -3,32 +3,30 @@ import 'dart:html';
 
 @CustomTag('recipr-toggle')
 class ReciprToggle extends PolymerElement {
-  @published String options;
-
-  List<SpanElement> optionElements = new List<SpanElement>();
+  final List<SpanElement> options = toObservable([]);
 
   ReciprToggle.created() : super.created(){
-    Element optionsWrap = this.shadowRoot.querySelector('#options');
 
-    List<String> optionsList = options.split(',');
-    optionsList.forEach((String name){
-        SpanElement option = new SpanElement();
-        option.innerHtml = name;
-        option.style.width = '${100 / optionsList.length}%';
-        optionsWrap.append(option);
-        optionElements.add(option);
+    List<SpanElement> dataSource = this.querySelectorAll('span');
+    if (dataSource == null) {
+      return;
+    }
 
-        option.onClick.listen(onOptionClick);
+    dataSource.forEach((SpanElement option){
+        options.add(option);
+        option.style.width = '${100 / dataSource.length}%';
+        option.onClick.listen(_onOptionClick);
     });
   }
 
-  void onOptionClick(Event evt){
-    optionElements.forEach((option){
-       option.classes.remove('active');
+  void _onOptionClick(MouseEvent event){
+    options.forEach((SpanElement option){
+        option.classes.remove('active');
     });
 
-    Element target = evt.target;
+    SpanElement target = event.target as SpanElement;
     target.classes.add('active');
-    fire('recipr-toggle', detail: {'name': target.innerHtml});
+
+    fire('toggle', detail: {'value': target.getAttribute('value')});
   }
 }
