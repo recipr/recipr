@@ -13,7 +13,7 @@
       width: 200%;
     }
 
-    ::content .tab {
+    ::content [data-tab] {
         display: none;
         width: 50%;
         float: left;
