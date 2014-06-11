@@ -12,7 +12,11 @@
                    user-scalable=no">
 
     <!-- Components -->
+    <!-- Components -->
     <link rel="import" href="packages/polymer/polymer.html">
+    <link rel="import" href="packages/recipr/components/header/index.html">
+    <link rel="import" href="packages/recipr/components/toggle/index.html">
+
     <link rel="import" href="packages/recipr/components/ingredient/index.html">
   </head>
   <body>
@@ -58,7 +62,17 @@
                 </div>
             </div>
         </div>
+        <h2>Toggle</h2>
+          <div class="example">
+            <div class="preview">
+              <recipr-toggle name="">
+                  <span value="1">Option 1</span>
+                  <span class="active" value="2">Option 2</span>
+                  <span value="2">Option 3</span>
+              </recipr-toggle>
+            </div>
+        </div>
     </div>
-    <script type="application/dart">export 'package:polymer/init.dart';</script>
+    <script type="application/dart" src="res/scripts/main.dart"></script>
   </body>
 </html>
