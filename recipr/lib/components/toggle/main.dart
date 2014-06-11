@@ -27,6 +27,6 @@ class ReciprToggle extends PolymerElement {
     SpanElement target = event.target as SpanElement;
     target.classes.add('active');
 
-    fire('toggle', detail: {'value': target.getAttribute('value')});
+    fire('onToggle', detail: {'value': target.getAttribute('value')});
   }
 }

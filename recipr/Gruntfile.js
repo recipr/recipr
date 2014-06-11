@@ -12,6 +12,7 @@ module.exports = function(grunt) {
           'web/res/css/main.css': 'res/scss/main.scss',
           'lib/components/header/main.css': 'lib/components/header/main.scss',
           'lib/components/toggle/main.css': 'lib/components/toggle/main.scss',
+          'lib/components/tabs/main.css': 'lib/components/tabs/main.scss',
           'lib/components/ingredient/main.css': 'lib/components/ingredient/main.scss'
         }
       },
