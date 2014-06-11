@@ -1,9 +1,15 @@
+library recipr_toggle;
+
 import 'package:polymer/polymer.dart';
 import 'dart:html';
+import 'dart:async';
 
 @CustomTag('recipr-toggle')
 class ReciprToggle extends PolymerElement {
   final List<SpanElement> options = toObservable([]);
+
+  StreamController _onToggle = new StreamController.broadcast();
+  Stream<String> get onToggle => _onToggle.stream;
 
   ReciprToggle.created() : super.created(){
 
@@ -27,6 +33,6 @@ class ReciprToggle extends PolymerElement {
     SpanElement target = event.target as SpanElement;
     target.classes.add('active');
 
-    fire('onToggle', detail: {'value': target.getAttribute('value')});
+    _onToggle.add(target.getAttribute('value'));
   }
 }
