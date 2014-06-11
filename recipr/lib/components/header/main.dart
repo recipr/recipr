@@ -1,3 +1,5 @@
+library recipr_header;
+
 import 'package:polymer/polymer.dart';
 
 @CustomTag('recipr-header')
