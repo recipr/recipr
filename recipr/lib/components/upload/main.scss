@@ -1,0 +1,21 @@
+@import "../../../res/scss/recipr";
+
+:host * {
+  @include box-sizing(border-box);
+}
+
+:host {
+    display: block;
+
+    .input {
+        @include input();
+    }
+
+    .btn {
+        @include btn();
+    }
+
+    .inputGroup {
+        @include input-group();
+    }
+}
