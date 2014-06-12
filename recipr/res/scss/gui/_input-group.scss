@@ -1,40 +1,49 @@
 @mixin inputGroup {
     padding: 0;
-    border: 1px solid $border-color;
-    border-radius: 10px;
     margin: 0;
     width: 100%;
-    position: relative;
     display: table;
-    border-collapse: separate;
 
-    @include default-inset-shadow;
-    @include clear-fix;
+    div {
+        display: table-cell;
+        vertical-align: top;
+        margin: 0;
+        padding: 0;
+    }
+
+    .input,
+    .btn {
+        display: block;
+        border-radius: 0;
+        margin: 0;
+        width: 100%;
+        vertical-align: middle;
+        border-right: none;
+    }
+
+    .btn {
+        @include no-shadow();
+        outline: none;
+    }
+
+    div:last-child {
+        * {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-left: 1px solid $border-color;
+            border-right: 1px solid $border-color;
+        }
+    }
+
+    div:first-child {
+        * {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-left: 1px solid $border-color;
+        }
+    }
 
     .input {
-        display: table-cell;
-        border-radius: 0;
-        height: 38px;
-        border: none;
         background-color: transparent;
-        box-shadow: none;
-        position: relative;
-        z-index: 2;
-        float: left;
-        width: auto;
-        vertical-align: middle;
-        border-right: 1px solid $border-color;
-
-        &:last-of-type {
-            border-right: none;
-        }
-
-        &.iSmall {
-            height: 28px;
-        }
-
-        &.iBig {
-            height: 48px;
-        }
     }
 }
