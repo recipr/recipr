@@ -14,6 +14,7 @@ module.exports = function(grunt) {
           'lib/components/toggle/main.css': 'lib/components/toggle/main.scss',
           'lib/components/tabs/main.css': 'lib/components/tabs/main.scss',
           'lib/components/upload/main.css': 'lib/components/upload/main.scss',
+          'lib/components/textarea/main.css': 'lib/components/textarea/main.scss',
           'lib/components/ingredient/main.css': 'lib/components/ingredient/main.scss'
         }
       },

@@ -18,6 +18,7 @@
     <link rel="import" href="packages/recipr/components/tabs/index.html">
     <link rel="import" href="packages/recipr/components/ingredient/index.html">
     <link rel="import" href="packages/recipr/components/upload/index.html">
+    <link rel="import" href="packages/recipr/components/textarea/index.html">
   </head>
   <body>
     <div id="container">
@@ -37,7 +38,11 @@
 
             <recipr-tabs tab="ingredients">
               <div data-tab="ingredients">Tab 1</div>
-              <div data-tab="preparation">Tab 2</div>
+              <div data-tab="preparation">
+                <div class="row">
+                    <recipr-textarea>ASDF</recipr-textarea>
+                </div>
+              </div>
             </recipr-tabs>
         </div>
     </div>

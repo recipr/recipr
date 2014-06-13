@@ -1,0 +1,42 @@
+@import "../../../res/scss/recipr";
+
+:host * {
+  @include box-sizing(border-box);
+}
+
+:host {
+    display: block;
+    position: relative;
+
+    .tools {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        @include default-shadow;
+        background-color: $button-background-color;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border: 1px solid $border-color;
+
+        li {
+            display: block;
+            float: left;
+            width: 25px;
+            height: 25px;
+            margin: 0;
+            padding: 3px 10px;
+            border-right: 1px solid $border-color;
+        }
+    }
+
+    textarea {
+        @include input();
+        width: 100%;
+        min-height: 150px;
+    }
+}
+
