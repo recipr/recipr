@@ -2,14 +2,15 @@
 <polymer-element name="recipr-upload">
   <template>
     <link rel="stylesheet" href="main.css">
-        <div class="inputGroup">
+        <div class="inputGroup" id="upload">
             <div>
-                <input class="input" name="{{name}}" value="{{value}}" placeholder="{{placeholder}}">
+                <input type="text" id="name" class="input" name="{{name}}" value="{{fileName}}" placeholder="{{placeholder}}">
             </div>
             <div>
                 <button class="btn">{{label}}</button>
             </div>
         </div>
+        <input type="file" id="file">
   </template>
   <script type="application/dart" src="main.dart">
   </script>
