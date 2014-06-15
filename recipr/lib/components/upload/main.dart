@@ -1,4 +1,4 @@
-library recipr_tabs;
+library recipr_upload;
 
 import 'dart:html';
 import 'dart:async';
