@@ -1,3 +1,5 @@
+library recipr_ingredient;
+
 import 'dart:html';
 import 'dart:async';
 import 'package:polymer/polymer.dart';
@@ -12,8 +14,9 @@ class ReciprIngredient extends PolymerElement {
     @observable String unit = '';
     @observable String name = '';
 
-    Element sketchForm;
-    Element detailedForm;
+    FormElement sketchForm;
+    FormElement detailedForm;
+    InputElement sketchInput;
 
     RegExp exp = new RegExp(r"^([\d.,\/]*)(\s*([^\W]*)\s+(.*))?");
 
@@ -23,6 +26,7 @@ class ReciprIngredient extends PolymerElement {
     StreamController _onDelete = new StreamController.broadcast();
     Stream get onDelete => _onDelete.stream;
 
+    factory ReciprIngredient() =>  new Element.tag('recipr-ingredient');
     ReciprIngredient.created() : super.created();
 
     @override
@@ -30,6 +34,7 @@ class ReciprIngredient extends PolymerElement {
         super.enteredView();
         sketchForm = this.shadowRoot.querySelector('#sketch');
         detailedForm = this.shadowRoot.querySelector('#detailed');
+        sketchInput = sketchForm.querySelector('#name');
     }
 
     void save(Event evt){
@@ -40,6 +45,10 @@ class ReciprIngredient extends PolymerElement {
     void delete(Event evt){
         this.remove();
         _onDelete.add(true);
+    }
+
+    void focusSketch(){
+        sketchInput.focus();
     }
 
     void _parseSketch(){

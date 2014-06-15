@@ -16,6 +16,7 @@
     <link rel="import" href="packages/recipr/components/header/index.html">
     <link rel="import" href="packages/recipr/components/toggle/index.html">
     <link rel="import" href="packages/recipr/components/tabs/index.html">
+    <link rel="import" href="packages/recipr/components/ingredients/index.html">
     <link rel="import" href="packages/recipr/components/ingredient/index.html">
     <link rel="import" href="packages/recipr/components/upload/index.html">
     <link rel="import" href="packages/recipr/components/textarea/index.html">
@@ -41,7 +42,9 @@
             <recipr-tabs tab="ingredients">
               <div data-tab="ingredients">
                 <div class="row">
-                    <recipr-ingredient placeholder="Ingredient" simpleLabel="Save"></recipr-ingredient>
+                    <recipr-ingredients placeholder="Ingredient" simpleLabel="Save">
+                        <recipr-ingredient placeholder="Ingredient" simpleLabel="Save"></recipr-ingredient>
+                    </recipr-ingredients>
                 </div>
               </div>
               <div data-tab="preparation">

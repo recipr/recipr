@@ -6,6 +6,7 @@
 
 
 :host {
+    display: block;
     .input {
         @include input();
         width: 100%;
