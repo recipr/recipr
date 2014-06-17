@@ -14,18 +14,33 @@
 <body>
     <script type="text/x-handlebars">
         <div id="container">
-            <h2>Welcome to Ember.js</h2>
-
+            {{recipr-header title="Recipr"}}
+            <div class="header">
+                <div class="cover"></div>
+                <div class="wrap row">
+                    <input class="input iBig" name="name" placeholder="Recipe name" value="">
+                </div>
+                <div class="wrap row">
+                    {{recipr-upload class="coverUpload" name="cover" value="" placeholder="Cover Image" label="file"}}
+                </div>
+            </div>
             {{outlet}}
         </div>
     </script>
 
-    <script type="text/x-handlebars" id="index">
-        <ul>
-        {{#each item in model}}
-          <li>{{item}}</li>
-        {{/each}}
-        </ul>
+    <script type="text/x-handlebars" id="components/recipr-header">
+        {{title}}
+    </script>
+
+    <script type="text/x-handlebars" id="components/recipr-upload">
+        <div class="inputGroup" id="upload">
+            <div>
+               {{view Ember.TextField valueBinding="text" class="input" type="text" name="name" placeholder=placeholder value=fileName}}
+            </div>
+            <div>
+                <button class="btn">{{label}}</button>
+            </div>
+        </div>
     </script>
 
     <script src="res/js/lib/jquery-1.10.2.js"></script>

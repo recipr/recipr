@@ -9,14 +9,7 @@ module.exports = function(grunt) {
           sourceMap: true
         },
         files: {
-          'web/res/css/main.css': 'res/scss/main.scss',
-          'lib/components/header/main.css': 'lib/components/header/main.scss',
-          'lib/components/toggle/main.css': 'lib/components/toggle/main.scss',
-          'lib/components/tabs/main.css': 'lib/components/tabs/main.scss',
-          'lib/components/upload/main.css': 'lib/components/upload/main.scss',
-          'lib/components/textarea/main.css': 'lib/components/textarea/main.scss',
-          'lib/components/ingredient/main.css': 'lib/components/ingredient/main.scss',
-          'lib/components/ingredients/main.css': 'lib/components/ingredients/main.scss'
+          'web/res/css/main.css': 'res/scss/main.scss'
         }
       },
       live: {
@@ -25,7 +18,7 @@ module.exports = function(grunt) {
           imagePath: '/web/res/images'
         },
         files: {
-          'web/res/css/main.css': 'res/scss/main.scss',
+          'web/res/css/main.css': 'res/scss/main.scss'
         }
       }
     },

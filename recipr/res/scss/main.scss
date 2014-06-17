@@ -1,5 +1,8 @@
 @import "recipr";
 
+/* Components */
+@import "components/header.scss";
+@import "components/upload.scss";
 
 * {
   @include box-sizing(border-box);

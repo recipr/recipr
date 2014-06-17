@@ -1,11 +1,14 @@
 App = Ember.Application.create();
 
-App.Router.map(function() {
-    // put your routes here
+App.ReciprHeaderComponent = Ember.Component.extend({
+    classNames: ['recipr-header']
 });
 
-App.IndexRoute = Ember.Route.extend({
-    model: function() {
-        return ['red', 'yellow', 'blue'];
-    }
+App.ReciprUploadComponent = Ember.Component.extend({
+    classNames: ['recipr-upload'],
+
+    name: '',
+    fileName: '',
+    placeholder: '',
+    label: '',
 });
