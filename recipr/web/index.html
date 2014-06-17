@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <title>recipr (dev)</title>
     <link rel="stylesheet" href="res/css/main.css">
@@ -10,51 +10,27 @@
                    initial-scale=1,
                    maximum-scale=1,
                    user-scalable=no">
+</head>
+<body>
+    <script type="text/x-handlebars">
+        <div id="container">
+            <h2>Welcome to Ember.js</h2>
 
-    <!-- Components -->
-    <link rel="import" href="packages/polymer/polymer.html">
-    <link rel="import" href="packages/recipr/components/header/index.html">
-    <link rel="import" href="packages/recipr/components/toggle/index.html">
-    <link rel="import" href="packages/recipr/components/tabs/index.html">
-    <link rel="import" href="packages/recipr/components/ingredients/index.html">
-    <link rel="import" href="packages/recipr/components/ingredient/index.html">
-    <link rel="import" href="packages/recipr/components/upload/index.html">
-    <link rel="import" href="packages/recipr/components/textarea/index.html">
-  </head>
-  <body>
-    <div id="container">
-        <recipr-header>Recipr</recipr-header>
-        <div class="header">
-            <div class="cover"></div>
-            <div class="wrap row">
-                <input class="input iBig" name="name" placeholder="Recipe name" value="">
-            </div>
-            <div class="wrap row">
-                <recipr-upload class="coverUpload" name="cover" value="" placeholder="Cover Image" label="file"></recipr-upload>
-            </div>
+            {{outlet}}
         </div>
-        <div class="wrap row">
-            <recipr-toggle name="">
-                <span class="active" value="ingredients">Ingredients</span>
-                <span value="preparation">Preparation</span>
-            </recipr-toggle>
+    </script>
 
-            <recipr-tabs tab="ingredients">
-              <div data-tab="ingredients">
-                <div class="row">
-                    <recipr-ingredients placeholder="Ingredient" simpleLabel="Save">
-                        <recipr-ingredient placeholder="Ingredient" simpleLabel="Save"></recipr-ingredient>
-                    </recipr-ingredients>
-                </div>
-              </div>
-              <div data-tab="preparation">
-                <div class="row">
-                    <recipr-textarea>ASDF</recipr-textarea>
-                </div>
-              </div>
-            </recipr-tabs>
-        </div>
-    </div>
-    <script type="application/dart" src="res/scripts/main.dart"></script>
-  </body>
+    <script type="text/x-handlebars" id="index">
+        <ul>
+        {{#each item in model}}
+          <li>{{item}}</li>
+        {{/each}}
+        </ul>
+    </script>
+
+    <script src="res/js/lib/jquery-1.10.2.js"></script>
+    <script src="res/js/lib/handlebars-1.1.2.js"></script>
+    <script src="res/js/lib/ember-1.5.1.js"></script>
+    <script src="res/js/app.js"></script>
+</body>
 </html>
