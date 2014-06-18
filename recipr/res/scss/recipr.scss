@@ -6,3 +6,10 @@
 @import "gui/_input";
 @import "gui/_input-group";
 @import "gui/_form";
+
+/* Components */
+@import "components/header.scss";
+@import "components/upload.scss";
+
+/* Pages */
+@import "edit/edit.scss";

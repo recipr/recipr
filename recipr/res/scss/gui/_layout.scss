@@ -1,3 +1,7 @@
+* {
+  @include box-sizing(border-box);
+}
+
 .wrap {
     margin: 0 10px;
 }

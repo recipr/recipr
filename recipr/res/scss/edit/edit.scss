@@ -1,0 +1,27 @@
+.header {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid $border-color;
+
+    .input {
+        background-color: rgba(255, 255, 255, .6);
+    }
+
+    .cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        text-align: center;
+
+        .coverImage {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: inline;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+    }
+}
