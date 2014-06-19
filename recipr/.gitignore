@@ -4,7 +4,9 @@
 # Grunt / npm
 node_modules
 
+# lib
+/res/lib
+
 # Build folders
-/web/res/css
-*.css
-*.css.map
+/public/assets/css/*
+/public/assets/js/*

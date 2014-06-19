@@ -5,46 +5,56 @@ module.exports = function(grunt) {
       dev: {
         options: {
           outputStyle: 'nested',
-          imagePath: '/web/res/images',
+          imagePath: '/public/assets/images',
           sourceMap: true
         },
         files: {
-          'web/res/css/main.css': 'res/scss/main.scss'
+          'public/assets/css/main.css': 'res/scss/main.scss'
         }
       },
       live: {
         options: {
           outputStyle: 'compressed',
-          imagePath: '/web/res/images'
+          imagePath: '/public/assets/images'
         },
         files: {
-          'web/res/css/main.css': 'res/scss/main.scss'
+          'public/assets/css/main.css': 'res/scss/main.scss'
         }
       }
     },
-    shell: {
-      "build-dev": {
-        command: 'pub build --mode=dev'
+    concat: {
+      app: {
+        src:[
+           'res/js/app/app.js',
+           'res/js/app/store.js',
+           'res/js/app/router.js',
+           'res/js/app/*/*.js'
+        ],
+        dest: 'public/assets/js/app.js',
       },
-      "build-test": {
-        command: 'pub build --mode=release'
-      },
-      "build-live": {
-        command: 'pub build --mode=release'
+      lib: {
+        src:[
+           'res/lib/jquery/dist/jquery.min.js',
+           'res/lib/handlebars/handlebars.js',
+           'res/lib/ember/ember.js',
+           'res/lib/ember-data/ember-data.js'
+        ],
+        dest: 'public/assets/js/lib.js',
       }
     },
+    jshint: {
+      all: ['Gruntfile.js', 'res/js/app/**/*.js', 'test/**/*.js']
+    },
     watch: {
-      files: ['res/scss/**/*.scss', 'lib/components/**/*.scss'],
-      tasks: ['sass:dev']
+      files: ['res/scss/**/*.scss', 'res/js/app/**/*.js'],
+      tasks: ['default']
     }
   });
 
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
 
-  grunt.registerTask('default', ['sass:dev']);
-  grunt.registerTask('build-dev', ['sass:dev', 'shell:build-dev']);
-  grunt.registerTask('build-test', ['sass:dev', 'shell:build-test']);
-  grunt.registerTask('build-live', ['sass:live', 'shell:build-live']);
+  grunt.registerTask('default', ['sass:dev', 'jshint:all', 'concat:app', 'concat:lib']);
 };
