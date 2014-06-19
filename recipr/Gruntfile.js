@@ -58,7 +58,12 @@ module.exports = function(grunt) {
         }
     },
     watch: {
-      files: ['res/scss/**/*.scss', 'res/js/app/**/*.js', 'res/templates/**/*.hbs'],
+      files: [
+        'res/scss/**/*.scss',
+        'res/js/app/**/*.js',
+        'res/templates/**/*.hbs',
+        'res/templates/*.hbs'
+      ],
       tasks: ['default']
     }
   });

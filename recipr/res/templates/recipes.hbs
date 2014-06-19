@@ -1,0 +1,15 @@
+<div class="header">
+    <div class="cover"></div>
+    <div class="wrap row">
+        <input class="input iBig" name="name" placeholder="Recipe name" value="">
+    </div>
+    <div class="wrap row">
+        {{recipr-upload class="coverUpload" name="cover" value="" placeholder="Cover Image" label="file"}}
+    </div>
+</div>
+<div class="wrap row">
+  <div class="toggle">
+    {{#link-to 'recipes.ingredients' class="btn" }}Ingredients{{/link-to}}
+    {{#link-to 'recipes.preparation' class="btn" }}preparation{{/link-to}}
+  <div>
+</div>
