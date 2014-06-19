@@ -12,6 +12,7 @@
     "grunt-contrib-concat": "^0.4.0",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-watch": "~0.6.1",
+    "grunt-ember-template-compiler": "^1.5.0",
     "grunt-sass": "~0.13.1"
   }
 }

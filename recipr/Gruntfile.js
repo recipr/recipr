@@ -45,8 +45,20 @@ module.exports = function(grunt) {
     jshint: {
       all: ['Gruntfile.js', 'res/js/app/**/*.js', 'test/**/*.js']
     },
+    emberhandlebars: {
+        compile: {
+            options: {
+                templateName: function(sourceFile) {
+                    var newSource = sourceFile.replace('res/templates/', '');
+                    return newSource.replace('.hbs', '');
+                }
+            },
+            files: ['res/templates/**/*.hbs'],
+            dest: 'public/assets/js/tmpl.js'
+        }
+    },
     watch: {
-      files: ['res/scss/**/*.scss', 'res/js/app/**/*.js'],
+      files: ['res/scss/**/*.scss', 'res/js/app/**/*.js', 'res/templates/**/*.hbs'],
       tasks: ['default']
     }
   });
@@ -55,6 +67,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-ember-template-compiler');
 
-  grunt.registerTask('default', ['sass:dev', 'jshint:all', 'concat:app', 'concat:lib']);
+  grunt.registerTask('default', ['sass:dev', 'jshint:all', 'concat:app', 'concat:lib', 'emberhandlebars']);
 };

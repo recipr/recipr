@@ -1,3 +1,1 @@
-App.Store = DS.Store.extend({
-  adapter: DS.FixtureAdapter
-});
+App.ApplicationAdapter = DS.FixtureAdapter.extend();

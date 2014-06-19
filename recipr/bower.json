@@ -22,9 +22,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.1",
-    "handlebars": "~1.3.0",
-    "ember": "~1.5.1",
-    "ember-data": "~0.0.14"
+    "ember": "~1.5",
+    "ember-data": "~1.0.0-beta.4"
   }
 }
