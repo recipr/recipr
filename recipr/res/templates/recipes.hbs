@@ -1,7 +1,7 @@
 <div class="header">
     <div class="cover"></div>
     <div class="wrap row">
-        <input class="input iBig" name="name" placeholder="Recipe name" value="">
+        {{input class="input iBig" name="name" placeholder="Recipe name" value=name}}
     </div>
     <div class="wrap row">
         {{recipr-upload class="coverUpload" name="cover" value="" placeholder="Cover Image" label="file"}}
@@ -10,6 +10,19 @@
 <div class="wrap row">
   <div class="toggle">
     {{#link-to 'recipes.ingredients' class="btn" }}Ingredients{{/link-to}}
-    {{#link-to 'recipes.preparation' class="btn" }}preparation{{/link-to}}
-  <div>
+    {{#link-to 'recipes.preparation' class="btn" }}Preparation{{/link-to}}
+  </div>
+  <div class="tabs">
+    <div {{bind-attr class=":tab isIngredientTab:active"}} >
+      <div class="row">
+        tab1
+      </div>
+    </div>
+      <div {{bind-attr class=":tab isPreparationTab:active"}} >
+      <div class="row">
+        tab2
+      </div>
+    </div>
+  </div>
+  </recipr-tabs>
 </div>

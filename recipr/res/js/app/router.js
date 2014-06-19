@@ -1,6 +1,6 @@
 App.Router.map(function() {
   this.route('index', { path: '/' });
-  this.resource('recipes', function() {
+  this.resource('recipes', { path: '/recipes/:recipe_id' }, function() {
     this.route('index', { path: '/' });
     this.route('preparation');
     this.route('ingredients');
@@ -9,6 +9,6 @@ App.Router.map(function() {
 
 App.IndexRoute = Ember.Route.extend({
     redirect: function() {
-        this.transitionTo('recipes');
+        this.transitionTo('recipes', '1');
     }
 });
