@@ -5,7 +5,7 @@
 node_modules
 
 # lib
-/res/lib
+/res/lib/*
 
 # Build folders
 /public/assets/css/*
