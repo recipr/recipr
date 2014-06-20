@@ -28,7 +28,7 @@ module.exports = function(grunt) {
            'res/js/app/app.js',
            'res/js/app/store.js',
            'res/js/app/router.js',
-           'res/js/app/*/*.js'
+           'res/js/app/**/*.js'
         ],
         dest: 'public/assets/js/app.js',
       },
