@@ -1,5 +1,5 @@
 App.Ingredient = DS.Model.extend({
-  section: DS.belongsTo('section'),
+  section: DS.belongsTo('Section'),
   name: DS.attr('string'),
   unit: DS.attr('string'),
   quantity: DS.attr('string')
