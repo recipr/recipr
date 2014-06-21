@@ -1,0 +1,9 @@
+<div {{bind-attr class=":tab showPreparation:active"}} >
+{{#if hasMultipleSections}}
+  <div class="row">
+    {{input class="input" name="name" placeholder="Section name" value=section.name}}
+  </div>
+{{/if}}
+<div class="row">
+  {{textarea class="textarea" name="preparation" placeholder="Section name" value=section.preparation}}
+</div>
