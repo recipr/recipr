@@ -1,9 +1,8 @@
 App.Section = DS.Model.extend({
-  recipe: DS.belongsTo('Recipe'),
+  recipe: DS.belongsTo('recipe'),
   name: DS.attr('string'),
   preparation: DS.attr('string'),
-  preparationTime: DS.attr('int'),
-  ingredients: DS.hasMany('Ingredient')
+  preparationTime: DS.attr('int')
 });
 
 App.Section.FIXTURES = [
