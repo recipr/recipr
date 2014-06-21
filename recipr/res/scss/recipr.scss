@@ -4,14 +4,16 @@
 @import "gui/_layout";
 @import "gui/_button";
 @import "gui/_input";
+@import "gui/_textarea";
 @import "gui/_input-group";
 @import "gui/_form";
 @import "gui/_toggle";
 @import "gui/_tabs";
+
 
 /* Components */
 @import "components/header";
 @import "components/upload";
 
 /* Pages */
-@import "edit/edit.scss";
+@import "recipe/edit.scss"; 
