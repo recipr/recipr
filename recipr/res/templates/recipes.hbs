@@ -9,7 +9,7 @@
       </div>
   </div>
     {{#each section in sections}}
-      <section>
+      <section class="row">
         <div class="wrap row">
           <div class="toggle">
             {{#link-to 'recipes.ingredients' class="btn" }}Ingredients{{/link-to}}
@@ -25,7 +25,7 @@
         </div>
       </section>
     {{/each }}
-    <div class="wrap row">
+    <div class="wrap row bigRow">
       <button {{action 'addSection'}} type="button" class="btn addSection" >add Section</button>
     </div>
 </div>
