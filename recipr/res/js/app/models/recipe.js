@@ -9,7 +9,7 @@ App.Recipe.FIXTURES = [
     "id": 1,
     "name": "Ground beef with carrots and mashed potatoes",
     "url": "http://www.example.com",
-    "sections": [1, 2, 3]
+    "sections": [1]
   },{
     "id": 2,
     "name": "Potato Mash",
