@@ -1,4 +1,7 @@
 .recipeEdit {
+  padding: 60px 0;
+  min-height: 100%;
+  position: relative;
   .header {
     position: relative;
     overflow: hidden;
@@ -43,5 +46,10 @@
   .addSection {
     width: auto;
     float: right;
+  }
+
+  .save {
+    position: absolute;
+    bottom: 0;
   }
 }
