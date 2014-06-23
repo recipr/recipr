@@ -4,10 +4,10 @@
     font-size: 18px;
     line-height: 20px;
     font-weight: bold;
-    border: 1px solid $border-color;
+    border: 1px solid $color-border;
     border-radius: 10px;
-    color: $main-text-color;
-    background-color: $input-background-color;
+    color: $color-text-main;
+    background-color: $color-background-input;
     background-image: none;
     margin: 0;
     width: 100%;
@@ -29,18 +29,18 @@
     }
 
     ::-webkit-input-placeholder {
-       color: $border-color;
+       color: $color-border;
     }
 
     :-moz-placeholder {
-       color: $border-color;
+       color: $color-border;
     }
 
     ::-moz-placeholder {
-       color: $border-color;
+       color: $color-border;
     }
 
     :-ms-input-placeholder {
-       color: $border-color;
+       color: $color-border;
     }
 }
