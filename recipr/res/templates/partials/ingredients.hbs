@@ -1,20 +1,21 @@
 {{#each ingredient in section.ingredients}}
   <div class="row">
     {{recipr-ingredient
-      add="addIngredient"
       remove="removeIngredient"
       name=ingredient.name
       unit=ingredient.unit
       quantity=ingredient.quantity
       ingredient=ingredient
-      section=section
     }}
   </div>
 {{/each}}
 <div class="row">
-  {{recipr-ingredient
-    add="addIngredient"
-    remove="removeIngredient"
-    section=section
-  }}
+  <form class="inputGroup" {{action "addIngredient" section on="submit" }}>
+      <div>
+         {{view Ember.TextField value=newIngredient valueBinding="text" class="input" type="text" name="ingredient" placeholder="Add Ingredient"}}
+      </div>
+      <div>
+          <button type="submit" class="btn">+</button>
+      </div>
+  </form>
 </div>

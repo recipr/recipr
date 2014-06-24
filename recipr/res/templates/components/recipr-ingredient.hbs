@@ -1,13 +1,4 @@
-<form {{bind-attr class=":inputGroup :sketch isSketch:show"}} {{action "add" on="submit"}}>
-    <div>
-       {{view Ember.TextField valueBinding="text" class="input" type="text" name="sketch" placeholder="Add Ingredient" value=sketch}}
-    </div>
-    <div>
-        <button type="submit" class="btn">+</button>
-    </div>
-</form>
-
-<form {{bind-attr class=":inputGroup :detail isSketch::show"}} {{action "update" on="submit"}}>
+<form class="inputGroup" {{action "update" on="submit"}}>
     <div>
        {{view Ember.TextField valueBinding="text" class="input" type="text" name="quantity" placeholder="Quantity" value=quantity}}
     </div>
