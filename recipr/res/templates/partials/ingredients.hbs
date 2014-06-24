@@ -1,3 +1,20 @@
+{{#each ingredient in section.ingredients}}
+  <div class="row">
+    {{recipr-ingredient
+      add="addIngredient"
+      remove="removeIngredient"
+      name=ingredient.name
+      unit=ingredient.unit
+      quantity=ingredient.quantity
+      ingredient=ingredient
+      section=section
+    }}
+  </div>
+{{/each}}
 <div class="row">
-  {{recipr-ingredient name="" unit="" quantity="5"}}
+  {{recipr-ingredient
+    add="addIngredient"
+    remove="removeIngredient"
+    section=section
+  }}
 </div>

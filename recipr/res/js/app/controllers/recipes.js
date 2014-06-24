@@ -12,6 +12,19 @@ App.RecipesController = Ember.ObjectController.extend({
       var section = this.store.createRecord('Section');
       var sections = this.get('model.sections');
       sections.pushObject(section);
-    }
+    },
+
+    removeIngredient: function(ingredient){
+        ingredient.deleteRecord();
+    },
+
+    addIngredient: function(data){
+        var ingredient = this.store.createRecord('ingredient', {
+          quantity: data.quantity,
+          unit: data.unit,
+          name: data.name
+        });
+        data.section.get('ingredients').pushObject(ingredient);
+    },
   }
 });

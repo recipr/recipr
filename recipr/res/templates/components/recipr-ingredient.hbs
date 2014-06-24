@@ -1,21 +1,21 @@
-<form {{bind-attr class=":inputGroup :sketch isInSketchMode:show"}} {{action "add" on="submit"}}>
+<form {{bind-attr class=":inputGroup :sketch isSketch:show"}} {{action "add" on="submit"}}>
     <div>
-       {{view Ember.TextField valueBinding="text" class="input" type="text" name="sketch" placeholder="1 ml Milk" value=sketch}}
+       {{view Ember.TextField valueBinding="text" class="input" type="text" name="sketch" placeholder="Add Ingredient" value=sketch}}
     </div>
     <div>
         <button type="submit" class="btn">+</button>
     </div>
 </form>
 
-<form {{bind-attr class=":inputGroup :detail isInSketchMode::show"}} {{action "update" on="submit"}}>
+<form {{bind-attr class=":inputGroup :detail isSketch::show"}} {{action "update" on="submit"}}>
     <div>
-       {{view Ember.TextField valueBinding="text" class="input" type="text" name="quantity" placeholder="1" value=quantity}}
+       {{view Ember.TextField valueBinding="text" class="input" type="text" name="quantity" placeholder="Quantity" value=quantity}}
     </div>
     <div>
-       {{view Ember.TextField valueBinding="text" class="input" type="text" name="unit" placeholder="ml" value=unit}}
+       {{view Ember.TextField valueBinding="text" class="input" type="text" name="unit" placeholder="Unit" value=unit}}
     </div>
     <div>
-       {{view Ember.TextField valueBinding="text" class="input" type="text" name="name" placeholder="Milk" value=name}}
+       {{view Ember.TextField valueBinding="text" class="input" type="text" name="name" placeholder="Name" value=name}}
     </div>
     <div>
         <button type="button" class="btn" {{action "remove"}}>X</button>

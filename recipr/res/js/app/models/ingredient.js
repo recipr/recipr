@@ -1,5 +1,5 @@
 App.Ingredient = DS.Model.extend({
-  section: DS.belongsTo('Section'),
+  section: DS.belongsTo('section'),
   name: DS.attr('string'),
   unit: DS.attr('string'),
   quantity: DS.attr('string')
@@ -9,19 +9,19 @@ App.Ingredient.FIXTURES = [
  {
    "id": 1,
    "name": "Potatoes (Big)",
-   "unit": "10",
-   "quantity": ""
+   "unit": "",
+   "quantity": "10"
  },
  {
    "id": 2,
    "name": "Water",
-   "unit": "200",
-   "quantity": "ml"
+   "unit": "ml",
+   "quantity": "200"
  },
  {
    "id": 3,
-   "name": "Carrots",
-   "unit": "3",
-   "quantity": ""
+   "name": "Sugar",
+   "unit": "Cups",
+   "quantity": "3/4"
  }
 ];
