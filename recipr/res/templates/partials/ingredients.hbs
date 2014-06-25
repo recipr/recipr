@@ -10,7 +10,7 @@
   </div>
 {{/each}}
 <div class="row">
-  <form class="inputGroup" {{action "addIngredient" section on="submit" }}>
+  <form {{bind-attr class=":inputGroup ingredientError:true"}} {{action "addIngredient" section on="submit" }}>
       <div>
          {{view Ember.TextField value=newIngredient valueBinding="text" class="input" type="text" name="ingredient" placeholder="Add Ingredient"}}
       </div>

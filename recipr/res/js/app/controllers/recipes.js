@@ -3,6 +3,7 @@ App.RecipesController = Ember.ObjectController.extend({
   showPreparation: false,
 
   newIngredient: '',
+  ingredientError: false,
 
   regex: /^([\d.,\/]*)(\s*([^\W]*)\s+(.*))?/i,
 
@@ -24,7 +25,12 @@ App.RecipesController = Ember.ObjectController.extend({
 
     addIngredient: function(section){
         var ingredient = this.createIngredientFromName();
-        section.get('ingredients').pushObject(ingredient);
+        if(ingredient){
+            this.set('ingredientError', false);
+            section.get('ingredients').pushObject(ingredient);
+        } else {
+            this.set('ingredientError', true);
+        }
     },
   },
 
@@ -37,6 +43,11 @@ App.RecipesController = Ember.ObjectController.extend({
         unit: match[3] ? match[3] : "",
         name: match[4] ? match[4] : ""
       });
+
+      if(!ingredient.name){
+          return false;
+      }
+
       this.set('newIngredient', '');
       return ingredient;
   },
