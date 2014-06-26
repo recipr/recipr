@@ -38,13 +38,13 @@ App.RecipesController = Ember.ObjectController.extend({
       name = this.filterWhitespaces(this.get('newIngredient'));
       var match = this.regex.exec(name);
 
-      var ingredient =this.store.createRecord('ingredient', {
+      var ingredient = this.store.createRecord('ingredient', {
         quantity: match[1] ? match[1] : "1",
         unit: match[3] ? match[3] : "",
         name: match[4] ? match[4] : ""
       });
 
-      if(!ingredient.name){
+      if(!ingredient.get('name')){
           return false;
       }
 

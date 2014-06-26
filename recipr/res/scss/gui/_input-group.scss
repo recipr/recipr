@@ -27,6 +27,13 @@
         outline: none;
     }
 
+    &.error {
+      .input,
+      .btn {
+        border-color: $color-border-error;
+      }
+    }
+
     div:last-child {
         * {
             border-top-right-radius: 10px;

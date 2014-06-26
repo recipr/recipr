@@ -15,7 +15,7 @@
     @include default-inset-shadow;
 
     &.error {
-        border-color: @color-border-error;
+        border-color: $color-border-error;
     }
 
     &.iSmall {
