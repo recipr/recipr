@@ -27,4 +27,7 @@
 <div class="wrap row bigRow">
   <button {{action 'addSection'}} type="button" class="btn addSection" >add Section</button>
 </div>
+<div class="wrap bigRow">
+    {{recipr-tags tags=tags add="addTag" remove="removeTag"}}
+</div>
 <button {{action 'saceRecipe'}} class="save btn bFull">Publish</button>

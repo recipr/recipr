@@ -32,6 +32,23 @@ App.RecipesController = Ember.ObjectController.extend({
             this.set('ingredientError', true);
         }
     },
+
+    addTag: function(name){
+        name = this.filterWhitespaces(name);
+        if(name.length){
+            var tag = this.store.createRecord('tag', {
+                name: name
+            });
+            this.get('tags').pushObject(tag);
+        }
+    },
+
+    removeTag: function(tag){
+        if(!tag){
+            tag = this.get('tags.lastObject');
+        }
+        this.get('tags').removeObject(tag);
+    }
   },
 
   createIngredientFromName: function(name){
