@@ -1,8 +1,2 @@
-<div class="inputGroup" class="upload">
-    <div>
-       {{view Ember.TextField valueBinding="text" class="input" type="text" name="name" placeholder=placeholder value=fileName}}
-    </div>
-    <div>
-        <button class="btn">{{label}}</button>
-    </div>
-</div>
+{{view App.FileInput name="cover" type="file" class="file" action="getFile" onEvent="change"}}
+{{value}}

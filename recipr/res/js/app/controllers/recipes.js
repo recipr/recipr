@@ -4,6 +4,7 @@ App.RecipesController = Ember.ObjectController.extend({
 
   newIngredient: '',
   ingredientError: false,
+  cover: null,
 
   regex: /^([\d.,\/]*)(\s*([^\W]*)\s+(.*))?/i,
 
@@ -48,6 +49,10 @@ App.RecipesController = Ember.ObjectController.extend({
             tag = this.get('tags.lastObject');
         }
         this.get('tags').removeObject(tag);
+    },
+
+    onCoverChange: function(data){
+        this.set('cover', data.base64);
     }
   },
 

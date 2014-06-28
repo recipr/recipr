@@ -1,10 +1,12 @@
 <div class="header">
-  <div class="cover"></div>
+  <div class="cover">
+      <img class="coverImage" {{bind-attr src=cover}}>
+  </div>
   <div class="wrap row">
       {{input class="input iBig" name="name" placeholder="Recipe name" value=name}}
   </div>
   <div class="wrap row">
-      {{recipr-upload class="coverUpload" name="cover" value="" placeholder="Cover Image" label="file"}}
+      {{recipr-upload class="coverUpload" upload="onCoverChange" value="Cover Image"}}
   </div>
 </div>
 {{#each section in sections}}

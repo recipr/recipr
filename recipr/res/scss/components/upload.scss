@@ -1,11 +1,8 @@
 .recipr-upload {
+  @extend .btn;
+  @extend .btn.bBig;
   display: block;
-
-  .inputGroup {
-    .input {
-      background-color: rgba($color-background-input, .6);
-    }
-  }
+  background: rgba($color-text-button-active, .6);
 
   .file {
     display: none;
