@@ -1,4 +1,4 @@
-@mixin input-group {
+.inputGroup {
     padding: 0;
     margin: 0;
     width: 100%;
@@ -27,12 +27,19 @@
         outline: none;
     }
 
+    &.error {
+      .input,
+      .btn {
+        border-color: $color-border-error;
+      }
+    }
+
     div:last-child {
         * {
             border-top-right-radius: 10px;
             border-bottom-right-radius: 10px;
-            border-left: 1px solid $border-color;
-            border-right: 1px solid $border-color;
+            border-left: 1px solid $color-border;
+            border-right: 1px solid $color-border;
         }
     }
 
@@ -40,7 +47,7 @@
         * {
             border-top-left-radius: 10px;
             border-bottom-left-radius: 10px;
-            border-left: 1px solid $border-color;
+            border-left: 1px solid $color-border;
         }
     }
 }

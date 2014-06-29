@@ -1,5 +1,0 @@
-library recipr;
-
-class Recipr {
-
-}

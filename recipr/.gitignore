@@ -1,26 +1,12 @@
-# Don’t commit the following directories created by pub.
-build/
-packages/
-
-# Or the files created by dart2js.
-*.dart.js
-*.dart.precompiled.js
-*.js_
-*.js.deps
-*.js.map
-
-# Include when developing application packages.
-pubspec.lock
+#IDE stuff
+.idea
 
 # Grunt / npm
 node_modules
 
-# Configs. Prevent config overwrite
-.deploy.json
-.config.json
+# lib
+/res/lib/*
 
 # Build folders
-/web/res/css
-.buildlog
-*.css
-*.css.map
+/public/assets/css/*
+/public/assets/js/*

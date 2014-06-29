@@ -1,0 +1,55 @@
+.recipeEdit {
+  padding: 60px 0;
+  min-height: 100%;
+  position: relative;
+  .header {
+    position: relative;
+    overflow: hidden;
+
+    .input {
+      background-color: rgba($color-background-input, .6);
+    }
+
+    .cover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      text-align: center;
+
+      .coverImage {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: inline;
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+    }
+  }
+
+  .tabs {
+    .tab {
+      width: 100%;
+    }
+  }
+
+  section {
+    padding: 10px 0;
+    border-top: 1px solid $color-border;
+    &:last-of-type {
+      border-bottom: 1px solid $color-border;
+    }
+  }
+
+  .addSection {
+    width: auto;
+    float: right;
+  }
+
+  .save {
+    position: absolute;
+    bottom: 0;
+  }
+}

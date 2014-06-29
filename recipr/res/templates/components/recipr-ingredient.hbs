@@ -1,0 +1,14 @@
+<form class="inputGroup" {{action "update" on="submit"}}>
+    <div>
+       {{view Ember.TextField valueBinding="text" class="input" type="text" name="quantity" placeholder="Quantity" value=quantity}}
+    </div>
+    <div>
+       {{view Ember.TextField valueBinding="text" class="input" type="text" name="unit" placeholder="Unit" value=unit}}
+    </div>
+    <div>
+       {{view Ember.TextField valueBinding="text" class="input" type="text" name="name" placeholder="Name" value=name}}
+    </div>
+    <div>
+        <button type="button" class="btn" {{action "remove"}}>X</button>
+    </div>
+</form>
