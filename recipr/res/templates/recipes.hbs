@@ -1,0 +1,35 @@
+<div class="header">
+  <div class="cover">
+      <img class="coverImage" {{bind-attr src=cover}}>
+  </div>
+  <div class="wrap row">
+      {{input class="input iBig" name="name" placeholder="Recipe name" value=name}}
+  </div>
+  <div class="wrap row">
+      {{recipr-upload class="coverUpload" upload="onCoverChange" value="Cover Image"}}
+  </div>
+</div>
+{{#each section in sections}}
+  <section class="row">
+    <div class="wrap row">
+      <div class="toggle">
+        {{#link-to 'recipes.ingredients' class="btn" }}Ingredients{{/link-to}}
+        {{#link-to 'recipes.preparation' class="btn" }}Preparation{{/link-to}}
+      </div>
+      <div class="tabs">
+        <div {{bind-attr class=":tab showIngredients:active"}} >
+          {{partial "partials/ingredients"}}
+        </div>
+          {{partial "partials/preparation"}}
+        </div>
+      </div>
+    </div>
+  </section>
+{{/each }}
+<div class="wrap row bigRow">
+  <button {{action 'addSection'}} type="button" class="btn addSection" >add Section</button>
+</div>
+<div class="wrap bigRow">
+    {{recipr-tags tags=tags add="addTag" remove="removeTag"}}
+</div>
+<button {{action 'saceRecipe'}} class="save btn bFull">Publish</button>

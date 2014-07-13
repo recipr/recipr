@@ -1,0 +1,10 @@
+.recipr-upload {
+  @extend .btn;
+  @extend .btn.bBig;
+  display: block;
+  background: rgba($color-text-button-active, .6);
+
+  .file {
+    display: none;
+  }
+}

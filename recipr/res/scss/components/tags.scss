@@ -1,0 +1,46 @@
+.recipr-tags {
+    .input {
+        display: block;
+        height: auto;
+        min-height: 40px;
+        padding: 0;
+        @include clear-fix();
+
+        .newTag {
+            @extend .input;
+            border: none;
+            outline: none;
+            box-shadow: none;
+            background-color: transparent;
+            float: left;
+            width: auto;
+            padding-left: 10px;
+        }
+    }
+    .tag {
+        @extend .btn;
+        @extend .btn.bSmall;
+        margin: 5px;
+        display: block;
+        float: left;
+        width: auto;
+        position: relative;
+        padding-right: 30px;
+
+        &:hover {
+            color: $color-text-button;
+            background-color: $color-background-button;
+        }
+
+        .icon {
+            position: absolute;
+            right: 4px;
+            top: 4px;
+            color: $color-text-button-active;
+            background-color: $color-background-button-active;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+    }
+}
