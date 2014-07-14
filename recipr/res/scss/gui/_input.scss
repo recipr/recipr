@@ -12,8 +12,6 @@
     margin: 0;
     width: 100%;
 
-    @include default-inset-shadow;
-
     &.error {
         border-color: $color-border-error;
     }

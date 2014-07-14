@@ -1,11 +1,9 @@
 .toggle {
     width: 100%;
     display: block;
-    @include default-shadow;
     @include clear-fix;
 
     .btn {
-        @include no-shadow;
         display: block;
         width: 50%;
         float: left;
