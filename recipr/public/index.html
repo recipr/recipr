@@ -14,7 +14,13 @@
 <body>
     <script type="text/x-handlebars">
       {{recipr-header toggleSidebar="toggleSidebar" title="Recipr"}}
-      {{#recipr-sidebar show=sidebarIsOpen}}output{{/recipr-sidebar}}
+
+      {{#recipr-sidebar show=sidebarIsOpen}}
+        {{#each menu in menus}}
+            {{recipr-menu name=menu.name nodes=menu.nodes}}
+        {{/each}}
+      {{/recipr-sidebar}}
+
       {{outlet}}
     </script>
 
