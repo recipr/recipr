@@ -13,7 +13,8 @@
 </head>
 <body>
     <script type="text/x-handlebars">
-      {{recipr-header title="Recipr"}}
+      {{recipr-header toggleSidebar="toggleSidebar" title="Recipr"}}
+      {{#recipr-sidebar show=sidebarIsOpen}}output{{/recipr-sidebar}}
       {{outlet}}
     </script>
 

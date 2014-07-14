@@ -37,6 +37,11 @@
     text-transform: uppercase;
   }
 
+  &.bTrans {
+    background-color: transparent;
+    color: $color-text-button-active;
+  }
+
   &:hover,
   &.active {
     background-color: $color-background-button-active;

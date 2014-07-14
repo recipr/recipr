@@ -1,6 +1,7 @@
 @import "configs";
 @import "mixins";
 
+@import "gui/_helper";
 @import "gui/_layout";
 @import "gui/_button";
 @import "gui/_input";
@@ -15,6 +16,8 @@
 @import "components/header";
 @import "components/upload";
 @import "components/tags";
+@import "components/sidebar";
+@import "components/menu";
 
 /* Pages */
 @import "recipe/edit.scss";
