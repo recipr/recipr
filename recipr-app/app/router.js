@@ -8,8 +8,9 @@ Router.map(function() {
     this.route('index', { path: '/' });
     this.route('dashboard');
 
-    this.resource('recipes', function() {
-        this.route('recipe');
+    this.route('recipes');
+
+    this.resource('recipe', { path: 'recipe/:id'}, function() {
         this.route('preparation');
         this.route('ingredients');
     });
