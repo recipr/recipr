@@ -1,0 +1,17 @@
+.recipr-header {
+  background-color: $color-background-header;
+  color: $color-header;
+  width: 100%;
+  display: block;
+  font-size: 30px;
+  line-height: 40px;
+  padding: 10px 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  .toggleSidebar {
+    width: auto;
+  }
+}

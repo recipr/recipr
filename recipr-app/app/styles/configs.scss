@@ -1,0 +1,25 @@
+/* Base Color */
+
+$color1: #000000;
+$color2: #ffffff;
+$color3: #979797;
+$color4: #d8d8d8;
+$color5: #3d3d3d;
+$color6: #ff0000;
+
+/* Colors usage */
+
+$color-border: $color3;
+$color-border-error: $color6;
+
+$color-text-main: $color1;
+$color-text-button: $color1;
+$color-text-button-active: $color2;
+$color-text-header-link: $color2;
+
+$color-header: $color2;
+
+$color-background-button: $color4;
+$color-background-button-active: $color5;
+$color-background-header: $color1;
+$color-background-input: $color2;

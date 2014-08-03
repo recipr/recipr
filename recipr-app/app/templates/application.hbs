@@ -1,0 +1,8 @@
+{{recipr-header toggleSidebar="toggleSidebar" title="Recipr"}}
+
+{{#recipr-sidebar show=sidebarIsOpen}}
+    {{#each menu in menus}}
+        {{recipr-menu name=menu.name nodes=menu.nodes}}
+    {{/each}}
+{{/recipr-sidebar}}
+{{outlet}}

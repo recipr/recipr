@@ -1,0 +1,50 @@
+.btn {
+  height: 40px;
+  padding: 10px 20px;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid $color-border;
+  border-radius: 10px;
+  color: $color-text-button;
+  background-color: $color-background-button;
+  margin: 0;
+  width: 100%;
+  text-decoration: none;
+
+  &.bSmall {
+    height: 30px;
+    padding: 5px 20px;
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  &.bBig {
+    height: 50px;
+    padding: 10px 20px;
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  &.bFull {
+    width: 100%;
+    border-radius: 0;
+    height: 50px;
+    background-color: $color-background-button-active;
+    color: $color-text-button;
+    border: none;
+    text-transform: uppercase;
+  }
+
+  &.bTrans {
+    background-color: transparent;
+    color: $color-text-button-active;
+  }
+
+  &:hover,
+  &.active {
+    background-color: $color-background-button-active;
+    color: $color-text-button-active;
+  }
+}
