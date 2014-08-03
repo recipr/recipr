@@ -5,6 +5,10 @@
 
   a {
     color: $color-text-header-link;
+    &:hover,
+    &.active {
+        color: $color3;
+    }
   }
 
   ul {
