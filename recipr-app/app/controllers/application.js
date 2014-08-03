@@ -3,45 +3,40 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 
     sidebarIsOpen: false,
-    
+
     menus: [
         {
-            name: 'Main Menu',
+            name: '',
             nodes: [
                 {
-                    name: 'Node 1',
-                    target: '/',
-                    icon: 'test-icon',
-                    model: 232
-                },
-                {
-                    name: 'Node 2',
-                    target: '/test',
-                    external: true
-                },
-                {
-                    name: 'Node 3',
-                    target: '/test',
-                    icon: 'test-icon-3'
-                }
-            ]
-        },
-        {
-            nodes: [
-                {
-                    name: 'Node 1',
-                    target: '/',
+                    name: 'Dashboard',
+                    target: 'dashboard',
                     icon: 'test-icon'
                 },
                 {
-                    name: 'Node 2',
-                    target: '/test',
-                    icon: 'test-icon-2'
+                    name: 'Recipes',
+                    target: 'recipes'
                 },
                 {
-                    name: 'Node 3',
-                    target: '/test',
-                    icon: 'test-icon-3'
+                    name: 'Settings',
+                    target: 'settings.user',
+                    icon: 'test-icon-3',
+                    nodes: [
+                        {
+                            name: 'User',
+                            target: 'settings.user',
+                            icon: 'test-icon'
+                        },
+                        {
+                            name: 'Security',
+                            target: 'settings.security'
+                        },
+                        {
+                            name: 'Recipes',
+                            target: 'settings.recipes',
+                            icon: 'test-icon-3'
+                        }
+                    ]
                 }
             ]
         }

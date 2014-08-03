@@ -11,7 +11,7 @@
             {{#if node.external}}
                 <a {{bind-attr href=node.target}} target="_blank" >{{node.name}}</a>
             {{else}}
-                {{#link-to 'recipes' node.model}}{{node.name}}{{/link-to}}
+                {{#link-to node.target }}{{node.name}}{{/link-to}}
             {{/if}}
         </li>
     {{/each}}

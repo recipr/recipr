@@ -17,7 +17,7 @@ export default Ember.Component.extend({
         var file = this.get('files')[0];
         var reader = new FileReader();
         var instance = this;
-        reader.onload = function(evt) {
+        reader.onload = function() {
             instance.sendAction('upload', {
                 'file': file,
                 'base64': reader.result
