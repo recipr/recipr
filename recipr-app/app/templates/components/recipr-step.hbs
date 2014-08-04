@@ -1,0 +1,18 @@
+<div {{action 'edit'}}>
+    {{#if index}}
+        <span class="index">{{index}}</span>
+    {{/if}}
+
+    {{#if isEditable}}
+    {{textarea class="step-content" value=content }}
+    {{else}}
+    <p class="step-content">{{content}}</p>
+    {{/if}}
+
+    {{#if isEditable}}
+        <div class="actions">
+            <button class="btn bSmall action save" {{action 'save' bubbles=false}}>save</button>
+            <button class="btn bSmall action delete" {{action 'delete' bubbles=false }}>delete</button>
+        </div>
+    {{/if}}
+</div>

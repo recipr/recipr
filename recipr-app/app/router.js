@@ -20,6 +20,7 @@ Router.map(function() {
         this.route('security');
         this.route('recipes');
     });
+  this.route('test');
 });
 
 export default Router;
