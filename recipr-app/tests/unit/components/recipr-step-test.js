@@ -85,11 +85,64 @@ test('test recipr-step has index bubble when index is set', function() {
     var component = this.subject();
     equal(component.index, false);
 
-    equal(this.$().find('.index').length, 0);
+    equal(this.$().find('.step-index').length, 0);
 
     Ember.run(function(){
         component.set('index', true);
     });
 
-    equal(this.$().find('.index').length, 1);
+    equal(this.$().find('.step-index').length, 1);
+});
+
+test('test recipr-step has edit class in edit mode', function() {
+    var component = this.subject();
+    equal(this.$().hasClass('edit'), false);
+
+    Ember.run(function(){
+        component.set('isEditable', true);
+    });
+
+    equal(this.$().hasClass('edit'), true);
+});
+
+test('test recipr-step has textarea in edit mode', function() {
+    var component = this.subject();
+    equal(this.$().find('textarea').length, 0);
+
+    Ember.run(function(){
+        component.set('isEditable', true);
+    });
+
+    equal(this.$().find('textarea').length, 1);
+});
+
+
+test('test recipr-step textarea contains content in edit mode', function() {
+    var component = this.subject();
+    var content = 'test content';
+
+    Ember.run(function(){
+        component.set('content', content);
+        component.set('isEditable', true);
+    });
+
+    equal(this.$().find('textarea').val(), content);
+});
+
+test('test recipr-step contains content in view mode', function() {
+    var component = this.subject();
+    var content = 'test content';
+
+    Ember.run(function(){
+        component.set('content', content);
+    });
+
+    equal(this.$().find('.step-content').text(), content);
+});
+
+test('test recipr-step fires edit event if it gets in edit mode', function() {
+    var component = this.subject();
+
+    
+
 });

@@ -7,5 +7,11 @@ export default Ember.ObjectController.extend({
             'step2',
             'step3'
         ]
+    },
+
+    actions: {
+        editStep: function(){
+            alert('edit step');
+        }
     }
 });

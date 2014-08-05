@@ -8,6 +8,12 @@ export default Ember.Component.extend({
     content: '',
     isEditable: false,
 
+    editableObserver: function() {
+        if(this.get('isEditable') == true){
+            this.sendAction('onEdit');
+        }
+    }.observes('isEditable'),
+
     actions:{
         edit: function(){
             console.log('edit');

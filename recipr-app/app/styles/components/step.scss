@@ -3,7 +3,11 @@
     position: relative;
     width: 500px;
 
-    .index {
+    .step-wrap {
+        height: 100%;
+    }
+
+    .step-index {
         color: $color2;
         background: $color1;
         width: 30px;
@@ -34,7 +38,7 @@
     }
 
     &.edit {
-        .index {
+        .step-index {
             display: none;
         }
     }

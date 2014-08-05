@@ -16,46 +16,46 @@ export default Ember.Controller.extend({
         }.property('model.sections.length'),
 
     actions: {
-    addSection: function(){
-        var section = this.store.createRecord('Section');
-        var sections = this.get('model.sections');
-        sections.pushObject(section);
-    },
+        addSection: function(){
+            var section = this.store.createRecord('Section');
+            var sections = this.get('model.sections');
+            sections.pushObject(section);
+        },
 
-    removeIngredient: function(ingredient){
-        ingredient.deleteRecord();
-    },
+        removeIngredient: function(ingredient){
+            ingredient.deleteRecord();
+        },
 
-    addIngredient: function(section){
-        var ingredient = this.createIngredientFromName();
-        if(ingredient){
-            this.set('ingredientError', false);
-            section.get('ingredients').pushObject(ingredient);
-        } else {
-            this.set('ingredientError', true);
+        addIngredient: function(section){
+            var ingredient = this.createIngredientFromName();
+            if(ingredient){
+                this.set('ingredientError', false);
+                section.get('ingredients').pushObject(ingredient);
+            } else {
+                this.set('ingredientError', true);
+            }
+        },
+
+        addTag: function(name){
+            name = this.filterWhitespaces(name);
+            if(name.length){
+                var tag = this.store.createRecord('tag', {
+                    name: name
+                });
+                this.get('tags').pushObject(tag);
+            }
+        },
+
+        removeTag: function(tag){
+            if(!tag){
+                tag = this.get('tags.lastObject');
+            }
+            this.get('tags').removeObject(tag);
+        },
+
+        onCoverChange: function(data){
+            this.set('cover', data.base64);
         }
-    },
-
-    addTag: function(name){
-        name = this.filterWhitespaces(name);
-        if(name.length){
-            var tag = this.store.createRecord('tag', {
-                name: name
-            });
-            this.get('tags').pushObject(tag);
-        }
-    },
-
-    removeTag: function(tag){
-        if(!tag){
-            tag = this.get('tags.lastObject');
-        }
-        this.get('tags').removeObject(tag);
-    },
-
-    onCoverChange: function(data){
-        this.set('cover', data.base64);
-    }
     },
 
     createIngredientFromName: function(name){
