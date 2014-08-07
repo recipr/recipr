@@ -3,9 +3,14 @@ import Ember from 'ember';
 export default Ember.ObjectController.extend({
     model: {
         steps: [
-            'step1',
-            'step2',
-            'step3'
+            {
+                index: 1,
+                content: 'step1'
+            },
+            {
+                index: 2,
+                content: 'step2'
+            }
         ]
     },
 

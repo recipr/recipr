@@ -1,7 +1,8 @@
 {{#if steps}}
-    <ol>
     {{#each step in steps}}
-        <li contenteditable="true">{{step}}</li>
+    	{{recipr-step index=step.index content=step.content isEditable=step.isEditable}}
     {{/each}}
-    </ol>
 {{/if}}
+{{#unless inEditMode}}
+	<div class="btn bSmall addStep" {{action 'addStep'}}>add next step</div>
+{{/unless}}

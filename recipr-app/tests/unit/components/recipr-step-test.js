@@ -139,10 +139,3 @@ test('test recipr-step contains content in view mode', function() {
 
     equal(this.$().find('.step-content').text(), content);
 });
-
-test('test recipr-step fires edit event if it gets in edit mode', function() {
-    var component = this.subject();
-
-    
-
-});
