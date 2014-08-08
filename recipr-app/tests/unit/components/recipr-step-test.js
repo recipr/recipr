@@ -11,15 +11,6 @@ test('test recipr-step', function() {
     equal(component.state, 'inDOM');
 });
 
-test('test recipr-step is in edit mode after click', function() {
-    var component = this.subject();
-    equal(component.isEditable, false);
-
-    this.$().click(function(){
-        equal(component.isEditable, true);
-    });
-});
-
 test('test recipr-step has save button only in edit mode', function() {
     var component = this.subject();
     equal(component.isEditable, false);
@@ -65,8 +56,7 @@ test('test recipr-step is in view mode after save', function() {
         component.set('isEditable', true);
         equal(component.isEditable, true);
     });
-    this.$().find('.save')[0].click(function(){
-        equal(1, 2);
+    this.$().find('.save').click(function(){
         equal(component.isEditable, false);
     });
 });

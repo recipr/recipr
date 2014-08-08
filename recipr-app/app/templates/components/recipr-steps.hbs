@@ -1,8 +1,16 @@
 {{#if steps}}
     {{#each step in steps}}
-    	{{recipr-step index=step.index content=step.content isEditable=step.isEditable}}
+    	{{recipr-step index=step.index content=step.content isEditable=step.isEditable onEdit='startEdit'}}
     {{/each}}
 {{/if}}
-{{#unless inEditMode}}
-	<div class="btn bSmall addStep" {{action 'addStep'}}>add next step</div>
-{{/unless}}
+{{#if addMode}}
+	<div class="add-form">
+		{{textarea class="step-content" value=stepContent}}
+		<div class="actions">
+	        <button class="btn bSmall action save" {{action 'saveStep' bubbles=false}}>save</button>
+	        <button class="btn bSmall action cancel" {{action 'cancelAdd' bubbles=false }}>delete</button>
+	    </div>
+    </div>
+{{else}}
+	<div class="btn bSmall add-step" {{action 'addStep'}}>add next step</div>
+{{/if}}

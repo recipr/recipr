@@ -2,14 +2,23 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     classNames: ['recipr-steps'],
-    inEditMode: false,
+    addMode: false,
+    stepContent: '',
 
     steps: [],
 
     actions: {
     	addStep: function(){
-    		this.get('steps').pushObject({index: this.get('steps.length')+1, content: '', isEditable: true});
-    		this.set('inEditMode', true);
+    		this.set('addMode', true); 
+    	},
+    	cancelAdd: function(){
+    		this.set('addMode', false); 
+    	},
+    	saveStep: function(){
+    		if(this.get('stepContent.length') === 0){
+    			return;
+    		}
+    		this.set('addMode', false); 
     	}
     }
 });

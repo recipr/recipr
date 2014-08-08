@@ -35,25 +35,83 @@ test('test recipr-steps has recipr step children', function() {
 test('test recipr-steps has add step button', function() {
     var component = this.subject();
 
-    equal(this.$().find('.addStep').length, 1);
+    equal(this.$().find('.add-step').length, 1);
 });
 
-test('test recipr-steps click on addStep button adds empty step in edit mode', function() {
+test('test recipr-steps is in addMode after step button', function() {
     var component = this.subject();
-    
-    equal(this.$().find('.recipr-step').length, 0);
 
-    this.$().find('.addStep').click();
+    this.$().find('.add-step').click();
 
-    equal(this.$().find('.recipr-step').length, 1);
-    equal(this.$().find('.recipr-step').hasClass('edit'), true);
+    Ember.run(function(){
+        equal(component.get('addMode'), true);
+    });
 });
 
-test('test recipr-steps add button hidden if a step is in edit mode', function() {
+
+test('test recipr-steps has add form when in addMode', function() {
     var component = this.subject();
     
-    this.$().find('.addStep').click();
+    equal(this.$().find('.add-form').length, 0);
 
-    equal(this.$().find('.recipr-step').length, 1);
-    equal(this.$().find('.addStep').length, 0);
+    Ember.run(function(){
+        component.set('addMode', true);
+    });
+
+    equal(this.$().find('.add-form').length, 1);
+    var addForm = this.$().find('.add-form');
+    equal(addForm.find('.save').length, 1);
+    equal(addForm.find('.cancel').length, 1);
+    equal(addForm.find('.step-content').length, 1);
+});
+
+test('test recipr-steps no add button when in addMode', function() {
+    var component = this.subject();
+    
+    equal(this.$().find('.add-step').length, 1);
+
+    Ember.run(function(){
+        component.set('addMode', true);
+    });
+
+    equal(this.$().find('.add-step').length, 0);
+});
+
+
+test('test recipr-steps close edit mode when cancel is clicked', function() {
+    var component = this.subject();
+    
+    Ember.run(function(){
+        component.set('addMode', true);
+    });
+
+    this.$().find('.cancel').click();
+
+    equal(component.get('addMode'), false);
+});
+
+test('test recipr-steps close edit mode when save is clicked', function() {
+    var component = this.subject();
+    
+    Ember.run(function(){
+        component.set('addMode', true);
+        component.set('stepContent', 'TEST');
+    });
+
+    this.$().find('.save').click();
+
+    equal(component.get('addMode'), false);
+});
+
+test('test recipr-steps disable save when new step is empty', function() {
+    var component = this.subject();
+    
+    Ember.run(function(){
+        component.set('addMode', true);
+        component.set('stepContent', '');
+    });
+
+    this.$().find('.save').click();
+
+    equal(component.get('addMode'), true);
 });
