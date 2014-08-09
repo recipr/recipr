@@ -115,3 +115,96 @@ test('test recipr-steps disable save when new step is empty', function() {
 
     equal(component.get('addMode'), true);
 });
+
+test('test recipr-steps error is true on error', function() {
+    var component = this.subject();
+    
+    Ember.run(function(){
+        component.set('addMode', true);
+        component.set('stepContent', '');
+    });
+
+    this.$().find('.save').click();
+    equal(component.get('error'), true);
+});
+
+test('test recipr-steps has error class on error', function() {
+    var component = this.subject();
+    
+    Ember.run(function(){
+        component.set('addMode', true);
+        component.set('stepContent', '');
+    });
+
+    this.$().find('.save').click();
+    equal(this.$().find('.add-form.error').length, 1);
+});
+
+test('test recipr-steps remove error on successful save', function() {
+    var component = this.subject();
+    
+    Ember.run(function(){
+        component.set('addMode', true);
+        component.set('stepContent', 'TEST');
+        component.set('error', true);
+    });
+
+    this.$().find('.save').click();
+
+    equal(component.get('error'), false);
+});
+
+test('test recipr-steps content is empty after saving', function() {
+    var component = this.subject();
+    
+    Ember.run(function(){
+        component.set('addMode', true);
+        component.set('stepContent', 'TEST');
+    });
+
+    this.$().find('.save').click();
+
+    equal(component.get('stepContent').length, 0);
+});
+
+test('test recipr-steps trim whitespaces at saving', function() {
+    var component = this.subject();
+    
+    Ember.run(function(){
+        component.set('addMode', true);
+        component.set('stepContent', '     ');
+    });
+
+    this.$().find('.save').click(); 
+
+    equal(component.get('error'), true);
+});
+
+test('test recipr-steps error is false after cancel', function() {
+    var component = this.subject();
+    
+    Ember.run(function(){
+        component.set('addMode', true);
+        component.set('error', true);
+    });
+
+    this.$().find('.cancel').click(); 
+
+    equal(component.get('error'), false);
+});
+
+
+test('test recipr-steps stepContent empty after cancel', function() {
+    var component = this.subject();
+    
+    Ember.run(function(){
+        component.set('addMode', true);
+        component.set('stepContent', 'TEST');
+    });
+
+    this.$().find('.cancel').click(); 
+
+    equal(component.get('stepContent').length, 0);
+});
+
+
