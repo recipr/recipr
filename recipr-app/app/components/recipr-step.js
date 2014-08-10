@@ -17,7 +17,12 @@ export default Ember.Component.extend({
         },
         save: function(){
             this.set('openedStep', null);
-            this.sendAction('openedStep', this.get('step'));
+            if(this.get('step.content').trim().length == 0){
+                this.sendAction('onDeleteStep', this.get('step'));
+            }
+        },
+        delete: function(){
+            this.sendAction('onDeleteStep', this.get('step'));
         }
     } 
 });

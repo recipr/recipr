@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.ObjectController.extend({
+export default Ember.ArrayController.extend({
     model: [
         {
             index: 1,
@@ -18,6 +18,15 @@ export default Ember.ObjectController.extend({
                 index: this.get('model').length + 1,
                 content: stepContent
             });
+        },
+        deleteStep: function(step){
+            var other = this.get('model').filter(function(otherStep){
+                if(step !== otherStep){
+                    return true;
+                }
+            });
+
+            this.set('model', other);            
         }
     }
 });

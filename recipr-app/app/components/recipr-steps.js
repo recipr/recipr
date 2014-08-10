@@ -35,8 +35,11 @@ export default Ember.Component.extend({
     		}
     		this.set('error', false);
     		this.set('addMode', false); 
-    		this.sendAction('addStep', this.get('stepContent'));
+    		this.sendAction('onAddStep', this.get('stepContent'));
     		this.set('stepContent', '');
-    	}
+    	},
+        deleteStep: function(step){
+            this.sendAction('onDeleteStep', step);
+        },
     }
 });
