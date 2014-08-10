@@ -1,14 +1,14 @@
 <div class="step-wrap"{{action 'edit'}}>
-    {{#if index}}
-        <span class="step-index">{{index}}</span>
+    {{#if step.index}}
+        <span class="step-index">{{step.index}}</span>
     {{/if}}
 
     {{#if isEditable}}
-        {{textarea class="step-content" value=content}}
+        {{textarea class="step-content" value=step.content}}
     {{else}}
-        <p class="step-content">{{content}}</p>
+        <p class="step-content">{{step.content}}</p>
     {{/if}}
-
+ 
     {{#if isEditable}}
         <div class="actions">
             <button class="btn bSmall action save" {{action 'save' bubbles=false}}>save</button>

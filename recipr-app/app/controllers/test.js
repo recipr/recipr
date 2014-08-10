@@ -5,7 +5,7 @@ export default Ember.ObjectController.extend({
         {
             index: 1,
             content: 'step1'
-        },
+        },    
         {
             index: 2,
             content: 'step2'
@@ -13,15 +13,11 @@ export default Ember.ObjectController.extend({
     ],
 
     actions: {
-        editStep: function(){
-            alert('edit step');
-        },
         addStep: function(stepContent){
-     
             this.get('model').pushObject({
                 index: this.get('model').length + 1,
                 content: stepContent
             });
-        },
+        }
     }
 });

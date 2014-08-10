@@ -1,6 +1,6 @@
 {{#if steps}}
     {{#each step in steps}}
-    	{{recipr-step index=step.index content=step.content isEditable=step.isEditable onEdit='startEdit'}}
+    	{{recipr-step step=step onEdit='startEdit' openedStep=openedStep}}
     {{/each}}
 {{/if}}
 {{#if addMode}}

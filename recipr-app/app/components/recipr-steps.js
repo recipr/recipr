@@ -6,12 +6,21 @@ export default Ember.Component.extend({
     error: false,
 
     stepContent: '',
+    openedStep: null,
 
     steps: [],
 
     actions: {
+    	startEdit: function(step){
+    	   	this.set('addMode', false); 
+    		this.set('error', false);
+    		this.set('stepContent', '');
+    		this.set('openedStep', step);
+    	},
+
     	addStep: function(){
     		this.set('addMode', true); 
+    		this.set('openedStep', null);
     	},
     	cancelAdd: function(){
     		this.set('addMode', false); 
