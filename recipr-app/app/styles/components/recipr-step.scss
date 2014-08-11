@@ -1,0 +1,73 @@
+.recipr-step {
+    @include clear-fix();
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #cccccc;
+    margin: 10px 0;
+    padding-bottom: 10px;
+
+    .step-wrap {
+        height: 100%;
+    }
+
+    .step-index {
+        color: $color2;
+        background: $color1;
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+        display: block;
+        border-radius: 50%;
+        line-height: 30px;
+        text-align: center;
+        float: left;
+        margin-right: 10px;
+    }
+
+    .step-content {
+        padding: 0 0 0 50px;
+        margin: 0;
+    }
+
+    .actions {
+        position: absolute;
+        display: none;
+        right: 0px;
+        top: 0px;
+        .action {
+            display: block;
+            width: auto;
+            border-radius: 0;
+            width: 70px;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    }
+
+    &.edit {
+        padding-left: 50px;
+
+        .step-index {
+            display: none;
+        }
+
+        .step-content {
+            min-height: 100px;
+            width: 100%;
+            padding: 10px;
+            padding-right: 50px;
+        }
+
+        .actions {
+            display: initial;
+        }
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    &:hover {
+        background-color: #cccccc;
+    }
+}

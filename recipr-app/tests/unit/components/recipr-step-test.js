@@ -1,7 +1,9 @@
 import Ember from "ember";
 import { test, moduleForComponent } from 'ember-qunit';
 
-moduleForComponent('recipr-step', 'ReciprStepComponent');
+moduleForComponent('recipr-step', 'ReciprStepComponent', {
+    needs: ['component:recipr-focus-textarea']
+});
 
 var step = {
     index: 1,
