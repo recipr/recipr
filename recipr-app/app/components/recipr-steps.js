@@ -22,11 +22,13 @@ export default Ember.Component.extend({
     		this.set('addMode', true); 
     		this.set('openedStep', null);
     	},
+
     	cancelAdd: function(){
     		this.set('addMode', false); 
     		this.set('error', false);
     		this.set('stepContent', '');
     	},
+
     	saveStep: function(){
     		this.set('stepContent', this.get('stepContent').trim());
     		if(this.get('stepContent.length') === 0){
@@ -38,6 +40,7 @@ export default Ember.Component.extend({
     		this.sendAction('onAddStep', this.get('stepContent'));
     		this.set('stepContent', '');
     	},
+        
         deleteStep: function(step){
             this.sendAction('onDeleteStep', step);
         },

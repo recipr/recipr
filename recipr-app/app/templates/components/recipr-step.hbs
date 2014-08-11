@@ -4,7 +4,7 @@
     {{/if}}
 
     {{#if isEditable}}
-        {{textarea class="step-content" value=step.content}}
+        {{recipr-focus-textarea class="step-content" value=step.content}}
     {{else}}
         <p class="step-content">{{step.content}}</p>
     {{/if}}

@@ -5,7 +5,7 @@
 {{/if}}
 {{#if addMode}}
 	<div {{bind-attr class=":add-form error"}}>
-		{{textarea class="step-content" value=stepContent}}
+		{{recipr-focus-textarea class="step-content" value=stepContent}}
 		<div class="actions">
 	        <button class="btn bSmall action save" {{action 'saveStep' bubbles=false}}>save</button>
 	        <button class="btn bSmall action cancel" {{action 'cancelAdd' bubbles=false }}>cancel</button>

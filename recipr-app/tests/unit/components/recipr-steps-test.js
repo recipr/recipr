@@ -2,7 +2,7 @@ import Ember from "ember";
 import { test, moduleForComponent } from 'ember-qunit';
 
 moduleForComponent('recipr-steps', 'ReciprStepComponent', {
-    needs: ['component:recipr-step']
+    needs: ['component:recipr-step', 'component:recipr-focus-textarea']
 });
 
 test('test recipr-steps', function() {
@@ -47,7 +47,6 @@ test('test recipr-steps is in addMode after step button', function() {
         equal(component.get('addMode'), true);
     });
 });
-
 
 test('test recipr-steps has add form when in addMode', function() {
     var component = this.subject();
