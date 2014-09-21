@@ -3,10 +3,11 @@ package main
 import (
 	"database/sql"
 	"fmt"
-	"github.com/gorilla/mux"
+	"github.com/ant0ine/go-json-rest/rest"
+	"github.com/recipr/recipr/api"
+	"github.com/recipr/recipr/conf"
 	"github.com/recipr/recipr/db"
-	"github.com/recipr/recipr/handler"
-	"github.com/recipr/recipr/rest"
+	"log"
 	"net/http"
 )
 
@@ -14,28 +15,31 @@ var dbConnection *sql.DB
 
 func main() {
 	dbConnection, _ = db.ConnectToDb()
-	startWebServer()
+	startAPI()
 
 	defer dbConnection.Close()
 }
 
-func startWebServer() {
-	fmt.Println("Listening...")
-	http.Handle("/", getRestRouter())
-	http.ListenAndServe(":1337", nil)
-}
+func startAPI() {
 
-func getRestRouter() *mux.Router {
-	router := mux.NewRouter()
-	restRoute := router.PathPrefix("/rest/").Subrouter()
+	handler := rest.ResourceHandler{
+		EnableRelaxedContentType: true,
+	}
 
-	recipeRoute := restRoute.PathPrefix("/recipes/").Subrouter()
-	recipeHandler := new(handler.Recipe)
+	recipeHandler := new(api.Recipe)
 	recipeHandler.Db = dbConnection
-	rest.Router(recipeRoute, recipeHandler)
+	err := handler.SetRoutes(
+		rest.RouteObjectMethod("GET", "/api/recipes/", recipeHandler, "Get"),
+		rest.RouteObjectMethod("POST", "/api/recipes/", recipeHandler, "Post"),
+		rest.RouteObjectMethod("GET", "/api/recipes/:id", recipeHandler, "Get"),
+		rest.RouteObjectMethod("DELETE", "/api/recipes/:id", recipeHandler, "Delete"),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	userRoute := restRoute.PathPrefix("/users/").Subrouter()
-	rest.Router(userRoute, new(handler.User))
+	fmt.Println("Listening...")
 
-	return router
+	conf := conf.Load()
+	log.Fatal(http.ListenAndServe(conf.Api.Address, &handler))
 }

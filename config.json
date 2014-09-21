@@ -1,0 +1,14 @@
+{
+    "Api": {
+    	"Address": ":31337"
+    },
+
+    "Database": {
+    	"Type": "mysql",
+		"User": "recipr",    
+		"Pass": "test1234",
+		"Host": "",
+		"Name": "recipr"
+    }     
+		
+}

@@ -6,12 +6,12 @@ import (
 
 type Recipe struct {
 	Id           int
-	Name         string
-	Slug         string
-	Intro        string
-	DateCreated  int
-	DateModified int
-	Status       int
+	Name         string `json:"name"`
+	Slug         string `json:"slug"`
+	Intro        string `json:"intro"`
+	DateCreated  int    `json:"date_created"`
+	DateModified int    `json:"date_modified"`
+	Status       int    `json:"status"`
 }
 
 func GetAllRecipes(db *sql.DB) (recipes []Recipe, err error) {

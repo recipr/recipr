@@ -1,30 +1,27 @@
-package handler
+package api
 
 import (
 	"database/sql"
 	"fmt"
-	"github.com/gorilla/mux"
+	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/recipr/recipr/model"
-	"github.com/recipr/recipr/rest"
 	"github.com/recipr/recipr/tools"
 	"github.com/recipr/recipr/validate"
 	"log"
-	"net/http"
 	"strconv"
 )
 
 type Recipe struct {
-	rest.BaseHandler
 	Db *sql.DB
 }
 
-func (handler *Recipe) Get(writer http.ResponseWriter, request *http.Request) {
-	params := mux.Vars(request)
-	id, err := strconv.Atoi(params["id"])
-
+func (handler *Recipe) Get(writer rest.ResponseWriter, request *rest.Request) {
+	id, err := strconv.Atoi(request.PathParam("id"))
 	if err != nil {
 		id = 0
 	}
+
+	fmt.Println(id)
 
 	var recipes []model.Recipe
 
@@ -38,10 +35,10 @@ func (handler *Recipe) Get(writer http.ResponseWriter, request *http.Request) {
 		log.Fatal(err)
 	}
 
-	fmt.Fprintln(writer, recipes)
+	writer.WriteJson(&recipes)
 }
 
-func (handler *Recipe) Post(writer http.ResponseWriter, request *http.Request) {
+func (handler *Recipe) Post(writer rest.ResponseWriter, request *rest.Request) {
 	name := request.FormValue("name")
 	intro := request.FormValue("intro")
 	slug := request.FormValue("slug")
@@ -65,12 +62,11 @@ func (handler *Recipe) Post(writer http.ResponseWriter, request *http.Request) {
 		log.Fatal(err)
 	}
 
-	fmt.Fprintln(writer, recipe)
+	writer.WriteJson(recipe)
 }
 
-func (handler *Recipe) Delete(writer http.ResponseWriter, request *http.Request) {
-	params := mux.Vars(request)
-	id, err := strconv.Atoi(params["id"])
+func (handler *Recipe) Delete(writer rest.ResponseWriter, request *rest.Request) {
+	id, err := strconv.Atoi(request.PathParam("id"))
 
 	if err != nil {
 		id = 0
@@ -86,8 +82,8 @@ func (handler *Recipe) Delete(writer http.ResponseWriter, request *http.Request)
 	}
 
 	if count == 0 {
-		fmt.Fprintln(writer, "not deleted")
+		writer.WriteJson("not deleted")
 	} else {
-		fmt.Fprintln(writer, "deleted")
+		writer.WriteJson("deleted")
 	}
 }
