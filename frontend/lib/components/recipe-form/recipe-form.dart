@@ -11,11 +11,16 @@ class RecipeFormComponent {
   Router router;
   NgForm recipeForm;
 
+  @NgOneWay('path')
+  String path;
+
   RecipeFormComponent(this.storage, this.router, RouteProvider routeProvider){
     recipe = storage.find(_recipeId(routeProvider));
     if(recipe != null){
+      path = recipe.id;
     } else {
       recipe = new Recipe();
+      path = 'new';
     }
   }
 
