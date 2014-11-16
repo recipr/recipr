@@ -1,0 +1,13 @@
+name: recipr
+description: A sample web application
+dependencies:
+  browser: any
+  angular: 1.0.0
+  sass: any
+  uuid: any
+  recipr_components:
+    path: /Users/slemgrim/Documents/Projects/Private/recipr_components
+transformers:
+  - angular:
+      html_files: [ 'lib/components/']
+  - sass

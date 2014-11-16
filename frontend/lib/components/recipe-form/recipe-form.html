@@ -1,0 +1,39 @@
+<form ng-submit="create()" name="recipeForm" class="fill-content" enctype="multipart/form-data">
+  <div class="has-main-action">
+    <div class="card rect z-1 dim-default-padding">
+      <div class="form-row">
+          <input type="text" ng-class="{'input-error': (recipeForm['title'].invalid && recipeForm['title'].dirty)}"
+            ng-model="recipe.title"
+            name="title"
+            ng-trim="true"
+            ng-required="true"
+            ng-pattern="titlePattern"
+            class="input input-big dim-100"
+            placeholder="Title *"
+            autofocus
+          />
+          <span class="form-error" ng-if="recipeForm['title'].invalid && recipeForm['title'].dirty">Ups, i think you forgot the title</span>
+      </div>
+      <div class="form-row">
+        <recipr-image name="cover" value="recipe.cover" placeholder="Upload a conver image"></recipr-image>
+      </div>
+
+    </div>
+
+    <div class="card rect z-1 dim-default-padding">
+      <div class="grid">
+        <div class="grid-row">
+          <div class="grid-col-6"><a href="#/recipes/edit/new/ingredients" class="btn dim-100 btn-left">Ingredients</a></div>
+          <div class="grid-col-6"><a href="#/recipes/edit/new/preparation" class="btn dim-100 btn-right">Preparation</a></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-col-12">
+            <ng-view></ng-view>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-accent btn-big btn-middle dim-100">Save Draft</button>
+</form>

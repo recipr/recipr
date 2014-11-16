@@ -1,0 +1,20 @@
+{
+  "name": "recipr",
+  "version": "0.0.1",
+  "authors": [
+    "Slemgrim <slemgrim@gmail.com>"
+  ],
+  "main": "index.dart",
+  "license": "GPLv2",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "recipr_guikit": "/Users/slemgrim/Documents/Projects/Private/recipr_guikit"
+  }
+}

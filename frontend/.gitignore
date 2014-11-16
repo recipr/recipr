@@ -1,17 +1,14 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# Don’t commit the following directories created by pub.
+.buildlog
+.pub/
+build/
+packages
 
-# compiled output
-/dist
-/tmp
+# Or the files created by dart2js.
+*.dart.js
+*.js_
+*.js.deps
+*.js.map
 
-# dependencies
-/node_modules
-/vendor/*
-
-# misc
-/.sass-cache
-/connect.lock
-/coverage/*
-/libpeerconnection.log
-npm-debug.log
-testem.log
+# Include when developing application packages.
+pubspec.lock

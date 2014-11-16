@@ -1,0 +1,11 @@
+<div class="item-list">
+    <div ng-repeat="recipe in recipes | orderBy: 'title'">
+      <recipr-edit-item type="recipe" meta="{{recipe.date}}" id="{{recipe.id}}">
+        {{recipe.title}}
+      </recipr-edit-item>
+    </div>
+    <div class="empty-list" ng-if="!recipes.length">
+      <i class="icon icon-placeholder"></i>
+      You didn’t create a recipe yet
+    </div>
+</div>

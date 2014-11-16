@@ -1,0 +1,49 @@
+@import "bower_components/recipr_guikit/recipr_guikit.scss";
+
+.grid {
+  @include clear-fix;
+}
+
+
+.recipe-ingredients {
+  .ingredient-list {
+    display: table;
+    width: 100%;
+    padding: $dim-min * 2 $dim-min;
+  }
+}
+
+.recipe-ingredient {
+  display: table-row;
+  width: 100%;
+  @include clear-fix;
+
+  .quantity {
+    width: 50px;
+  }
+
+  .unit {
+    width: 50px;
+  }
+
+  .part {
+    display: table-cell;
+    padding: $dim-min * 2 $dim-min * 3;
+    position: relative;
+  }
+
+  .delete {
+    color: $color-neutral-dark;
+    font-size: 20px;
+    text-align: right;
+    padding: 0;
+    position: absolute;
+    right: 0;
+  }
+}
+
+.icon {
+  margin: 0;
+  border: none;
+  background: none;
+}

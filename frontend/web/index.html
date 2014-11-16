@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recipr</title>
+
+    <link rel="stylesheet" href="recipr.css">
+    <script async type="application/dart" src="index.dart"></script>
+    <script async src="packages/browser/dart.js"></script>
+  </head>
+  <body class="recipr">
+    <global-alert></global-alert>
+
+    <recipr-header state="sidebarState" title="Recipr" class="header fixed"></recipr-header>
+
+    <recipr-sidebar state="sidebarState">
+      <recipr-menu>
+        <recipr-menu-item name="Dashboard" icon="placeholder" href="#/dashboard"></recipr-menu-item>
+        <recipr-menu-item name="Recipes" icon="placeholder" href="#/recipes"></recipr-menu-item>
+        <recipr-menu-item name="Settings" icon="placeholder" href="#/settings"></recipr-menu-item>
+      </recipr-menu>
+    </recipr-sidebar>
+
+    <div class="main-content">
+      <ng-view></ng-view>
+    </div>
+  </body>
+</html>

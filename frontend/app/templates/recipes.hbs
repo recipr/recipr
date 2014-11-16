@@ -1,9 +1,0 @@
-<h1>Recipes</h1>
-
-{{#if model.length}}
-    <ul>
-        {{#each recipe in model}}
-            <li>{{#link-to 'recipe' recipe}}{{recipe.name}}{{/link-to}}</li>
-        {{/each}}
-    </ul>
-{{/if}}
