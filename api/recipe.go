@@ -2,7 +2,6 @@ package api
 
 import (
 	"database/sql"
-	"fmt"
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/recipr/recipr/model"
 	"github.com/recipr/recipr/tools"
@@ -20,8 +19,6 @@ func (handler *Recipe) Get(writer rest.ResponseWriter, request *rest.Request) {
 	if err != nil {
 		id = 0
 	}
-
-	fmt.Println(id)
 
 	var recipes []model.Recipe
 
@@ -42,6 +39,7 @@ func (handler *Recipe) Post(writer rest.ResponseWriter, request *rest.Request) {
 	name := request.FormValue("name")
 	intro := request.FormValue("intro")
 	slug := request.FormValue("slug")
+
 	if !validate.IsEmptyString(slug) {
 		slug = tools.PrettyUrl(name)
 	}
@@ -82,8 +80,8 @@ func (handler *Recipe) Delete(writer rest.ResponseWriter, request *rest.Request)
 	}
 
 	if count == 0 {
-		writer.WriteJson("not deleted")
+		writer.WriteJson(false)
 	} else {
-		writer.WriteJson("deleted")
+		writer.WriteJson(true)
 	}
 }

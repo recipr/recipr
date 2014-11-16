@@ -2,6 +2,7 @@ package model
 
 import (
 	"database/sql"
+	"fmt"
 )
 
 type Recipe struct {
@@ -12,6 +13,7 @@ type Recipe struct {
 	DateCreated  int    `json:"date_created"`
 	DateModified int    `json:"date_modified"`
 	Status       int    `json:"status"`
+	Tags         []Tag  `json:"tags"`
 }
 
 func GetAllRecipes(db *sql.DB) (recipes []Recipe, err error) {
@@ -28,6 +30,14 @@ func GetAllRecipes(db *sql.DB) (recipes []Recipe, err error) {
 		if err != nil {
 			return nil, err
 		}
+
+		tags, err := GetTagsByRecipeId(db, recipe.Id)
+		if err == nil {
+			recipe.Tags = tags
+		} else {
+			fmt.Println(err)
+		}
+
 		recipes = append(recipes, *recipe)
 	}
 	err = rows.Err()
@@ -58,6 +68,14 @@ func GetRecipeById(db *sql.DB, id int) (recipes []Recipe, err error) {
 		if err != nil {
 			return nil, err
 		}
+
+		tags, err := GetTagsByRecipeId(db, recipe.Id)
+		if err == nil {
+			recipe.Tags = tags
+		} else {
+			fmt.Println(err)
+		}
+
 		recipes = append(recipes, *recipe)
 	}
 	err = rows.Err()
@@ -100,6 +118,17 @@ func DeleteRecipe(db *sql.DB, id int) (int, error) {
 	}
 
 	rowCnt, err := res.RowsAffected()
+	if err != nil {
+		return 0, err
+	}
+
+	//Remove recipe-tag relation
+	stmt, err = db.Prepare("DELETE FROM recipe_tag_rel WHERE recipe_id = ?")
+	if err != nil {
+		return 0, err
+	}
+
+	res, err = stmt.Exec(id)
 	if err != nil {
 		return 0, err
 	}
