@@ -15,6 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "recipr_guikit": "/Users/slemgrim/Documents/Projects/Private/recipr_guikit"
+    "recipr_guikit": "https://github.com/recipr/recipr_guikit.git"
   }
 }
