@@ -23,8 +23,8 @@
     <div class="card rect z-1 dim-default-padding">
       <div class="grid">
         <div class="grid-row">
-          <div class="grid-col-6"><a href="#/recipes/edit/{{path}}/ingredients" class="btn dim-100 btn-left">Ingredients</a></div>
-          <div class="grid-col-6"><a href="#/recipes/edit/{{path}}/preparation" class="btn dim-100 btn-right">Preparation</a></div>
+          <div class="grid-col-6"><a href="#/recipes/edit/{{path}}/ingredients" ng-class="{'btn-accent':currentTab=='ingredients'}" class="btn dim-100 btn-left">Ingredients</a></div>
+          <div class="grid-col-6"><a href="#/recipes/edit/{{path}}/preparation" ng-class="{'btn-accent':currentTab=='preparation'}" class="btn dim-100 btn-right">Preparation</a></div>
         </div>
         <div class="grid-row">
           <div class="grid-col-12">

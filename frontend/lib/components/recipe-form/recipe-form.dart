@@ -14,6 +14,8 @@ class RecipeFormComponent {
   @NgOneWay('path')
   String path;
 
+  String currentTab;
+
   RecipeFormComponent(this.storage, this.router, RouteProvider routeProvider){
     recipe = storage.find(_recipeId(routeProvider));
     if(recipe != null){
@@ -22,6 +24,11 @@ class RecipeFormComponent {
       recipe = new Recipe();
       path = 'new';
     }
+
+    currentTab = router.activePath.last.name;
+    router.onRouteStart.listen((RouteStartEvent routeStartEvent){
+      currentTab = router.activePath.last.name;
+    });
   }
 
   void create() {
