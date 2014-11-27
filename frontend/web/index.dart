@@ -1,4 +1,4 @@
-library recipr;
+library recipr_app;
 
 import 'package:angular/angular.dart';
 import 'package:recipr/recipr.dart';
