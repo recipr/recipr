@@ -1,8 +1,7 @@
 <div class="recipe-ingredients">
   <div class="ingredient-list">
     <div class="recipe-ingredient" ng-repeat="ingredient in recipe.ingredients">
-        <span class="part quantity">{{ingredient.quantity}}</span>
-        <span class="part unit">{{ingredient.unit}}</span>
+        <span class="part quantity">{{ingredient.quantity}} {{ingredient.unit}}</span>
         <span class="part name">{{ingredient.name}}</span>
         <span class="part">
           <button type="button" ng-click="delete(ingredient)" class="icon icon-placeholder delete pull-right"></button>
