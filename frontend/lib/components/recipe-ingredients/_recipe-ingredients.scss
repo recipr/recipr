@@ -1,10 +1,3 @@
-@import "bower_components/recipr_guikit/recipr_guikit.scss";
-
-.grid {
-  @include clear-fix;
-}
-
-
 .recipe-ingredients {
   .ingredient-list {
     display: table;
@@ -13,6 +6,7 @@
   }
 }
 
+
 .recipe-ingredient {
   display: table-row;
   width: 100%;
@@ -20,10 +14,7 @@
 
   .quantity {
     width: 50px;
-  }
-
-  .unit {
-    width: 50px;
+    white-space: nowrap;
   }
 
   .part {
@@ -40,10 +31,4 @@
     position: absolute;
     right: 0;
   }
-}
-
-.icon {
-  margin: 0;
-  border: none;
-  background: none;
 }
