@@ -9,12 +9,15 @@
     </div>
   </div>
   <form ng-submit="create()" name="ingredientsForm">
-      <input type="text"
-        ng-model="newIngredient"
-        name="newIngredient"
-        ng-trim="true"
-        class="input dim-100"
-        placeholder="New Ingredient"
-      />
+      <div class="input-wrap">
+         <input type="text"
+          ng-model="newIngredient"
+          name="newIngredient"
+          ng-trim="true"
+          class="input dim-100"
+          placeholder="New Ingredient"
+        />
+        <button type="submit" class="input-icon icon icon-placeholder"></button>
+      </div>
   </form>
 </div>
