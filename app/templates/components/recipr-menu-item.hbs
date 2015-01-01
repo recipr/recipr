@@ -1,0 +1,10 @@
+<div {{action 'itemClick'}}>
+  {{#link-to route classNames="menu-item"}}
+    {{#if icon}}
+      <i class="icon icon-placeholder" {{bind-attr class="icon"}} ></i>
+    {{/if}}
+    {{name}}
+  {{/link-to}}
+</div>
+{{yield}}
+

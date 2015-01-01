@@ -1,0 +1,16 @@
+@import "bower_components/recipr_guikit/recipr_guikit.scss";
+
+body {
+  @extend .recipr;
+}
+
+.form-field {
+  display: block;
+
+  .error-message {
+    padding: $dim-min;
+    color: $color-error;
+    display: block;
+    font-size: $font-size-small;
+  }
+}

@@ -1,0 +1,10 @@
+<form {{action "update" on="submit"}} class="fill-content" enctype="multipart/form-data">
+  <div class="has-main-action">
+    <div class="card rect z-1 dim-default-padding">
+      {{#form-field error=titleError}}
+        {{input type="text" placeholder="Recipe Title *" focus-out="validateTitle" value=recipe.title classBinding=":input :input-big :dim-100 titleIsValid::input-error"}}
+      {{/form-field}}
+    </div>
+  </div>
+  <button type="submit" class="btn btn-accent btn-big btn-middle dim-100">Save Recipe</button>
+</form>

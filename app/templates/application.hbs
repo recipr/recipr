@@ -1,0 +1,13 @@
+{{recipr-header menuState=sidebarIsOpen title="Recipr" class="header fixed" onToggleMenu="toggleSidebar"}}
+
+{{#recipr-sidebar onItemClick="closeSidebar" isOpen=sidebarIsOpen}}
+  {{#recipr-menu}}
+    {{recipr-menu-item icon="placeholder" name="Dashboard" route="dashboard"}}
+    {{recipr-menu-item icon="placeholder" name="Recipes" route="recipes"}}
+    {{recipr-menu-item icon="placeholder" name="Settings" route="settings"}}
+  {{/recipr-menu}}
+{{/recipr-sidebar}}
+
+<div class="main-content">
+  {{outlet}}
+</div>
