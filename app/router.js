@@ -14,6 +14,8 @@ Router.map(function() {
   });
   this.route("settings", { path: "/settings" });
   this.route('recipe/edit');
+  this.route('recipe/ingredients');
+  this.route('recipe/preparation');
 });
 
 export default Router;

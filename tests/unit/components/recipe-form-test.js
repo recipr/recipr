@@ -240,3 +240,68 @@ test('titleError is empty after error is resolved', function() {
 
   equal(component.get('titleError.length') === 0, true, 'titleError should be empty');
 });
+
+test('ingredients are is initally shown', function() {
+  expect(1);
+
+  var recipe = model.create();
+  var component = this.subject();
+
+  equal(component.get('showIngredients'), true);
+});
+
+
+test('showPreparation is negation of showIngredients', function() {
+  expect(4);
+
+  var recipe = model.create();
+  var component = this.subject();
+
+  equal(component.get('showIngredients'), true);
+  equal(component.get('showPreparation'), false);
+
+  Ember.run(function(){
+    component.set('showIngredients', false);
+  });
+
+  equal(component.get('showIngredients'), false);
+  equal(component.get('showPreparation'), true);
+});
+
+test('click on tabs changes tab properties', function() {
+  expect(2);
+
+  var recipe = model.create();
+  var component = this.subject();
+  var $component = this.append();
+
+  var $ingredientTab = $component.find('.tab-ingredients');
+  var $preparationTab = $component.find('.tab-preparation');
+
+  $preparationTab.click();
+
+  equal(component.get('showIngredients'), false);
+
+  $ingredientTab.click();
+
+  equal(component.get('showIngredients'), true);
+});
+
+test('tabs are higlighted', function() {
+  expect(4);
+
+  var recipe = model.create();
+  var component = this.subject();
+  var $component = this.append();
+
+  var $ingredientTab = $component.find('.tab-ingredients');
+  var $preparationTab = $component.find('.tab-preparation');
+
+  equal($ingredientTab.hasClass('btn-accent'), true);
+  equal($preparationTab.hasClass('btn-accent'), false);
+
+  $preparationTab.click();
+
+  equal($ingredientTab.hasClass('btn-accent'), false);
+  equal($preparationTab.hasClass('btn-accent'), true);
+});

@@ -7,6 +7,9 @@ export default Ember.Component.extend({
   recipe: undefined,
   titleIsValid: true,
 
+  showIngredients: true,
+  showPreparation: Ember.computed.not('showIngredients'),
+
   titleError: function(){
     return this.get('titleIsValid') ? '' : 'Title needs at least 3 characters';
   }.property('titleIsValid'),
@@ -22,6 +25,12 @@ export default Ember.Component.extend({
     validateTitle: function(){
       this._sanitizeTitle();
       this._validateTitle();
+    },
+    showIngredients: function(){
+      this.set('showIngredients', true);
+    },
+    showPreparation: function(){
+      this.set('showIngredients', false);
     }
   },
 
