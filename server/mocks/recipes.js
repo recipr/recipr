@@ -8,12 +8,14 @@ module.exports = function(app) {
       title: 'Bad Motha Goose',
       slug: 'bad-motha-goose',
       date: 0,
+      ingredients: [0, 1, 2],
     },
     {
       id: 1,
       title: 'Concrete Octopus',
       slug: 'concrete-octopus',
       date: 0,
+      ingredients: [],
     }
   ];
 
@@ -27,7 +29,7 @@ module.exports = function(app) {
 
   recipesRouter.get('/:id', function(req, res) {
     res.send({
-      "recipe": RECIPES[req.params.id]
+      "recipes": RECIPES[req.params.id]
     });
   });
 

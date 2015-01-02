@@ -6,7 +6,7 @@ import {
 import Ember from 'ember';
 
 moduleForModel('recipe', 'Recipe', {
-  needs: []
+  needs: ['model:ingredient']
 });
 
 test('it exists', function() {
