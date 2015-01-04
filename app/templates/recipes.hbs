@@ -1,9 +1,9 @@
 <div id="recipes">
   <div class="card rect z-1 dim-default-padding">
-    {{#link-to 'recipe.new' class="btn-add btn btn-accent btn-big dim-100"}}
+    <button {{action "createRecipe"}} class="btn-add btn btn-accent btn-big dim-100">
       <i class="icon icon-placeholder"></i>
       Create new recipe
-    {{/link-to}}
+    </button>
   </div>
 
   {{recipe-list recipes=model onEdit="editRecipe" onDelete="deleteRecipe"}}
