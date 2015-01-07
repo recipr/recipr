@@ -1,10 +1,10 @@
 <template name="recipe">
 	<form class="recipe-form">
-		<input autofocus type="text" name="title" value="{{recipe.title}}" placeholder="title">
+		<input autofocus type="text" name="title" value="{{title}}" placeholder="title">
     <br>
 
     {{#if showIntro}}
-      <textarea name="intro" placeholder="Intro">{{recipe.intro}}</textarea>
+      <textarea name="intro" placeholder="Intro">{{intro}}</textarea>
     {{/if}}
 
     <h2>Ingredients</h2>
