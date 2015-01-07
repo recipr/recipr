@@ -7,20 +7,7 @@
       <textarea name="intro" placeholder="Intro">{{intro}}</textarea>
     {{/if}}
 
-    <h2>Ingredients</h2>
-
-    <div name="ingredient-form">
-      <ul>
-        {{#each ingredients}}
-          <li>{{quantity}}{{unit}} {{name}}</li>
-        {{/each}}
-      </ul>
-      <input type="text" class="new-quantity" placeholder="100" size="3">
-      <input type="text" class="new-unit" placeholder="ml" size="5">
-      <input type="text" class="new-ingredient" placeholder="Milk">
-
-      <input type="submit" class="add-ingredient" value="add">
-    </div>
+    {{> recipeIngredients ingredients}}
     <br>
     <br>
     <br>

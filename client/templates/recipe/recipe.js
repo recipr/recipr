@@ -10,12 +10,13 @@ Template.recipe.events({
 
     var ingredients = Session.get('ingredients');
 
-		var recipeId = this._id ? this._id : null;
+    var recipeId = this._id ? this._id : null;
 
     var data = {
         title: title,
         intro: intro,
-        ingredients: ingredients
+        ingredients: ingredients,
+        status: 'draft'
     };
     Meteor.call("saveRecipe", data, recipeId);
 		
@@ -25,34 +26,7 @@ Template.recipe.events({
 
 		Router.go('/recipes');
 		return false;
-	},
-
-  "click .add-ingredient": function(event, template){
-    var $name = template.find('.new-ingredient');
-    var name = $name.value;
-
-    var $unit = template.find('.new-unit');
-    var unit = $unit.value;
-
-    var $quantity = template.find('.new-quantity');
-    var quantity = $quantity.value;
-
-    var ingredients = Session.get('ingredients');
-
-    ingredients.push({
-      name: name,
-      quantity: quantity,
-      unit: unit,
-    });
-
-    Session.set('ingredients', ingredients);
-
-    $name.value = ''; 
-    $unit.value = ''; 
-    $quantity.value = ''; 
-
-    return false;
-  }
+	}
 });
 
 Template.recipe.helpers({

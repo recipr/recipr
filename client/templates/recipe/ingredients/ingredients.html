@@ -1,0 +1,15 @@
+<template name="recipeIngredients">
+    <h2>Ingredients</h2>
+
+    <ul>
+      {{#each this}}
+        <li>{{quantity}}{{unit}} {{name}}</li>
+      {{/each}}
+    </ul>
+    <form name="ingredient-form">
+      <input type="text" class="new-quantity" placeholder="100" size="3">
+      <input type="text" class="new-unit" placeholder="ml" size="5">
+      <input type="text" class="new-ingredient" placeholder="Milk">
+      <input type="submit" class="add-ingredient" value="add">
+    </form>
+</template>
