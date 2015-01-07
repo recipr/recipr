@@ -5,11 +5,14 @@ export default Ember.Controller.extend({
 
   actions: {
     editRecipe: function(recipe){
-      this.transitionToRoute('recipe.edit', recipe);
+      this.transitionToRoute('recipeedit', recipe);
     },
     deleteRecipe: function(recipe){
       recipe.deleteRecord();
       recipe.save();
+    },
+    createRecipe: function(){
+      this.transitionToRoute('recipenew');
     }
   }
 });

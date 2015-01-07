@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(Ember.Evented, {
   classNames: ['form-field'],
 
   isValid: true,
@@ -16,8 +16,11 @@ export default Ember.Component.extend({
     this._super();
     var self = this;
     var controller = this.get('controller');
+    console.log('init form field');
     if(controller){
+      console.log('init validate event');
       controller.on('validate', function(){
+        console.log('form-field validate');
         self._validate();
       });
     }

@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('route:recipe/new', 'RecipeNewRoute', {
+moduleFor('route:recipeedit', 'RecipeeditRoute', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
 });
@@ -11,10 +11,4 @@ moduleFor('route:recipe/new', 'RecipeNewRoute', {
 test('it exists', function() {
   var route = this.subject();
   ok(route);
-});
-
-test('controller is recipe', function() {
-  expect(1);
-  var route = this.subject();
-  equal(route.get('controllerName'), 'recipe');
 });

@@ -8,14 +8,9 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route("dashboard", { path: "/dashboard" });
   this.route("recipes", { path: "/recipes" });
-  this.resource("recipe", { path: "/recipe" }, function(){
-      this.route("edit", { path: '/edit/:recipe_id' });
-      this.route("new");
-  });
+  this.resource("recipeedit", { path: "/recipe/edit/:recipe_id" });
+  this.resource("recipenew", { path: "/recipe/new" });
   this.route("settings", { path: "/settings" });
-  this.route('recipe/edit');
-  this.route('recipe/ingredients');
-  this.route('recipe/preparation');
 });
 
 export default Router;

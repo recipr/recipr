@@ -13,6 +13,7 @@ export default FormField.extend({
   _lastState: true,
 
   _validate: function(){
+    console.log('validate');
     this.set('value', this.get('value').trim());
     if(this.get('required') && this.get('value.length') === 0){
       this.set('isValid', false);
