@@ -1,0 +1,13 @@
+<template name="recipes">
+
+  <h1>Recipes</h1>
+
+	<a href="/recipe/new" class="addRecipe">add</a>
+
+	<ul>
+	{{#each recipes}}
+		{{> listItem}}
+	{{/each}}
+	</ul>
+
+</template>

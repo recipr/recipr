@@ -1,0 +1,29 @@
+<template name="recipe">
+	<form class="recipe-form">
+		<input autofocus type="text" name="title" value="{{recipe.title}}" placeholder="title">
+    <br>
+
+    {{#if showIntro}}
+      <textarea name="intro" placeholder="Intro">{{recipe.intro}}</textarea>
+    {{/if}}
+
+    <h2>Ingredients</h2>
+
+    <div name="ingredient-form">
+      <ul>
+        {{#each ingredients}}
+          <li>{{quantity}}{{unit}} {{name}}</li>
+        {{/each}}
+      </ul>
+      <input type="text" class="new-quantity" placeholder="100" size="3">
+      <input type="text" class="new-unit" placeholder="ml" size="5">
+      <input type="text" class="new-ingredient" placeholder="Milk">
+
+      <input type="submit" class="add-ingredient" value="add">
+    </div>
+    <br>
+    <br>
+    <br>
+		<input type="submit" value="save">
+	</form>
+</template>

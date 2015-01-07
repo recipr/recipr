@@ -1,0 +1,41 @@
+* {
+	box-sizing: border-box;
+}
+
+body, html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.sidebar {
+	float: left;
+	width: 200px;
+	height: 100%;
+	border-right: 1px solid black;
+	margin: 0;
+	padding: 20px;
+	list-style-type: none;
+	position: relative;
+	z-index: 100;
+}
+
+.content {
+	float: left;
+	padding: 20px;
+	padding-left: 220px;
+	position: absolute;
+	width: 100%;
+}
+
+.context-menu {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 200;
+	border: 1px solid black;
+	min-width: 10px;
+	min-height: 10px;
+	padding: 20px;
+	margin: 20px;
+}

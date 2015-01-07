@@ -1,9 +1,0 @@
-<label class="input">
-    {{#each tag in tags}}
-        <span {{bind-attr data-tag=tag.id}} class="tag">
-            {{tag.name}}
-            <span class="icon" {{action "removeTag" tag}}>x</span>
-        </span>
-    {{/each}}
-    {{input class="newTag" value=newTag}}
-</label>

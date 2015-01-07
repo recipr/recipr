@@ -1,0 +1,16 @@
+<template name="ApplicationLayout">
+
+  <ul class="sidebar">
+    <li><a href="/">Dashboard</a></li>
+    <li><a href="/recipes">Recipes</a></li>
+    <li><a href="/ingredients">Ingredients</a></li>
+  </ul>
+
+  <div class="context-menu">
+    {{> yield "contextMenu"}}
+  </div>
+
+  <div class="content">
+    {{> yield}}
+  </div>
+</template>
