@@ -6,7 +6,6 @@ Meteor.methods({
     var validData = {
       title: data.title,
       intro: data.intro,
-      ingredients: data.ingredients,
       dateModified: new Date()
     }
 
@@ -18,10 +17,27 @@ Meteor.methods({
         $set: validData
       });
     }
+
+    Meteor.call('deleteRecipeIngredientsByRecipeId', recipeId);
+
+    if(data.ingredients.length){
+      data.ingredients.forEach(function(ingredient){
+        var ingredientId = Meteor.call('saveIngredient', ingredient.name);
+
+        Meteor.call(
+          'saveRecipeIngredient', 
+          recipeId, 
+          ingredientId, 
+          ingredient.quantity, 
+          ingredient.unit 
+        );
+      });
+    }
+
     return recipeId;
   },
 
   deleteRecipe: function (recipeId) {
-    Recipes.remove(recipeId);
+    Recipe.remove(recipeId);
   }
 });

@@ -19,10 +19,6 @@ Template.recipe.events({
         status: 'draft'
     };
     Meteor.call("saveRecipe", data, recipeId);
-		
-    if(ingredients.length){
-      Meteor.call('saveIngredients', ingredients);
-    }
 
 		Router.go('/recipes');
 		return false;
