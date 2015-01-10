@@ -43,7 +43,6 @@ Template.recipe.helpers({
   }
 })
 
-
 Template.recipe.created = function(){
   if(this.data && this.data.ingredients){
     Session.set('ingredients', this.data.ingredients);
@@ -61,6 +60,7 @@ Template.recipe.created = function(){
   } else {
     Sections.insert({
         name: 'default',
+        isDefault: true,
     });
   }
 }
