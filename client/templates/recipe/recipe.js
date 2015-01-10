@@ -4,10 +4,10 @@ Template.recipe.events({
 	"submit .recipe-form": function (event) {
 		var title = event.target.title.value;
 
-    if(Session.get('showIntro')){
+    if(event.target.intro){
       var intro = event.target.intro.value;
     } else {
-      var intro = '';
+      var intro = this.intro;
     }
 
     var ingredients = Session.get('ingredients');
@@ -39,8 +39,12 @@ Template.recipe.helpers({
   },
 
   showIntro: function(){
-    return Session.get('showIntro');
-  }
+    console.log(this);
+    return Settings.findOne({
+      type: 'gui',
+      key: 'showIntro',
+    }).value || this.intro.length;
+  },
 })
 
 Template.recipe.created = function(){

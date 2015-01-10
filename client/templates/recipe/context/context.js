@@ -1,12 +1,13 @@
 Template.recipeContext.events({
-  "click .show-intro": function (event) {
-    var state = event.target.checked;
-    Session.set('showIntro', state);
+  "click .change-setting": function (event) {
+    var value = event.target.checked;
+    var key = event.target.dataset.key;
+    Meteor.call('setSetting', 'gui', key, value)
   }
 });
 
 Template.recipeContext.helpers({
-  showIntro: function(){
-    return Session.get('showIntro');
-  },
+  settings: function(){
+    return Settings.find({type: 'gui'});
+  }
 });

@@ -1,4 +1,16 @@
 <template name="recipeContext">
-  <label><input type="checkbox" checked="{{#if showIntro}}checked{{/if}}" class="show-intro" value="1"> intro</label>
-  {{name}}
-</template>
+  <ul>
+  {{#each settings}}  
+    <li>
+      <label>
+        <input 
+          type="checkbox" 
+          data-key={{key}} 
+          checked="{{#if value}}checked{{/if}}" 
+          class="change-setting"> 
+          {{niceName}}
+      </label>
+    </li>
+  {{/each}}
+  </ul>
+</template>  

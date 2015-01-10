@@ -15,3 +15,12 @@ Template.recipeSections.events({
     return false;
   }
 });
+
+Template.recipeSections.helpers({
+  showSections: function(){
+    return Settings.findOne({
+      type: 'gui',
+      key: 'showSections',
+    }).value || Sections.find().count() > 1;
+  }
+});
