@@ -39,7 +39,6 @@ Template.recipe.helpers({
   },
 
   showIntro: function(){
-    console.log(this);
     return Settings.findOne({
       type: 'gui',
       key: 'showIntro',
