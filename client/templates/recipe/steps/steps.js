@@ -11,7 +11,6 @@ Template.recipeSteps.created = function(){
     sectionId: Template.parentData()._id,
     content: '',
     order: 1
-
   });
 }
 

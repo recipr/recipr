@@ -1,7 +1,7 @@
 Template.recipeStep.events({
   "keyup .step-content": function(event, template){
     Steps.update(this._id, { $set: { 
-      name: event.target.value,
+      content: event.target.value,
     }});
     return false;
   },

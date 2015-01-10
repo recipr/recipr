@@ -12,15 +12,26 @@ Template.recipe.events({
       var intro = this.intro;
     }
 
-    var ingredients = Session.get('ingredients');
     var sections = Sections.find().fetch();
+
+    sections.forEach(function(section){
+      var ingredients = RecipeIngredients.find({
+        sectionId: section._id
+      });
+
+      var steps = Steps.find({
+        sectionId: section._id
+      });
+
+      section.steps = steps.fetch();
+      section.ingredients = ingredients.fetch();
+    });
 
     var recipeId = this._id ? this._id : null;
 
     var data = {
         title: title,
         intro: intro,
-        ingredients: ingredients,
         sections: sections,
         status: 'draft'
     };
@@ -48,9 +59,26 @@ Template.recipe.created = function(){
   Sections.remove({});
   if(this.data && this.data.sections){
     this.data.sections.forEach(function(section){
-      Sections.insert({
+
+      var sectionId = Sections.insert({
           name: section.name,
       });
+
+      //Insert steps
+      if(section.steps){
+        section.steps.forEach(function(step){
+          step.sectionId = sectionId;
+          Steps.insert(step);
+        });
+      }
+
+      //Insert ingredients
+      if(section.ingredients){
+        section.ingredients.forEach(function(ingredient){
+          ingredient.sectionId = sectionId;
+          RecipeIngredients.insert(ingredient);
+        });
+      }
     });
   } else {
     Sections.insert({

@@ -12,6 +12,11 @@ Template.recipeIngredients.events({
     var name;
     var unit;
 
+    var ingredientCount = RecipeIngredients.find({
+      sectionId: Template.parentData()._id
+    }).count();
+
+
     if(value.trim().length < 3){
       return false;
     }
@@ -43,6 +48,7 @@ Template.recipeIngredients.events({
       name: name,
       quantity: quantity,
       unit: unit,
+      order: ingredientCount + 1,
     });
 
     $name.value = ''; 
