@@ -3,6 +3,12 @@ Template.recipeSection.events({
     if(this.isDefault){
       return false;
     }
+    Steps.remove({
+      sectionId: this._id
+    });
+    RecipeIngredients.remove({
+      sectionId: this._id
+    });
     Sections.remove(this._id);
     return false;
   },
