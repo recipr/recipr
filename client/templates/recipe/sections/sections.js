@@ -2,7 +2,7 @@ Template.recipeSections.events({
   "click .add-section": function(event, template){
 
     Sections.insert({
-      name: 'new section:' + (Sections.find().fetch().length),
+      name: 'new section:' + Sections.find().count(),
     });
 
     return false;
@@ -12,7 +12,6 @@ Template.recipeSections.events({
     Sections.update(this._id, {
       name: event.target.value,
     });
-
     return false;
   }
 });

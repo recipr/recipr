@@ -1,7 +1,11 @@
 <template name="recipeSection">
   <div class="section">
-    <input type="text" class="section-name" value="{{name}}">
-    <button type="button" class="remove-section">remove section</button>
+
+    {{#if hasMultipleSections}}
+      <input type="text" class="section-name" value="{{name}}">
+      <button type="button" class="remove-section">remove section</button>
+    {{/if}}
+
     <div class="half">
       <h3>Ingredients</h3>
       //Todo

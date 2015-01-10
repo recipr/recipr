@@ -58,6 +58,10 @@ body, html {
 	right: 0;
 }
 
+.add-section {
+	float: right;
+}
+
 .half {
 	width: 50%;
 	margin: 0;
