@@ -1,0 +1,11 @@
+<template name="recipeStep">
+  <div class="step {{#if showSteps}}show-steps{{/if}}">
+    {{#if isNotFirstStep}}
+      <button type="button" class="remove-step">Remove Step</button>
+    {{/if}}
+    {{#if showSteps}}
+      <span class="order">{{order}}</span>
+    {{/if}}
+    <textarea class="step-content" placeholder="preparation">{{content}}</textarea>
+  </div>
+</template>

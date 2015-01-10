@@ -6,6 +6,13 @@ Template.recipeSection.events({
     Sections.remove(this._id);
     return false;
   },
+
+  "keyup .section-name": function(event, template){
+    Sections.update(this._id, { $set: { 
+      name: event.target.value,
+    }});
+    return false;
+  }
 });
 
 Template.recipeSection.helpers({
@@ -15,5 +22,17 @@ Template.recipeSection.helpers({
 
   showDeleteButton: function(){
     return !this.isDefault;
-  }
+  },
+
+  ingredients: function(){
+    return RecipeIngredients.find({
+      sectionId: this._id
+    });
+  },
+
+  steps: function(){
+    return Steps.find({
+      sectionId: this._id
+    });
+  },
 });

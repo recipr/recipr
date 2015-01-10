@@ -7,13 +7,6 @@ Template.recipeSections.events({
 
     return false;
   },
-
-  "keyup .section-name": function(event, template){
-    Sections.update(this._id, {
-      name: event.target.value,
-    });
-    return false;
-  }
 });
 
 Template.recipeSections.helpers({

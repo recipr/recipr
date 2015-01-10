@@ -6,6 +6,7 @@ body, html {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	font-size: 16px;
 }
 
 .sidebar {
@@ -24,8 +25,10 @@ body, html {
 	float: left;
 	padding: 20px;
 	padding-left: 220px;
+	padding-right: 200px;
 	position: absolute;
 	width: 100%;
+	overflow: hidden;
 }
 
 .context-menu {
@@ -40,11 +43,21 @@ body, html {
 	margin: 20px;
 }
 
+.context-menu ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
 .section {
-	border-bottom: 1px solid black;
-	padding: 20px;
+	padding: 20px 0;
 	overflow: hidden;
 	position: relative;
+}
+
+.show-sections .section{
+	border-bottom: 1px solid black;
+
 }
 
 .section .section-name {
@@ -64,6 +77,68 @@ body, html {
 
 .half {
 	width: 50%;
+	padding: 20px;
 	margin: 0;
 	float: left;
+}
+
+.half:first-of-type {
+  padding-left: 0;
+}
+
+.half:last-of-type {
+  padding-right: 0;
+}
+
+.step {
+	position: relative;
+}
+
+
+.step textarea {
+	display: block;
+	width: 100%;
+	min-height: 100px;
+	margin-bottom: 20px;
+	overflow: hidden;
+	padding: 20px;
+}
+
+.step.show-steps textarea {
+	margin-left: 30px;
+}
+
+.step .order {
+	color: white;
+	background-color: black;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	font-size: 15px;
+	line-height: 20px;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.step .remove-step {
+	position: absolute;
+	top: 0;
+	right: -30px;
+}
+
+.save-recipe {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	display: block;
+	background-color: black;
+	color: white;
+	border: none;
+	height: 30px;
+	font-size: 20px;
+	line-height: 30px;
 }

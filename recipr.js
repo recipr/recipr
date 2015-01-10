@@ -11,6 +11,10 @@ Meteor.startup(function () {
           niceName: 'Show Sections',
           value: false,
         },
+        showSteps: {
+          niceName: 'Show Steps',
+          value: false,
+        },
       } 
     }
 

@@ -1,27 +1,51 @@
 Template.recipeIngredients.events({
   "click .add-ingredient": function(event, template){
+
     var $name = template.find('.new-ingredient');
-    var name = $name.value;
+    var value = $name.value;
 
-    var $unit = template.find('.new-unit');
-    var unit = $unit.value;
+    var regex = /^([\d.,\/]*)(\s*([^\W]*)(\s*(.*)))/;
 
-    var $quantity = template.find('.new-quantity');
-    var quantity = $quantity.value;
+    var match = regex.exec(value);
 
-    var ingredients = Session.get('ingredients');
+    var quantity;
+    var name;
+    var unit;
 
-    ingredients.push({
+    if(value.trim().length < 3){
+      return false;
+    }
+
+    if(match[1] != null){
+      quantity = match[1].trim();
+    }
+
+    if(match[3] != null){
+      unit = match[3].trim();
+    }
+
+    if(match[5] != null){
+      name = match[5].trim();
+    }
+
+    if(name.length === 0 && unit.length === 0){
+      name = quantity.trim();
+      quantity = "";
+    }
+
+    if(name.length === 0 && unit.length !== 0){
+      name = unit;
+      unit = '';
+    }
+
+    RecipeIngredients.insert({
+      sectionId: Template.parentData()._id,
       name: name,
       quantity: quantity,
       unit: unit,
     });
 
-    Session.set('ingredients', ingredients);
-
     $name.value = ''; 
-    $unit.value = ''; 
-    $quantity.value = ''; 
 
     return false;
   }

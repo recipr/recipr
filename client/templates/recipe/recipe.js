@@ -1,4 +1,6 @@
 Sections = new Mongo.Collection(null);
+RecipeIngredients = new Mongo.Collection(null);
+Steps = new Mongo.Collection(null),
 
 Template.recipe.events({
 	"submit .recipe-form": function (event) {
@@ -30,10 +32,6 @@ Template.recipe.events({
 });
 
 Template.recipe.helpers({
-  ingredients: function() {
-    return Session.get("ingredients");
-  },
-
   sections: function(){
     return Sections.find();
   },
@@ -47,12 +45,6 @@ Template.recipe.helpers({
 })
 
 Template.recipe.created = function(){
-  if(this.data && this.data.ingredients){
-    Session.set('ingredients', this.data.ingredients);
-  } else {
-    Session.set('ingredients', []);
-  }
-
   Sections.remove({});
   if(this.data && this.data.sections){
     this.data.sections.forEach(function(section){

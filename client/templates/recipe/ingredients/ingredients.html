@@ -3,13 +3,11 @@
 
     <ul>
       {{#each this}}
-        <li>{{quantity}}{{unit}} {{name}}</li>
+        <li>{{> recipeIngredient this}}</li>
       {{/each}}
     </ul>
     <form name="ingredient-form">
-      <input type="text" class="new-quantity" placeholder="100" size="3">
-      <input type="text" class="new-unit" placeholder="ml" size="5">
-      <input type="text" class="new-ingredient" placeholder="Milk">
+      <input type="text" class="new-ingredient" placeholder="Name">
       <input type="submit" class="add-ingredient" value="add">
     </form>
 </template>
