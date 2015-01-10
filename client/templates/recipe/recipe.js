@@ -1,3 +1,5 @@
+Sections = new Mongo.Collection(null);
+
 Template.recipe.events({
 	"submit .recipe-form": function (event) {
 		var title = event.target.title.value;
@@ -9,6 +11,7 @@ Template.recipe.events({
     }
 
     var ingredients = Session.get('ingredients');
+    var sections = Sections.find().fetch();
 
     var recipeId = this._id ? this._id : null;
 
@@ -16,6 +19,7 @@ Template.recipe.events({
         title: title,
         intro: intro,
         ingredients: ingredients,
+        sections: sections,
         status: 'draft'
     };
     Meteor.call("saveRecipe", data, recipeId);
@@ -30,15 +34,33 @@ Template.recipe.helpers({
     return Session.get("ingredients");
   },
 
+  sections: function(){
+    return Sections.find();
+  },
+
   showIntro: function(){
     return Session.get('showIntro');
   }
 })
+
 
 Template.recipe.created = function(){
   if(this.data && this.data.ingredients){
     Session.set('ingredients', this.data.ingredients);
   } else {
     Session.set('ingredients', []);
+  }
+
+  Sections.remove({});
+  if(this.data && this.data.sections){
+    this.data.sections.forEach(function(section){
+      Sections.insert({
+          name: section.name,
+      });
+    });
+  } else {
+    Sections.insert({
+        name: 'default',
+    });
   }
 }

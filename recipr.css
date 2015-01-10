@@ -39,3 +39,27 @@ body, html {
 	padding: 20px;
 	margin: 20px;
 }
+
+.section {
+	border-bottom: 1px solid black;
+	padding: 20px;
+	overflow: hidden;
+	position: relative;
+}
+
+.section .section-name {
+	display: block;
+	width: 100%;
+}
+
+.section .remove-section {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.half {
+	width: 50%;
+	margin: 0;
+	float: left;
+}

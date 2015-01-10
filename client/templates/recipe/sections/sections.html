@@ -1,0 +1,7 @@
+<template name="recipeSections">
+  <h2>Sections</h2>
+  {{#each this}}
+      {{> recipeSection this}}
+  {{/each}}
+  <button type="button" class="add-section">add section</button>
+</template>

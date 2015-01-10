@@ -3,10 +3,18 @@ Recipes = new Mongo.Collection("recipes");
 Meteor.methods({
   saveRecipe: function (data, recipeId) {
 
+    var sections = [];
+    data.sections.forEach(function(section) {
+      sections.push({
+        name: section.name
+      });
+    });
+
     var validData = {
       title: data.title,
       intro: data.intro,
       ingredients: data.ingredients,
+      sections: sections,
       dateModified: new Date()
     }
 
