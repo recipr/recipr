@@ -119,6 +119,6 @@ Template.recipe.helpers({
       type: 'gui',
       key: 'showIntro',
     }).value || this.intro.length;
-  },
+  }
 })
 

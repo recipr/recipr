@@ -1,7 +1,9 @@
 <template name="recipeContext">
-  <ul>
+  <span class="menu-header">
+    Options <i class="pull-right icon icon-vert-dots"></i>
+  </span>
   {{#each settings}}  
-    <li>
+    <div>
       <label>
         <input 
           type="checkbox" 
@@ -10,7 +12,6 @@
           class="change-setting"> 
           {{niceName}}
       </label>
-    </li>
+    </div>
   {{/each}}
-  </ul>
 </template>  

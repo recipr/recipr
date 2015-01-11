@@ -1,0 +1,17 @@
+@import 'recipr_guikit/recipr_guikit';
+
+body {
+	@extend .recipr;
+}
+
+* {
+	box-sizing: border-box;
+} 
+
+.recipr-header {
+	.context-menu {
+		.content {
+			display: block;
+		}
+	}
+}

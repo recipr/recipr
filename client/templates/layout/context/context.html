@@ -1,0 +1,13 @@
+<template name="contextMenu">
+  {{#if hasContextMenu}}
+    <div class="pull-right context-menu">
+      <i class="toggle-context-menu icon icon-vert-dots"></i>
+      {{#if showContextMenu}}
+        <div class="content card z-1">
+          {{> yield "contextMenu"}}
+        </div>
+        <div class="cover"></div>
+      {{/if}}
+    </div>
+  {{/if}}
+</template>
