@@ -1,6 +1,5 @@
 Template.recipeIngredients.events({
   "click .add-ingredient": function(event, template){
-
     var $name = template.find('.new-ingredient');
     var value = $name.value;
 

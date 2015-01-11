@@ -1,17 +1,29 @@
 Template.recipeSteps.created = function(){
-  var stepCount = Steps.find({
-    sectionId: Template.parentData()._id
-  }).count();
+  var self = this;
 
-  if( stepCount !== 0){
-    return;
+  this.init = function(){
+    var stepCount = Steps.find({
+      sectionId: Template.parentData()._id
+    }).count();
+
+    if( stepCount === 0){
+      self.addFirstStep();
+    }
   }
 
-  Steps.insert({
-    sectionId: Template.parentData()._id,
-    content: '',
-    order: 1
-  });
+  /**
+  * Add empty step with order 1 to section
+  * Every recipe needs at least one step
+  */
+  this.addFirstStep = function(){
+    Steps.insert({
+      sectionId: Template.parentData()._id,
+      content: '',
+      order: 1
+    });
+  }
+
+  this.init();
 }
 
 Template.recipeSteps.events({
