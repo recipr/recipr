@@ -5,7 +5,7 @@ Meteor.methods({
     var ingredient = Ingredients.findOne({name: name});
     
     if(ingredient){
-      return
+      return ingredient._id;
     }
 
     var ingredientId = Ingredients.insert({

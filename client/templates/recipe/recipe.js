@@ -46,8 +46,12 @@ Template.recipe.created = function(){
   */
   this.insertIngredients = function(ingredients, sectionId){
     ingredients.forEach(function(ingredient){
-      ingredient.sectionId = sectionId;
-      RecipeIngredients.insert(ingredient);
+      var loadedIngredient = Ingredients.findOne(ingredient.ingredientId);
+      if(loadedIngredient && loadedIngredient.name){
+        ingredient.name = loadedIngredient.name;
+        ingredient.sectionId = sectionId;
+        RecipeIngredients.insert(ingredient);
+      }
     });
   }
 

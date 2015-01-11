@@ -46,22 +46,22 @@ Meteor.methods({
           ingredients: ingredients,
         });
       });
-
-      return sections;
     }
 
     /**
     * Extracts ingredients from sent section
     * @param {Object} section
+    * @return {Array} ingredients 
     */
     this.getIngredients = function(section){
       var ingredients = [];
       section.ingredients.forEach(function(ingredient){
+        var ingredientId = Meteor.call('saveIngredient', ingredient.name);
         ingredients.push({
           quantity: ingredient.quantity,
           unit: ingredient.unit,
           order: ingredient.order,
-          name: ingredient.name
+          ingredientId: ingredientId
         });
       });
       return ingredients;
@@ -70,6 +70,7 @@ Meteor.methods({
     /**
     * Extracts steps from sent section
     * @param {Object} section
+    * @return {Array} steps 
     */
     this.getSteps = function(section){
      var steps = [];
