@@ -106,7 +106,15 @@ Template.recipe.events({
     Meteor.call("saveRecipe", data, recipeId);
 		Router.go('/recipes');
 		return false;
-	}
+	},
+
+  "click .show-ingredients": function(event){
+    Session.set('recipe-tab', 'ingredients');
+  },
+
+  "click .show-preparation": function(event){
+    Session.set('recipe-tab', 'preparation');
+  },
 });
 
 Template.recipe.helpers({
@@ -119,6 +127,15 @@ Template.recipe.helpers({
       type: 'gui',
       key: 'showIntro',
     }).value || this.intro.length;
-  }
+  },
+
+  showIngredients: function(){
+    var tab = Session.get('recipe-tab');
+    return tab === 'ingredients' || tab === undefined;
+  },
+
+  showPreparation: function(){
+    return Session.get('recipe-tab') === 'preparation';
+  },
 })
 

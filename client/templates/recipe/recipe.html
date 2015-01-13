@@ -1,16 +1,56 @@
 <template name="recipe">
-	<form class="recipe-form">
-		<input autofocus type="text" name="title" value="{{title}}" placeholder="title">
-    <br>
+	<form class="recipe-form fill-content">
+    <div class="has-main-action">
 
-    {{#if showIntro}}
-      <textarea name="intro" placeholder="Intro">{{intro}}</textarea>
-    {{/if}}
 
-    {{> recipeSections sections}}
-    <br>
-    <br>
-    <br>
-    <input type="submit" class="save-recipe" value="save">
+      <div class="card rect z-1 dim-default-padding">
+        <div class="form-row">
+
+          <input 
+            autofocus 
+            type="text" 
+            name="title" 
+            value="{{title}}" 
+            placeholder="Title *"
+            class="input input-big dim-100">
+
+          <span class="form-error">Ups, i think you forgot the title</span>
+        </div>
+
+        {{#if showIntro}}
+          <div class="form-row">
+            <textarea rows="3" name="intro" placeholder="Intro" class="input dim-100">{{intro}}</textarea>
+          </div>
+        {{/if}}
+      </div>
+
+      <div class="card rect z-1 dim-default-padding">
+        <div class="grid">
+          <div class="grid-row">
+            <div class="grid-col-6">
+              <a class="{{#if showIngredients}}btn-accent{{/if}} show-ingredients btn dim-100 btn-left">Ingredients
+              </a>
+            </div>
+            <div class="grid-col-6">
+              <a class="{{#if showPreparation}}btn-accent{{/if}} show-preparation btn dim-100 btn-right">Preparation
+              </a>
+            </div>
+          </div>
+          <div class="grid-row">
+            <div class="grid-col-12">
+              {{> recipeSections sections}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <button 
+      type="submit" 
+      class="save-recipe btn btn-accent btn-big btn-middle dim-100">
+      Save Draft
+    </button>
+
   </form>
 </template>
