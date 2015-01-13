@@ -137,5 +137,20 @@ Template.recipe.helpers({
   showPreparation: function(){
     return Session.get('recipe-tab') === 'preparation';
   },
+
+  recipeTabs: {
+    name: 'recipe-tab',
+    tabs: [
+      {
+        name: 'ingredients',
+        value: 'Ingredients',
+        active: 1,
+      },
+      {
+        name: 'preparation',
+        value: 'Preparation'
+      },
+    ]
+  }
 })
 

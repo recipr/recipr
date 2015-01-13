@@ -1,0 +1,11 @@
+<template name="tabs">
+  <div class="grid {{this.name}}">
+    <div class="grid-row">
+      {{#each tabs}}
+        <div class="grid-col-6">
+          <button type="button" class="{{#if active}}btn-accent{{/if}} show-tab btn dim-100 btn-left">{{value}}</button>
+        </div>
+      {{/each}}
+    </div>
+  </div> 
+</template>
