@@ -19,11 +19,8 @@ Template.tabs.created = function(){
 
 Template.tabs.events({
   "click .show-tab": function(event){
-    Tabs.update({group: this.group}, {
-      $set: {
-        active: 0,
-      }
-    });
+    Tabs.update({group: this.group}, {$set: {active: 0}}, {multi: true})
+
     
     Tabs.update(
       { $and: [

@@ -139,7 +139,7 @@ Template.recipe.helpers({
   },
 
   recipeTabs: {
-    name: 'recipe-tab',
+    group: 'recipe-tab',
     tabs: [
       {
         name: 'ingredients',
