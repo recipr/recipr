@@ -1,9 +1,8 @@
 <template name="recipeSteps">
   <div class="steps">
-    <h2>Preparation {{#if showSteps}} Steps {{/if}}</h2>
-      {{#each this}}
-        {{> recipeStep}}
-      {{/each}}
+    {{#each this}}
+      {{> recipeStep}}
+    {{/each}}
 
     {{#if showSteps}}
       <button type="button" class="add-step">Add Step</button>

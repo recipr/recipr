@@ -41,4 +41,12 @@ Template.recipeSection.helpers({
       sectionId: this._id
     });
   },
+
+  showIngredients: function(){
+    return Session.get('recipe-tab') === 'ingredients';
+  },
+
+  showPreparation: function(){
+    return Session.get('recipe-tab') === 'preparation';
+  }
 });

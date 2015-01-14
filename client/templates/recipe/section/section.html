@@ -8,11 +8,20 @@
       {{/if}}
     {{/if}}
 
-    <div class="half">
-      {{> recipeIngredients ingredients}}
-    </div>
-    <div class="half">
-      {{> recipeSteps steps}}
-    </div>
+    <div class="grid">
+      <div class="grid-row">
+
+        <div class="grid-col-6 grid-col-md {{#if showPreparation}}remove-until-md{{/if}}">
+          {{> recipeIngredients ingredients}}
+        </div>
+
+        <div class="grid-col-6 grid-col-md {{#if showIngredients}}remove-until-md{{/if}}">
+          {{> recipeSteps steps}}
+        </div>
+        
+      </div>
+    </div> 
   </div>
 </template>
+
+
