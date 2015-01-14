@@ -13,6 +13,9 @@ Template.tabs.created = function(){
   this.data.tabs.forEach(function(tab){
     tab.group = self.data.group;
     Tabs.insert(tab);
+    if(tab.active){
+      Session.set(self.data.group, tab.name);
+    }
   });
   
 }
@@ -31,6 +34,8 @@ Template.tabs.events({
         active: 1,
       }}
     );
+
+    Session.set(this.group, this.name);
   },
 });
 
