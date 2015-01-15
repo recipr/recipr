@@ -1,15 +1,16 @@
 <template name="ApplicationLayout">
+  <div class="app">
+    <header class="recipr-header header fixed">
+      <i class="menu-toggle icon icon-hamburger"></i>
+      <span class="logo">Recipr</span>
 
-  <header class="recipr-header header fixed">
-    <i class="menu-toggle icon icon-hamburger"></i>
-    <span class="logo">Recipr</span>
+      {{> contextMenu}}
+    </header>
 
-    {{> contextMenu}}
-  </header>
+    {{> sidebar}}
 
-  {{> sidebar}}
-
-  <div class="main-content">
-    {{> yield}}
+    <div class="main-content">
+      {{> yield}}
+    </div>
   </div>
 </template>

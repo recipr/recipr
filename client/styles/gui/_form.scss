@@ -1,0 +1,14 @@
+.form-error {
+  padding: $dim-min;
+  color: $color-error;
+  display: block;
+  font-size: $font-size-small;
+  
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &:first-of-type {
+    margin-bottom: 0;
+  }
+}

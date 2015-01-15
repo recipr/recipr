@@ -1,11 +1,29 @@
-@import 'recipr_guikit/recipr_guikit';
+@import "_config";
+@import "_config";
+@import "_mixins";
+
+@import "gui/_helper";
+@import "gui/_app";
+@import "gui/_icons";
+@import "gui/_elevation";
+@import "gui/_form";
+@import "gui/_button";
+@import "gui/_input";
+@import "gui/_card";
+@import "gui/_grid";
+@import "gui/_responsive";
+
+@import "layout/_sidebar";
+@import "layout/_header";
+@import "layout/_menu";
+@import "layout/_menu-item";
+@import "layout/_group";
+@import "layout/_dropdown";
+@import "layout/_edit-item";
+@import "layout/_search"; 
+@import "layout/_empty-list";
+@import "layout/_item-list";
+@import "layout/_form";
+@import "layout/_image-input";
+
 @import '_recipe';
-
-
-body {
-	@extend .recipr;
-}
-
-* {
-	box-sizing: border-box;
-}

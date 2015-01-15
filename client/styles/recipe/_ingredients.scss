@@ -27,7 +27,7 @@
     color: $color-neutral-dark;
     font-size: 20px;
     text-align: right;
-    padding: 0;
+    padding: 0 $dim-min 0 0;
     position: absolute;
     right: 0;
   }

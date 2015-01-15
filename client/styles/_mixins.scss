@@ -1,0 +1,38 @@
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+@mixin clear-fix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin box-sizing($box-model) {
+  @include vendor-prefix(box-sizing, $box-model);
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+    @include vendor-prefix(transition, $transition-property $transition-time $method);
+}
+
+@mixin transform($property: none) {
+  @include vendor-prefix(transform, $property);
+}
+
+@mixin box-shadow($string) {
+    @include vendor-prefix(box-shadow, $string);
+}
+
+@mixin transition-transform($string) {
+  -webkit-transition: -webkit-#{$string};
+     -moz-transition: -moz-#{$string};
+       -o-transition: -o-#{$string};
+          transition: #{$string};
+}

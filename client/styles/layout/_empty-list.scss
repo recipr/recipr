@@ -1,0 +1,13 @@
+.empty-list {
+  display: block;
+  text-align: center;
+  color: $color-neutral-dark;
+  margin-top: $dim-min * 21;
+  font-size: $font-size-small;
+  .icon {
+    display: block;
+    text-align: center;
+    font-size: $dim-min * 12;
+    margin: $dim-min * 3;
+  }
+}

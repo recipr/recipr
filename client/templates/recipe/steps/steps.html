@@ -1,5 +1,8 @@
 <template name="recipeSteps">
   <div class="steps">
+
+    <h2 class="remove-until-md">{{#if showSteps}}Steps{{else}}Preparation{{/if}}</h2>
+
     {{#each this}}
       {{> recipeStep}}
     {{/each}}

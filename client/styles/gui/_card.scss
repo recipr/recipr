@@ -1,0 +1,24 @@
+.card {
+  border-radius: $dim-border-radius;
+  background-color: $color-background;
+
+  &.rect {
+    border-radius: 0;
+  }
+
+  &.b-t {
+    border-top: 1px solid $color-neutral;
+  }
+
+  &.b-b {
+    border-bottom: 1px solid $color-neutral;
+  }
+
+  &.b-l {
+    border-left: 1px solid $color-neutral;
+  }
+
+  &.b-r {
+    border-right: 1px solid $color-neutral;
+  }
+}

@@ -1,0 +1,24 @@
+/*
+* Hide from/until width
+*
+* Examples:
+* .remove-from-md
+* .remove-until-sd
+*/
+
+$breakpoints: (sd: $breakpoint-sd, md: $breakpoint-md, ld: $breakpoint-ld);
+
+@each $size in map-keys($breakpoints) {
+  $breakpoint: map-get($breakpoints, $size);
+  @media (min-width: $breakpoint) {
+    .remove-from-#{$size} {
+      display: none;
+    }
+  }
+
+  @media (max-width: $breakpoint) {
+    .remove-until-#{$size} {
+      display: none;
+    }
+  } 
+}

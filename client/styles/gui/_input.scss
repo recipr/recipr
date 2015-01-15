@@ -1,0 +1,61 @@
+.input {
+  background-color: $color-background;
+  color: $color-text;
+  border: 1px solid $color-neutral;
+  margin: 0;
+  border-radius: $dim-border-radius;
+  font-size: $font-size-default;
+  line-height: $font-line-height-default;
+  font-weight: normal;
+  text-decoration: none;
+  padding: 9px $dim-min * 4;
+  outline: none;
+  font-family: $font-family-default;
+  @extend .z-inset;
+
+  @include transition(all, .2s, ease-out);
+
+  &:hover,
+  &:focus,
+  &.input-accent {
+    border-bottom-color: $color-accent;
+    @extend .z-inset-accent;
+  }
+
+  &.input-error {
+    border-color: $color-error;
+    @extend .z-inset-error;
+  }
+
+  &.input-middle {
+    border-radius: 0;
+  }
+
+  &.input-right {
+    @extend .border-radius-right;
+  }
+
+  &.input-left {
+    @extend .border-radius-left;
+  }
+
+  &.input-big {
+    font-size: $font-size-big;
+    line-height: $font-line-height-big;
+    padding: 14px $dim-min * 6 15px;
+  }
+}
+
+.input-wrap {  
+  position: relative;
+
+  .input-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: $color-accent;
+    padding: $dim-min * 2 + 2 $dim-min * 3 + 2;
+    font-size: 20px;
+    text-align: right;
+  }
+}

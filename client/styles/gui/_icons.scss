@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "recipr-icons";
+  src: url('/fonts/recipr-icons.eot');
+  src: url('/fonts/recipr-icons.eot?#iefix') format('eot'),
+    url('/fonts/recipr-icons.woff') format('woff'),
+    url('/fonts/recipr-icons.ttf') format('truetype'),
+    url('/fonts/recipr-icons.svg#recipr-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  display: inline-block;
+  margin: 0;
+  border: none;
+  background: none;
+}
+
+.icon:before {
+  display: inline-block;
+  font-family: "recipr-icons";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-lg {
+  font-size: 1.3333333333333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.icon-2x { font-size: 2em; }
+.icon-3x { font-size: 3em; }
+.icon-4x { font-size: 4em; }
+.icon-5x { font-size: 5em; }
+.icon-fw {
+  width: 1.2857142857142858em;
+  text-align: center;
+}
+
+.icon-Pen:before { content: "\E001" }
+.icon-arrow-down:before { content: "\E002" }
+.icon-arrow-eft:before { content: "\E003" }
+.icon-arrow-right:before { content: "\E004" }
+.icon-arrow-up:before { content: "\E005" }
+.icon-cross:before { content: "\E006" }
+.icon-hamburger:before { content: "\E007" }
+.icon-magnifying glass:before { content: "\E008" }
+.icon-placeholder:before { content: "\E009" }
+.icon-plus:before { content: "\E00A" }
+.icon-trashcan:before { content: "\E00B" }
+.icon-vert-dots:before { content: "\E00C" }

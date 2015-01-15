@@ -1,0 +1,22 @@
+{
+  "name": "recipr",
+  "version": "0.0.1",
+  "authors": [
+    "Slemgrim <slemgrim@gmail.com>"
+  ],
+  "repository" :
+  {
+    "type" : "git",
+    "url" : "http://github.com/recipr/recipr.git"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-consolidate": "^0.1.2",
+    "gulp-iconfont": "^0.1.2",
+    "gulp-rename": "^1.2.0",
+    "gulp-sketch": "0.0.6"
+  },
+  "dependencies": {
+    "lodash": "^2.4.1"
+  }
+}

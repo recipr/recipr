@@ -1,0 +1,87 @@
+.header {
+  position: relative;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0;
+  padding: 0;
+  z-index: $elevation-header;
+
+  &.fixed {
+    position: fixed;
+  }
+}
+
+.recipr-header {
+  background-color: $color-primary;
+  min-height: $dim-header-height;
+  position: relative;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  color: $color-primary-text;
+  font-size: $font-size-big;
+  line-height: 24px;
+  padding: $dim-min * 3 $dim-min * 2 $dim-min * 3 $dim-min * 8;
+  z-index: $elevation-header;
+
+  .icon {
+    color: $color-accent-light;
+    font-size: 24px;
+    height: 24px;
+
+    &.open {
+      color: $color-primary-text;
+    }
+  }
+
+  .menu-toggle {
+    position: absolute;
+    left: -2px;
+  }
+
+  .right {
+    right: left;
+  }
+
+  .context-menu {
+    .trigger {
+      float: right;
+    }
+
+    .content {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: $dim-min * 2 $dim-min* 2 0 0;
+      padding: 0 0 $dim-min * 2 0;
+      font-size: $font-size-small;
+      line-height: $font-line-height-small;
+      color: $color-text;
+      min-width: $dim-min * 40;
+      z-index: $elevation-dropdown-cover + 1;
+    }
+
+    .menu-header {
+      padding: $dim-min * 2 $dim-min $dim-min * 2 $dim-min * 4;
+      font-weight: bold;
+      display: block;
+    }
+  }
+
+  .cover {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: $elevation-dropdown-cover;
+  }
+
+  @media (min-width: $breakpoint-ld) {
+    .menu-toggle {
+      display: none;
+    }
+  }
+}

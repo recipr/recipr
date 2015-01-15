@@ -1,6 +1,5 @@
 {
   "includePaths": [
-    ".meteor/local/bower",
     "client/styles"
   ]
 }

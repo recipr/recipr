@@ -1,0 +1,47 @@
+.btn {
+  background-color: $color-neutral;
+  color: $color-text;
+  border: 1px solid $color-neutral;
+  border-radius: $dim-border-radius;
+  font-size: $font-size-default;
+  margin: 0;
+  line-height: $font-line-height-default;
+  font-weight: normal;
+  text-align: center;
+  text-decoration: none;
+  padding: 9px $dim-min * 4;
+  font-family: $font-family-default;
+  outline: none;
+  @extend .z-1;
+
+  &.btn-accent {
+    background-color: $color-accent;
+    color: $color-primary-text;
+    border: 1px solid $color-accent;
+  }
+
+  &.btn-error {
+    background-color: $color-error;
+    color: $color-primary-text;
+    border: 1px solid $color-error;
+  }
+
+  &.btn-middle {
+    border-radius: 0;
+  }
+
+  &.btn-right {
+    @extend .border-radius-right;
+  }
+
+  &.btn-left {
+    @extend .border-radius-left;
+  }
+
+  &.btn-big {
+    font-size: $font-size-big;
+    line-height: $font-line-height-big;
+
+    padding: 14px $dim-min * 6 15px;
+  }
+}

@@ -1,0 +1,29 @@
+.grid {
+  @include clear-fix;
+
+  .grid-row {
+    clear: both;
+  }
+
+  $i: 1;
+  @while $i <= 12  {
+    .grid-col-#{$i} {
+      float: left;
+      margin: 0;
+      padding: 0;
+      width: percentage(1 / (12 / $i));
+    }
+    $i: $i + 1;
+  }
+
+  $gridBreakpoints: (sd: $breakpoint-sd, md: $breakpoint-md, ld: $breakpoint-ld);
+
+  @each $size in map-keys($gridBreakpoints) {
+    $breakpoint: map-get($gridBreakpoints, $size);
+    @media (max-width: $breakpoint) {
+      .grid-col-#{$size} {
+        width: 100%;
+      }
+    }
+  }
+}
