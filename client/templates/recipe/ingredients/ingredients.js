@@ -20,15 +20,15 @@ Template.recipeIngredients.events({
       return false;
     }
 
-    if(match[1] != null){
+    if(match[1] !== null){
       quantity = match[1].trim();
     }
 
-    if(match[3] != null){
+    if(match[3] !== null){
       unit = match[3].trim();
     }
 
-    if(match[5] != null){
+    if(match[5] !== null){
       name = match[5].trim();
     }
 

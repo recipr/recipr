@@ -9,7 +9,7 @@ Template.recipeSteps.created = function(){
     if( stepCount === 0){
       self.addFirstStep();
     }
-  }
+  };
 
   /**
   * Add empty step with order 1 to section
@@ -21,10 +21,10 @@ Template.recipeSteps.created = function(){
       content: '',
       order: 1
     });
-  }
+  };
 
   this.init();
-}
+};
 
 Template.recipeSteps.events({
   "click .add-step": function(event, template){

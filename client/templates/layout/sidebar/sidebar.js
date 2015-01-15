@@ -12,7 +12,7 @@ Template.sidebar.helpers({
       return;
     }
 
-    var routeName = currentRoute.route.getName()
+    var routeName = currentRoute.route.getName();
     if(data && data.hash && data.hash.route && data.hash.route == routeName){
       return 'active';
     }
@@ -22,4 +22,4 @@ Template.sidebar.helpers({
   showSidebar: function(){
     return Session.get('showSidebar') ? 'open' : 'closed';
   },
-});
+}); 

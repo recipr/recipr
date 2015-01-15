@@ -15,7 +15,7 @@ Meteor.methods({
     this.init = function(){
       self.getSections(data.sections);
       self.save();
-    }
+    };
 
     /**
     * Save recipe to collection. 
@@ -29,7 +29,7 @@ Meteor.methods({
           $set: recipe
         });
       }
-    }
+    };
 
     /**
     * Extracts sections from sent recipe
@@ -46,7 +46,7 @@ Meteor.methods({
           ingredients: ingredients,
         });
       });
-    }
+    };
 
     /**
     * Extracts ingredients from sent section
@@ -65,7 +65,7 @@ Meteor.methods({
         });
       });
       return ingredients;
-    }
+    };
 
     /**
     * Extracts steps from sent section
@@ -81,7 +81,7 @@ Meteor.methods({
         });
       });
       return steps;
-    }
+    };
 
     this.init();
   },

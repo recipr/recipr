@@ -26,4 +26,4 @@ Template.recipeStep.helpers({
       key: 'showSteps',
     }).value || Template.parentData().count() > 1;
   },
-})
+});

@@ -1,4 +1,4 @@
-Tabs = new Mongo.Collection(null),
+Tabs = new Mongo.Collection(null);
 
 Template.tabs.created = function(){
 
@@ -16,21 +16,19 @@ Template.tabs.created = function(){
     if(tab.active){
       Session.set(self.data.group, tab.name);
     }
-  });
-  
-}
+  }); 
+};
 
 Template.tabs.events({
   "click .show-tab": function(event){
-    Tabs.update({group: this.group}, {$set: {active: 0}}, {multi: true})
-
+    Tabs.update({group: this.group}, {$set: {active: 0}}, {multi: true});
     
     Tabs.update(
       { $and: [
         {group: this.group},
         {name: this.name}
       ]}, 
-      { $set: {
+      { $set: { 
         active: 1,
       }}
     );

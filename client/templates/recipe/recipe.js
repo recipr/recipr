@@ -1,6 +1,6 @@
 Sections = new Mongo.Collection(null);
 RecipeIngredients = new Mongo.Collection(null);
-Steps = new Mongo.Collection(null),
+Steps = new Mongo.Collection(null);
 
 Template.recipe.created = function(){
 
@@ -12,7 +12,7 @@ Template.recipe.created = function(){
     } else {
       self.addDefaultSection();
     }
-  }
+  };
 
   /**
   * Inserts recipe sections into local 'Section' collection
@@ -27,7 +27,7 @@ Template.recipe.created = function(){
       self.insertIngredients(section.ingredients, sectionId);
       self.insertSteps(section.steps, sectionId);
     });
-  }
+  };
 
   /**
   * Adds a default Section to local 'Sections' collection
@@ -37,7 +37,7 @@ Template.recipe.created = function(){
         name: 'default',
         isDefault: true,
     });
-  }
+  };
 
   /**
   * Inserts section ingredients into local 'RecipeIngredients' collection
@@ -53,7 +53,7 @@ Template.recipe.created = function(){
         RecipeIngredients.insert(ingredient);
       }
     });
-  }
+  };
 
   /**
   * Inserts section steps into local 'Steps' collection
@@ -65,19 +65,20 @@ Template.recipe.created = function(){
       step.sectionId = sectionId;
       Steps.insert(step);
     });
-  }
+  };
 
   this.init();
-}
+};
 
 Template.recipe.events({
 	"submit .recipe-form": function (event) {
 		var title = event.target.title.value;
+    var intro;
 
     if(event.target.intro){
-      var intro = event.target.intro.value;
+      intro = event.target.intro.value;
     } else {
-      var intro = this.intro;
+      intro = this.intro;
     }
 
     var sections = Sections.find().fetch();
@@ -152,5 +153,5 @@ Template.recipe.helpers({
       },
     ]
   }
-})
+});
 

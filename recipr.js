@@ -1,3 +1,4 @@
+
 Meteor.startup(function () {
   //Restore default settings;
   if (Meteor.isServer) {
@@ -16,7 +17,7 @@ Meteor.startup(function () {
           value: false,
         },
       } 
-    }
+    };
 
     for (var type in defaultSettings) {
       if (defaultSettings.hasOwnProperty(type)) {

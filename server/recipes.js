@@ -4,5 +4,5 @@ Meteor.publish("Recipes", function () {
 
 Meteor.publish("Recipe", function (recipeId) {
   var recipeCursor = Recipes.find({_id: recipeId});
-  return recipeCursor
+  return recipeCursor;
 });
