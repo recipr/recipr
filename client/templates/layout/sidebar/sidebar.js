@@ -1,6 +1,10 @@
 Template.sidebar.events({
   "click .sidebar .cover": function (event) {
     Session.set('showSidebar', false);
+  },
+
+  "click .menu-item": function (event) {
+    Session.set('showSidebar', false);
   }
 });
 
