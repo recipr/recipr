@@ -1,11 +1,33 @@
 <template name="recipeStep">
-  <div class="step {{#if showSteps}}show-steps{{/if}}">
-    {{#if isNotFirstStep}}
-      <button type="button" class="remove-step">Remove Step</button>
+  <div class="recipe-step action-bar">
+    {{#if isInEditMode}}
+
+      <p contenteditable class="step-edit action-target input dim-100">{{cleanContent}}</p>
+
+      {{#if showSteps}}
+        <div class="actions">
+          <button type="button" class="close-step action icon icon-placeholder">save</button>
+        </div>
+
+        <div class="step-cover close-step"></div>
+      {{/if}}
+      
+    {{else}}
+      {{#if noOtherStepIsEdited}}
+        <div class="actions">
+          <button type="button" class="edit-step action icon icon-placeholder"></button>
+          {{#if isNotFirstStep}}
+            <button type="button" class="remove-step action icon icon-placeholder"></button>
+          {{/if}}
+        </div>
+      {{/if}}
+
+      {{#if showSteps}}
+        <span class="order">{{order}}</span>
+      {{/if}}
+
+      <p class="step-content action-target">{{{content}}}</p>
+
     {{/if}}
-    {{#if showSteps}}
-      <span class="order">{{order}}</span>
-    {{/if}}
-    <textarea class="step-content" placeholder="preparation">{{content}}</textarea>
   </div>
 </template>

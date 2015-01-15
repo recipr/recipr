@@ -2,6 +2,9 @@ Template.recipeSteps.created = function(){
   var self = this;
 
   this.init = function(){
+    //Remove leftover edit mode. just in case
+    Session.set('stepEditMode', false);
+
     var stepCount = Steps.find({
       sectionId: Template.parentData()._id
     }).count();
@@ -19,8 +22,10 @@ Template.recipeSteps.created = function(){
     Steps.insert({
       sectionId: Template.parentData()._id,
       content: '',
-      order: 1
+      order: 1,
+      editMode: true,
     });
+    Session.set('stepEditMode', true);
   };
 
   this.init();
@@ -28,15 +33,22 @@ Template.recipeSteps.created = function(){
 
 Template.recipeSteps.events({
   "click .add-step": function(event, template){
-    var stepCount = Steps.find({
-      sectionId: Template.parentData()._id
-    }).count();
+    var $content = template.find('.new-step');
 
-    Steps.insert({
-      sectionId: Template.parentData()._id,
-      content: '',
-      order: stepCount + 1
-    });
+    if($content.value.trim().length !== 0){
+      var stepCount = Steps.find({
+        sectionId: Template.parentData()._id
+      }).count();
+
+      Steps.insert({
+        sectionId: Template.parentData()._id,
+        content: $content.value,
+        order: stepCount + 1
+      });
+    }
+
+    $content.value = '';
+
     return false;
   }
 });
@@ -48,4 +60,24 @@ Template.recipeSteps.helpers({
       key: 'showSteps',
     }).value || this.count() > 1;
   },
+
+  showAddForm: function(){
+    return !Session.get('stepEditMode');
+  },
+
+  newPlaceholder: function(){
+    var value;
+    switch(this.count()){
+      case 1:
+        value = 'second step';
+        break;
+      case 2:
+        value = 'third step';
+        break;
+      default:
+        value = 'next step';
+        break;
+    }
+    return value;
+  }
 });

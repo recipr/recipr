@@ -1,0 +1,64 @@
+.recipe-steps {
+  margin: $dim-min * 6 0;
+
+  .add-step {
+    color: $color-accent;
+  }
+
+  .new-step {
+    min-height: $dim-min * 20;
+  }
+}
+
+@media (min-width: $breakpoint-md){
+  .recipe-steps {
+    padding-left: $dim-min * 10;
+  }
+}
+
+.recipe-step {
+  position: relative;
+  min-height: $dim-min * 20;
+  margin: $dim-min * 3 0;
+
+  .order {
+    float: left;
+    display: block;
+    width: $dim-min * 10;
+    height: $dim-min * 10;
+    line-height: $dim-min * 10;
+    border-radius: 50%;
+    background-color: $color-neutral;
+    color: $color-text;
+    text-align: center;
+    margin-top: $dim-min * 2;
+    margin-right: $dim-min * 4;
+    margin-bottom: $dim-min * 2;
+  }
+
+  .edit-step {
+    background-color: $color-neutral;
+    color: $color-accent;
+  }
+
+  .close-step {
+    position: relative;
+    color: $color-accent;
+    z-index: 111;
+  }
+
+  .step-edit {
+    position: relative;
+    z-index: 110;
+    min-height: $dim-min * 20;
+  }
+
+  .step-cover {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

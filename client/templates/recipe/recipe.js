@@ -124,10 +124,11 @@ Template.recipe.helpers({
   },
 
   showIntro: function(){
+    var hasAlreadyIntro = this.intro ? this.intro.length : false;
     return Settings.findOne({
       type: 'gui',
       key: 'showIntro',
-    }).value || this.intro.length;
+    }).value || hasAlreadyIntro;
   },
 
   showIngredients: function(){

@@ -6,6 +6,11 @@
   }
 }
 
+@media (min-width: $breakpoint-md){
+  .recipe-ingredients {
+    max-width: 320px;
+  }
+}
 
 .recipe-ingredient {
   display: table-row;
