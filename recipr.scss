@@ -1,4 +1,6 @@
 @import 'recipr_guikit/recipr_guikit';
+@import '_recipe';
+
 
 body {
 	@extend .recipr;
@@ -6,5 +8,4 @@ body {
 
 * {
 	box-sizing: border-box;
-} 
- 
+}

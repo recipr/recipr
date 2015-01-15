@@ -1,3 +1,9 @@
 <template name="recipeIngredient">
-  <li>{{quantity}}{{unit}} {{name}} <button class="delete-ingredient" type="button">delete</button></li>
-</template>
+  <div class="recipe-ingredient">
+    <span class="part quantity">{{quantity}} {{unit}}</span>
+    <span class="part name">{{name}}</span>
+    <span class="part">
+      <button type="button" class="delete-ingredient icon icon-placeholder delete pull-right"></button>
+    </span>
+  </div>
+</template> 

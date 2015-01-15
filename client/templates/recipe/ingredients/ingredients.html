@@ -1,11 +1,19 @@
 <template name="recipeIngredients">
-    <ul>
+  <div class="recipe-ingredients">
+    <div class="ingredient-list">
       {{#each this}}
-        <li>{{> recipeIngredient this}}</li>
+          {{> recipeIngredient this}}
       {{/each}}
-    </ul>
+    </div>
+
     <form name="ingredient-form">
-      <input type="text" class="new-ingredient" placeholder="Name">
-      <input type="submit" class="add-ingredient" value="add">
+      <div class="input-wrap">
+         <input type="text"
+          class="new-ingredient input dim-100"
+          placeholder="Add Ingredient"
+        />
+        <button type="submit" class="add-ingredient input-icon icon icon-placeholder"></button>
+      </div>
     </form>
+  </div>
 </template>
