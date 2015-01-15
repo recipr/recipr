@@ -1,9 +1,7 @@
 <template name="recipe">
 	<form class="recipe-form fill-content">
     <div class="has-main-action">
-
-
-      <div class="card rect z-1 dim-default-padding">
+      <div class="card main-card rect z-1 dim-default-padding-x">
         <div class="form-row">
 
           <input 
@@ -13,9 +11,10 @@
             value="{{title}}" 
             placeholder="Title *"
             class="input input-big dim-100">
-
-          <span class="form-error">Ups, i think you forgot the title</span>
-        </div>
+          {{#if titleError}}
+            <span class="form-error">Ups, i think you forgot the title</span>
+          {{/if}}
+        </div> 
 
         {{#if showIntro}}
           <div class="form-row">
