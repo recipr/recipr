@@ -8,3 +8,10 @@ Template.listItem.events({
     return false;
   }
 });
+
+Template.listItem.helpers({
+  meta: function(){
+    var meta = moment(this.dateCreated).format('MMMM DD, YYYY');
+    return meta;
+  }
+});

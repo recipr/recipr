@@ -7,7 +7,6 @@ Template.recipes.events({
 
 Template.recipes.helpers({
   hasRecipes: function(){
-    console.log(this);
     return this.count();
   }
 });
