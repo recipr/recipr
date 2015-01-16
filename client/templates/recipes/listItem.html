@@ -1,6 +1,11 @@
 <template name="listItem">
-	<li>{{title}} 
-		<button class="edit-recipe">edit</button>
-		<button class="delete-recipe">delete</button>
-	</li>
+  <div class="edit-item card z-1">
+    {{title}}
+    <span class="meta">{{meta}}</span>
+
+    <div class="actions">
+      <button class="edit-recipe action main"><i class="icon icon-placeholder"></i></button>
+      <button class="delete-recipe action"><i class="icon icon-placeholder"></i></button>
+    </div>
+  </div>
 </template>

@@ -1,13 +1,24 @@
 <template name="recipes">
 
-  <h1>Recipes</h1>
+  <div id="recipes">
+    <div class="card rect z-1 dim-default-padding">
+      <button class="add-recipe btn-add btn btn-accent btn-big dim-100">
+        <i class="icon icon-placeholder"></i>
+        Create new recipe
+      </button>
+    </div>
 
-	<a href="/recipe/new" class="addRecipe">add</a>
-
-	<ul>
-	{{#each this}}
-		{{> listItem}}
-	{{/each}}
-	</ul>
-
+    <div class="item-list">
+      {{#if hasRecipes}}
+          {{#each this}}
+            {{> listItem}}
+          {{/each}}
+      {{else}}
+       <div class="empty-list">
+          <i class="icon icon-placeholder"></i>
+          You didn’t create a recipe yet
+        </div>
+      {{/if}}
+    </div>
+  </div>
 </template>
