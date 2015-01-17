@@ -104,10 +104,26 @@ Template.recipe.events({
         status: 'draft'
     };
 
-    Meteor.call("saveRecipe", data, recipeId);
-		Router.go('/recipes');
+    Meteor.call("saveRecipe", data, recipeId, function(error){
+      if(error){
+
+      } else {
+        Router.go('/recipes');
+      }
+    });
 		return false;
 	},
+
+  "keyup [name=title]": function(event){
+    var title = event.target.value;
+    Meteor.call('validateRecipeTitle', title, function(error, result){
+      if(error){
+        Session.set('recipe-title-error', error.reason);      
+      } else {
+        Session.set('recipe-title-error', false);      
+      }
+    });
+  },
 
   "click .show-ingredients": function(event){
     Session.set('recipe-tab', 'ingredients');
@@ -138,6 +154,10 @@ Template.recipe.helpers({
 
   showPreparation: function(){
     return Session.get('recipe-tab') === 'preparation';
+  },
+
+  titleError: function(){
+    return Session.get('recipe-title-error');
   },
 
   recipeTabs: {

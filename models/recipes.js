@@ -13,8 +13,13 @@ Meteor.methods({
         sections = [];
 
     this.init = function(){
+      self.validate();
       self.getSections(data.sections);
       self.save();
+    };
+
+    this.validate = function(){
+      var title = Meteor.call('validateRecipeTitle', recipe.title);
     };
 
     /**
@@ -89,4 +94,23 @@ Meteor.methods({
   deleteRecipe: function (recipeId) {
     Recipes.remove(recipeId);
   }
+});
+
+
+Meteor.methods({
+  validateRecipeTitle: function (title) {
+    check(title, String);
+
+    if (title.length == 0){
+      throw new Meteor.Error("title-required",
+        "Recipe title is required");
+    }
+
+    if (title.length < 3) {
+      throw new Meteor.Error("title-to-short",
+        "Recipe title needs at least 3 characters");
+    }
+
+    return true;
+  },
 });

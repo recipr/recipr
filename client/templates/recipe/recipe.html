@@ -9,10 +9,11 @@
             type="text" 
             name="title" 
             value="{{title}}" 
+            autocomplete="off"
             placeholder="Title *"
-            class="input input-big dim-100">
+            class="input input-big dim-100 {{#if titleError}}input-error{{/if}}">
           {{#if titleError}}
-            <span class="form-error">Ups, i think you forgot the title</span>
+            <span class="form-error">{{titleError}}</span>
           {{/if}}
         </div> 
 
