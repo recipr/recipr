@@ -45,6 +45,12 @@
     padding: 14px $dim-min * 6 15px;
   }
 
+  &.btn-small {
+    font-size: $font-size-small;
+    line-height: $font-line-height-small;
+    padding: 6px $dim-min * 3;
+  }
+
   &:focus {
     outline:0;
   }

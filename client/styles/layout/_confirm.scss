@@ -1,0 +1,51 @@
+.confirm {
+  position: fixed;
+  padding: $dim-min * 4;
+  position: fixed;
+  top: 200px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in;
+  transform: translateY(50px);
+
+  .wrap {
+    background-color: $color-primary;
+    padding: $dim-min * 4;
+    border-radius: $dim-border-radius;
+    width: 100%;
+    @include clear-fix;
+  }
+
+  .confirm-content {
+    color: $color-primary-text;
+  }
+
+  &.show {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .confirm-actions {
+    color: $color-neutral-dark;
+    margin-top: $dim-min * 4; 
+    float: right;
+  }
+
+  .cancel {
+    font-size: $font-size-small;
+    margin-right: 8px;
+  }
+}
+
+@media (min-width: $breakpoint-sd) {
+  .confirm {
+    .confirm-content {
+      display: inline-block;
+      width: auto;
+    }
+  }
+}

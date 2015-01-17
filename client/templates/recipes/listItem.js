@@ -4,7 +4,11 @@ Template.listItem.events({
     return false;
   },
   "click .delete-recipe": function (event) {
-    Meteor.call('deleteRecipe', this._id);
+    Session.set('show-confirm', true);
+    return false;
+  },
+  'click .confirm .accept-confirm': function(event, template){
+    Meteor.call('deleteRecipe', template.data._id);
     return false;
   }
 });
@@ -13,5 +17,9 @@ Template.listItem.helpers({
   meta: function(){
     var meta = moment(this.dateCreated).format('MMMM DD, YYYY');
     return meta;
+  },
+
+  showConfirm: function(){
+    return Session.get('show-confirm');
   }
 });
