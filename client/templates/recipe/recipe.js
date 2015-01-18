@@ -1,3 +1,4 @@
+LocalRecipes = new Mongo.Collection(null);
 Sections = new Mongo.Collection(null);
 RecipeIngredients = new Mongo.Collection(null);
 Steps = new Mongo.Collection(null);
@@ -6,7 +7,7 @@ Template.recipe.created = function(){
 
   var self = this;
   this.init = function(){
-    Sections.remove({});
+    Sections.remove({recipeId: this.data._id});
     if(this.data && this.data.sections){
       self.insertSections(this.data.sections);
     } else {
@@ -19,8 +20,10 @@ Template.recipe.created = function(){
   * @param {Array} sections list of sections
   */
   this.insertSections = function(sections){
+    var recipeId = this.data._id;
     sections.forEach(function(section){
       var sectionId = Sections.insert({
+          recipeId: recipeId,
           name: section.name,
       });
 
@@ -34,6 +37,7 @@ Template.recipe.created = function(){
   */
   this.addDefaultSection = function(){
     Sections.insert({
+        recipeId: this.data._id,
         name: 'default',
         isDefault: true,
     });
@@ -72,16 +76,8 @@ Template.recipe.created = function(){
 
 Template.recipe.events({
 	"submit .recipe-form": function (event) {
-		var title = event.target.title.value;
-    var intro;
-
-    if(event.target.intro){
-      intro = event.target.intro.value;
-    } else {
-      intro = this.intro;
-    }
-
-    var sections = Sections.find().fetch();
+    var recipeId = this._id == 'new' ? null : this._id;
+    var sections = Sections.find({recipeId: this._id}).fetch();
 
     sections.forEach(function(section){
       var ingredients = RecipeIngredients.find({
@@ -96,10 +92,9 @@ Template.recipe.events({
       section.ingredients = ingredients.fetch();
     });
 
-    var recipeId = this._id ? this._id : null;
     var data = {
-        title: title,
-        intro: intro,
+        title: this.title,
+        intro: this.intro,
         sections: sections,
         status: 'draft'
     };
@@ -116,14 +111,22 @@ Template.recipe.events({
 
   "keyup [name=title]": function(event){
     var title = event.target.value;
+    var recipeId = this._id;
 
-    Meteor.call('validateRecipeTitle', title, function(error, result){
+    Meteor.call("validateRecipeTitle", title, function(error){
       if(error){
-        Session.set('recipe-title-error', error.reason);      
+        LocalRecipes.update(recipeId, {$set: {titleError: error.reason}});
       } else {
-        Session.set('recipe-title-error', false);      
+        LocalRecipes.update(recipeId, {$set: {titleError: ''}});
       }
     });
+
+    LocalRecipes.update(recipeId, {$set: {title: title}});
+  },
+
+  "keyup [name=intro]": function(event){
+    var intro = event.target.value;
+    LocalRecipes.update(this._id, {$set: {intro: intro}});
   },
 
   "click .show-ingredients": function(event){
@@ -136,8 +139,12 @@ Template.recipe.events({
 });
 
 Template.recipe.helpers({
+  recipe: function(){
+    return LocalRecipes.findOne({_id: this._id});
+  },
+
   sections: function(){
-    return Sections.find();
+    return Sections.find({recipeId: this._id});
   },
 
   showIntro: function(){
@@ -155,10 +162,6 @@ Template.recipe.helpers({
 
   showPreparation: function(){
     return Session.get('recipe-tab') === 'preparation';
-  },
-
-  titleError: function(){
-    return Session.get('recipe-title-error');
   },
 
   recipeTabs: {

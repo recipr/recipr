@@ -23,7 +23,7 @@ Template.recipeSection.events({
 
 Template.recipeSection.helpers({
   hasMultipleSections: function(){
-    return Sections.find().count() > 1;
+    return Sections.find({recipeId: this.recipeId}).count() > 1;
   },
 
   showDeleteButton: function(){
