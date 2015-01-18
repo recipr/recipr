@@ -35,14 +35,12 @@
   }
 
   .confirm-actions {
-    color: $color-neutral-dark;
     margin-top: $dim-min * 4; 
     float: right;
   }
 
-  .cancel {
-    font-size: $font-size-small;
-    margin-right: 8px;
+  .cancel-confirm {
+    color: $color-neutral-dark;
   }
 
   .cover {

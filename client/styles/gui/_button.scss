@@ -26,6 +26,12 @@
     border: 1px solid $color-error;
   }
 
+  &.btn-trans {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
   &.btn-middle {
     border-radius: 0;
   }
@@ -41,7 +47,6 @@
   &.btn-big {
     font-size: $font-size-big;
     line-height: $font-line-height-big;
-
     padding: 14px $dim-min * 6 15px;
   }
 
