@@ -74,8 +74,19 @@ Template.recipe.created = function(){
   this.init();
 };
 
+handleRecipeErrors = function(recipeId, errors){
+  errors.forEach(function(error){
+    switch(error.error){
+        case 'title-error':
+          LocalRecipes.update(recipeId, {$set: {titleError: error.reason}});
+        break;
+    }
+  });
+}
+
 Template.recipe.events({
 	"submit .recipe-form": function (event) {
+    var self = this;
     var recipeId = this._id == 'new' ? null : this._id;
     var sections = Sections.find({recipeId: this._id}).fetch();
 
@@ -101,7 +112,7 @@ Template.recipe.events({
 
     Meteor.call("saveRecipe", data, recipeId, function(error){
       if(error){
-
+        handleRecipeErrors(self._id, [error]);
       } else {
         Router.go('/recipes');
       }
@@ -115,7 +126,7 @@ Template.recipe.events({
 
     Meteor.call("validateRecipeTitle", title, function(error){
       if(error){
-        LocalRecipes.update(recipeId, {$set: {titleError: error.reason}});
+        handleRecipeErrors(recipeId, [error]);
       } else {
         LocalRecipes.update(recipeId, {$set: {titleError: ''}});
       }
