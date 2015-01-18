@@ -1,13 +1,16 @@
 <template name="confirm">
   <div class="confirm {{showConfirm}}" style="{{position}}">
-    <div class="wrap z-1">
-      <div class="confirm-content">
-        {{message}}
-      </div>
-      <div class="confirm-actions">
-        <span class="cancel-confirm cancel">Cancel</span>
-        <button class="accept-confirm btn btn-accent btn-small">{{action}}</button>
+    <div class="wrap">
+      <div class="confirm-box z-1">
+        <div class="confirm-content">
+          {{message}}
+        </div>
+        <div class="confirm-actions">
+          <span class="cancel-confirm cancel">Cancel</span>
+          <button class="accept-confirm btn btn-accent btn-small">{{action}}</button>
+        </div>
       </div>
     </div>
+    <div class="cover"></div>
   </div>
 </template>

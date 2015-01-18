@@ -1,14 +1,26 @@
+Template.listItem.created = function(){
+  this.showConfirm = new Blaze.ReactiveVar(false);
+}
+
 Template.listItem.events({
   "click .edit-recipe": function (event) {
     Router.go('recipe.edit', {_id: this._id});
     return false;
   },
-  "click .delete-recipe": function (event) {
-    Session.set('show-confirm', true);
+  "click .delete-recipe": function (event, template) {
+    template.showConfirm.set(true);
     return false;
   },
   'click .confirm .accept-confirm': function(event, template){
     Meteor.call('deleteRecipe', template.data._id);
+    return false;
+  },
+  'click .confirm .cancel-confirm': function(event, template){
+    template.showConfirm.set(false);
+    return false;
+  },
+  'click .confirm .cover': function(event, template){
+    template.showConfirm.set(false);
     return false;
   }
 });
@@ -20,6 +32,6 @@ Template.listItem.helpers({
   },
 
   showConfirm: function(){
-    return Session.get('show-confirm');
+    return Template.instance().showConfirm.get();
   }
 });
