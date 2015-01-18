@@ -13,13 +13,19 @@ Meteor.methods({
         sections = [];
 
     this.init = function(){
+      self.sanitize();
       self.validate();
       self.getSections(data.sections);
       self.save();
     };
 
+    this.sanitize = function(){
+      recipe.title = Meteor.call('sanitizeRecipeTitle', recipe.title);
+
+    };
+
     this.validate = function(){
-      var title = Meteor.call('validateRecipeTitle', recipe.title);
+      Meteor.call('validateRecipeTitle', recipe.title);
     };
 
     /**
@@ -98,19 +104,35 @@ Meteor.methods({
 
 
 Meteor.methods({
+  sanitizeRecipeTitle: function (title) {
+    return title.trim();
+  },
+});
+
+Meteor.methods({
   validateRecipeTitle: function (title) {
     check(title, String);
 
-    if (title.length == 0){
-      throw new Meteor.Error("title-required",
-        "Recipe title is required");
-    }
+    var error;
 
     if (title.length < 3) {
-      throw new Meteor.Error("title-to-short",
+      error = new Meteor.Error("title-to-short",
         "Recipe title needs at least 3 characters");
     }
 
-    return true;
+    if (title.length == 0){
+      error = new Meteor.Error("title-required",
+        "Recipe title is required");
+    }
+
+    if(!error){
+      return true;
+    }
+
+    if(Meteor.isClient){
+      return error; 
+    } else {
+      throw error;
+    }
   },
 });

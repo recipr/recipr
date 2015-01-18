@@ -116,6 +116,7 @@ Template.recipe.events({
 
   "keyup [name=title]": function(event){
     var title = event.target.value;
+
     Meteor.call('validateRecipeTitle', title, function(error, result){
       if(error){
         Session.set('recipe-title-error', error.reason);      
