@@ -55,11 +55,11 @@
       top: 0;
       right: 0;
       margin: $dim-min * 2 $dim-min* 2 0 0;
-      padding: 0 0 $dim-min * 2 0;
+      padding-bottom: $dim-min * 2;
       font-size: $font-size-small;
       line-height: $font-line-height-small;
       color: $color-text;
-      min-width: $dim-min * 40;
+      min-width: $dim-min * 45;
       z-index: $elevation-dropdown-cover + 1;
     }
 
@@ -68,6 +68,31 @@
       font-weight: bold;
       display: block;
     }
+
+    .menu {
+      padding: 0 $dim-min * 4;
+    }
+
+    .menu-row {
+      padding: $dim-min * 2 0; 
+      width: 100%;
+      display: block;
+      line-height: 20px;
+    }
+
+    .checkbox {
+      margin-right: $dim-min * 2;
+      top: 1px;
+    }
+
+    .divider {
+      border: none;
+      background-color: transparent;
+      margin: $dim-min * 2 0;
+      padding: 0;
+      border-bottom: 1px solid $color-neutral;
+    }
+
   }
 
   .cover {

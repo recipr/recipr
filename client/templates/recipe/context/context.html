@@ -2,16 +2,16 @@
   <span class="menu-header">
     Options <i class="pull-right icon icon-vert-dots"></i>
   </span>
-  {{#each settings}}  
-    <div>
-      <label>
+  <div class="menu"> 
+    {{#each settings}}  
+      <label class="menu-row">
         <input 
           type="checkbox" 
           data-key={{key}} 
           checked="{{#if value}}checked{{/if}}" 
-          class="change-setting"> 
+          class="change-setting checkbox"> 
           {{niceName}}
       </label>
-    </div>
-  {{/each}}
-</template>  
+    {{/each}}
+  </div>
+</template>
