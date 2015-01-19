@@ -1,0 +1,40 @@
+.login-box {
+  padding: $dim-min * 4;
+  height: 100%;
+
+  .wrap {
+    position: relative;
+    top: 50%;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .card {
+    padding: $dim-min * 4;
+    margin-bottom: $dim-min * 2;
+  }
+
+  .logo {
+    font-weight: 100;
+    font-size: 40px;
+    line-height: 72px;
+    margin: 0;
+    text-align: center;
+  }
+
+  .slogan {
+    text-align: center;
+    display: block; 
+    margin-bottom: $dim-min * 3;
+  }
+
+  .reset {
+    display: block;
+    text-align: center;
+    font-size: $font-size-small;
+    line-height: $font-line-height-small;
+  }
+
+}

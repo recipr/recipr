@@ -1,5 +1,5 @@
 .card {
-  border-radius: $dim-border-radius;
+  border-radius: $dim-border-radius * 2;
   background-color: $color-background;
 
   &.rect {
@@ -20,5 +20,10 @@
 
   &.b-r {
     border-right: 1px solid $color-neutral;
+  }
+
+  &.dark {
+    background-color: $color-primary;
+    color: $color-primary-text;
   }
 }

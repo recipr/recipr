@@ -1,7 +1,7 @@
 .checkbox {
   position: relative;
   padding: 0;
-  margin: 0;
+  margin: 0 $dim-min * 2 0 0;
   line-height: 20px;
   width: $dim-min * 5;
   height: $dim-min * 5;
