@@ -1,0 +1,44 @@
+.checkbox {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  line-height: 20px;
+  width: $dim-min * 5;
+  height: $dim-min * 5;
+  display: inline-block;
+  outline: none;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $dim-min * 5;
+    height: $dim-min * 5;
+    display: block;
+    border: 1px solid $color-neutral;
+    background-color: $color-background;
+    border-radius: $dim-border-radius;
+    z-index: 4;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: $dim-min * 3;
+    height: $dim-min * 3;
+    margin: $dim-min;
+    display: block;
+    background-color: $color-accent;
+    border-radius: 50%;
+    z-index: 5;
+    transition: all .2s ease-in-out;
+    transform: rotateY( 90deg );
+  }
+
+  &:checked:before {
+    transform: rotateY( 0deg );
+  }
+}
