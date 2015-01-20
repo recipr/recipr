@@ -8,3 +8,4 @@ meteor-platform
 iron:router
 fourseven:scss
 momentjs:moment
+accounts-password

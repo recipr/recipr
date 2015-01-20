@@ -5,6 +5,12 @@ Template.sidebar.events({
 
   "click .menu-item": function (event) {
     Session.set('showSidebar', false);
+  },
+
+  "click .logout": function (event) {
+    Meteor.logout(function(){
+      Router.go('login');
+    });
   }
 });
 

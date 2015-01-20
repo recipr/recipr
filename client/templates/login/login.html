@@ -1,21 +1,27 @@
 <template name="login">
   <div class="login-box">
     <div class="wrap">
-      <div class="card dark z-1">
+      <div class="card dark z-1 {{#if loginError}}login-error{{/if}}">
         <h1 class="logo">Recipr</h1>
         <span class="slogan">Hey, nice to see you!</span>
         <form class="login-form">
           <div class="form-row">
-            <input type="text" class="input dim-100" placeholder="Username">
+            <input id="login-email" type="text" class="{{#if loginError}}input-error{{/if}} input dim-100" placeholder="Username">
           </div>
           <div class="form-row">
-            <input type="password" class="input dim-100" placeholder="Password">
+            <input id="login-password" type="password" class="{{#if loginError}}input-error{{/if}} input dim-100" placeholder="Password">
+            {{#if loginError}}
+              <span class="form-error">{{loginError}}</span>
+            {{/if}}
           </div>
           <div class="form-row">
-            <label class="remember"><input type="checkbox" class="checkbox">Remember me</label>
-          </div>
-          <div class="form-row">
-            <input type="submit" class="btn btn-accent dim-100" value="Login">
+            <button type="submit" class="btn btn-accent dim-100">
+              {{#if loggingIn}}
+                <i class="spinner icon icon-placeholder"></i>
+              {{else}}
+                Login
+              {{/if}}
+            </button>
           </div>
         </form>
       </div>

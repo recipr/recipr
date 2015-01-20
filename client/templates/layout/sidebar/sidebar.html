@@ -19,10 +19,12 @@
           <i class="icon icon-placeholder"></i>
           Settings
         </a>
-        <a class="menu-item {{active route="settings"}}" href="/login">
+        {{#if currentUser}}
+        <span class="menu-item logout">
           <i class="icon icon-placeholder"></i>
-          Login (Dev)
-        </a>
+          Logout
+        </span>
+        {{/if}}
       </div>
     </div>
   </nav>

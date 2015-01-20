@@ -1,0 +1,23 @@
+<template name="setup">
+  <div class="login-box">
+    <div class="wrap">
+      <div class="card dark z-1">
+        <h1 class="logo">Recipr Setup</h1>
+        {{#if currentUser}}
+          <p>You're logged in.</p>
+        {{/if}}
+        <form class="setup-form">
+          <div class="form-row">
+            <input id="register-email" type="text" class="input dim-100" placeholder="Username">
+          </div>
+          <div class="form-row">
+            <input id="register-password" type="password" class="input dim-100" placeholder="Password">
+          </div>
+          <div class="form-row">
+            <input type="submit" class="btn btn-accent dim-100" value="Login">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>
