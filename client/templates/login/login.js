@@ -1,5 +1,6 @@
 Template.login.created = function(){
   this.loginError = new Blaze.ReactiveVar();
+  this.show = new Blaze.ReactiveVar();
 };
 
 Template.login.events({
@@ -12,7 +13,7 @@ Template.login.events({
       if(error){
         template.loginError.set(error.reason);
       } else {
-        Router.go('dashboard');
+        Router.go('recipes');
       }
     });
   }
@@ -21,5 +22,13 @@ Template.login.events({
 Template.login.helpers({
   loginError: function(){
     return Template.instance().loginError.get();
+  },
+
+  show: function(){
+    return Template.instance().show.get();
   }
 });
+
+Template.login.rendered = function(){
+  Template.instance().show.set(true);
+};
