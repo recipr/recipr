@@ -1,11 +1,22 @@
 Template.recipeStep.events({
   "click .remove-step": function(event, template){
+    var sectionId = this.sectionId;
     Steps.remove(this._id);
+
+    var steps = Steps.find({sectionId: sectionId}).fetch();
+    
+    for(var i = 0; i < steps.length; i++){
+      var step = steps[i];
+      Steps.update({_id: step._id}, { $set: {
+        order: i+1
+      }});
+    }
+
     return false;
   },
 
   "click .edit-step": function(event, template){
-    Steps.update({_sectionId: this._sectionId}, {$set: {editMode: false}}, {multi: true});
+    Steps.update({sectionId: this._sectionId}, {$set: {editMode: false}}, {multi: true});
     Steps.update({_id: this._id}, {$set: {editMode: true}});
     Session.set('stepEditMode', true);
     return false;
