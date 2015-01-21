@@ -1,0 +1,19 @@
+.recipe-preparation {
+  margin: $dim-min * 6 0;
+
+  .edit-preparation {
+    min-height: $dim-min * 20;
+  }
+}
+
+@media (min-width: $breakpoint-md){
+  .recipe-preparation {
+    padding-left: $dim-min * 10;
+  }
+}
+
+.edit-preparation {
+  position: relative;
+  min-height: $dim-min * 20;
+  margin: $dim-min * 3 0;
+}

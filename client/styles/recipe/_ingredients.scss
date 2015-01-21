@@ -1,4 +1,7 @@
-.recipe-ingredients {
+.recipe-ingredients,
+.recipe-preparation {
+  margin: $dim-min * 6 0;
+
   .ingredient-list {
     display: table;
     width: 100%;
