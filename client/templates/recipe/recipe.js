@@ -114,7 +114,7 @@ Template.recipe.events({
       if(error){
         handleRecipeErrors(self._id, [error]);
       } else {
-        Router.go('/recipes');
+        Router.go('recipes');
       }
     });
 		return false;
