@@ -55,3 +55,9 @@ Template.recipeIngredients.events({
     return false;
   }
 });
+
+Template.ingredients.helpers({
+  hasIngredients: function(){
+    return this.count() > 0;
+  }
+});

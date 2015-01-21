@@ -42,6 +42,15 @@ Template.recipeSection.helpers({
     });
   },
 
+  showSteps: function(){
+    return Settings.findOne({
+      type: 'gui',
+      key: 'showSteps',
+    }).value || Steps.find({
+      sectionId: this._id
+    }).count() > 1;
+  },
+
   showIngredients: function(){
     return Session.get('recipe-tab') === 'ingredients';
   },

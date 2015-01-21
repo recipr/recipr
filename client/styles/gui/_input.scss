@@ -59,3 +59,7 @@
     text-align: right;
   }
 }
+
+.textarea {
+  min-height: $dim-min * 20;
+}

@@ -16,7 +16,11 @@
         </div>
 
         <div class="grid-col-7 grid-col-md {{#if showIngredients}}remove-until-md{{/if}}">
-          {{> recipeSteps steps}}
+          {{#if showSteps}}
+            {{> recipeSteps steps}}
+          {{else}}
+            {{> recipePreparation this}}
+          {{/if}}
         </div>
          
       </div>

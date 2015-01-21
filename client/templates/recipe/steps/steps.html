@@ -1,23 +1,21 @@
 <template name="recipeSteps">
   <div class="recipe-steps">
 
-    <h2 class="remove-until-md">{{#if showSteps}}Steps{{else}}Preparation{{/if}}</h2>
+    <h2 class="remove-until-md">Steps</h2>
 
     <div class="steps-list">
       {{#each this}}
         {{> recipeStep}}
       {{/each}}
     </div>
-    
-    {{#if showSteps}}
-      {{#if showAddForm}}
-        <div class="action-bar">
-          <textarea class="new-step action-target input dim-100" cols="3" placeholder="{{newPlaceholder}}"></textarea>
-          <div class="actions">
-            <button type="button" class="add-step action icon icon-placeholder pull-right"></button>
-          </div>
+  
+    {{#if showAddForm}}
+      <div class="action-bar">
+        <div contenteditable="true" class="new-step textarea action-target input dim-100" placeholder="{{newPlaceholder}}"></div>
+        <div class="actions">
+          <button type="button" class="add-step action icon icon-placeholder pull-right"></button>
         </div>
-      {{/if}}
+      </div>
     {{/if}}
   </div>
 </template>

@@ -1,16 +1,5 @@
 Template.recipeStep.events({
-  "focusout .step-edit": function(event, template){
-    var content = event.target.innerHTML;
-    Steps.update(this._id, { $set: { 
-      content: content,
-    }});
-    return false;
-  },
-
   "click .remove-step": function(event, template){
-    if(this.order === 1){
-      return false;
-    }
     Steps.remove(this._id);
     return false;
   },
@@ -22,31 +11,25 @@ Template.recipeStep.events({
     return false;
   },
 
-  "click .close-step": function(event, template){
+  "click .close-step, focusout .step-edit": function(event, template){
     Steps.update({_id: this._id}, {$set: {editMode: false}});
     Session.set('stepEditMode', false);
 
     var content = template.find('.step-edit').innerHTML;
 
-    Steps.update(this._id, { $set: { 
-      content: content,
-    }});
+    if(content.length){
+      Steps.update(this._id, { $set: { 
+        content: content,
+      }});
+    } else {
+      Steps.remove(this._id);
+    }
+
     return false;
   },
 });
 
 Template.recipeStep.helpers({
-  isNotFirstStep: function(){
-    return this.order !== 1;
-  },
-
-  showSteps: function(){
-    return Settings.findOne({
-      type: 'gui',
-      key: 'showSteps',
-    }).value || Template.parentData().count() > 1;
-  },
-
   isInEditMode: function(){
     return this.editMode || 
       ( Template.parentData().count() === 1 

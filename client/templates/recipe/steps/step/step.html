@@ -2,30 +2,21 @@
   <div class="recipe-step action-bar">
     {{#if isInEditMode}}
 
-      <p contenteditable class="step-edit action-target input dim-100">{{cleanContent}}</p>
+      <p contenteditable class="step-edit textarea action-target input dim-100">{{cleanContent}}</p>
 
-      {{#if showSteps}}
-        <div class="actions">
-          <button type="button" class="close-step action icon icon-placeholder">save</button>
-        </div>
-
-        <div class="step-cover close-step"></div>
-      {{/if}}
+      <div class="actions">
+        <button type="button" class="close-step action icon icon-placeholder">save</button>
+      </div>
       
     {{else}}
       {{#if noOtherStepIsEdited}}
         <div class="actions">
           <button type="button" class="edit-step action icon icon-placeholder"></button>
-          {{#if isNotFirstStep}}
-            <button type="button" class="remove-step action icon icon-trashcan"></button>
-          {{/if}}
+          <button type="button" class="remove-step action icon icon-trashcan"></button>
         </div>
       {{/if}}
 
-      {{#if showSteps}}
-        <span class="order">{{order}}</span>
-      {{/if}}
-
+      <span class="order">{{order}}</span>
       <p class="step-content action-target">{{{content}}}</p>
 
     {{/if}}

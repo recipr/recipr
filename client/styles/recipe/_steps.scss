@@ -1,6 +1,4 @@
 .recipe-steps {
-  margin: $dim-min * 6 0;
-
   .add-step {
     color: $color-accent;
   }
@@ -11,12 +9,14 @@
 }
 
 @media (min-width: $breakpoint-md){
-  .recipe-steps {
+  .recipe-steps,
+  .recipe-preparation {
     padding-left: $dim-min * 10;
   }
 }
 
-.recipe-step {
+.recipe-step,
+.recipe-preparation {
   position: relative;
   min-height: $dim-min * 20;
   margin: $dim-min * 3 0;
@@ -51,14 +51,5 @@
     position: relative;
     z-index: 110;
     min-height: $dim-min * 20;
-  }
-
-  .step-cover {
-    z-index: 100;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
   }
 }
