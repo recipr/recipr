@@ -56,7 +56,7 @@ Template.recipeIngredients.events({
   }
 });
 
-Template.ingredients.helpers({
+Template.recipeIngredients.helpers({
   hasIngredients: function(){
     return this.count() > 0;
   }
