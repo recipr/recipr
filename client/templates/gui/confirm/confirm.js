@@ -5,13 +5,7 @@ Template.confirm.helpers({
 });
 
 Template.confirm.events({
-  'click .accept-confirm': function(event){
-    Session.set('show-confirm', false);
-  }
-});
-
-Template.confirm.events({
-  'click .cancel-confirm': function(event){
+  'click .accept-confirm, click .cancel-confirm': function(event){
     Session.set('show-confirm', false);
   }
 });
