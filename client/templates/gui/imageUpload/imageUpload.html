@@ -1,0 +1,13 @@
+<template name="imageUpload">
+  <div class="image-upload">
+    <img class="image" src="{{src}}" />
+
+    <div class="gui">
+      {{#if noImage}}
+        <i class="icon icon-placeholder"></i>
+        <span class="name">{{placeholder}}</span>
+      {{/if}}
+      <input class="upload" accept="image/*" value="{{value}}" type="file" name="{{name}}">
+    </div>
+  </div>
+</template>

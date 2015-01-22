@@ -14,7 +14,11 @@
           {{#if titleError}}
             <span class="form-error">{{titleError}}</span>
           {{/if}}
-        </div> 
+        </div>
+
+        <div class="form-row">
+          {{> imageUpload placeholder="upload a cover image" name="cover"}}
+        </div>
 
         {{#if showIntro}}
           <div class="form-row">
