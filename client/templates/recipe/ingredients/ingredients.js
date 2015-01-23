@@ -3,7 +3,7 @@ Template.recipeIngredients.events({
     var $name = template.find('.new-ingredient');
     var value = $name.value;
 
-    var regex = /^([\d.,\/]*)(\s*([^\W]*)(\s*(.*)))/;
+    var regex = /^([\d.,\/]*)(\s*([^\s]+)(\s*(.*)))/;
 
     var match = regex.exec(value);
 
