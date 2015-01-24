@@ -9,3 +9,5 @@ iron:router
 fourseven:scss
 momentjs:moment
 accounts-password
+cfs:standard-packages
+cfs:filesystem

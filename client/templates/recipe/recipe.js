@@ -107,7 +107,8 @@ Template.recipe.events({
         title: this.title,
         intro: this.intro,
         sections: sections,
-        status: 'draft'
+        cover: this.cover,
+        status: 'draft',
     };
 
     Meteor.call("saveRecipe", data, recipeId, function(error){
@@ -147,6 +148,19 @@ Template.recipe.events({
   "click .show-preparation": function(event){
     Session.set('recipe-tab', 'preparation');
   },
+
+  "change .cover-upload": function(event, template){
+    var input = event.target;
+    var image = input.files[0];
+    Images.insert(image, function (error, imageObject) {
+      if(!error){
+        LocalRecipes.update(template.data._id, {$set: {cover: imageObject._id}});
+      } else {
+        console.log('cover upload error');
+        console.log(error);
+      }
+    });
+  }
 });
 
 Template.recipe.helpers({
@@ -164,6 +178,14 @@ Template.recipe.helpers({
       type: 'gui',
       key: 'showIntro',
     }).value || hasAlreadyIntro;
+  },
+
+  cover: function(){
+    if(!this.cover){
+      return '';
+    }
+
+    return Images.findOne(this.cover);
   },
 
   showIngredients: function(){

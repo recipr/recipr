@@ -7,6 +7,7 @@ Meteor.methods({
         recipe = {
           title: data.title,
           intro: data.intro,
+          cover: data.cover,
           sections: [],
           dateModified: new Date(),
         },
@@ -34,7 +35,7 @@ Meteor.methods({
     this.save = function(){
       if(!recipeId){
         recipe.dateCreated = new Date();
-        Recipes.insert(recipe);
+        recipeId = Recipes.insert(recipe);
       } else {
         Recipes.update(recipeId, {
           $set: recipe

@@ -17,7 +17,17 @@
         </div>
 
         <div class="form-row">
-          {{> imageUpload placeholder="upload a cover image" name="cover"}}
+          <div class="image-upload">
+            {{#if cover}}
+              <img class="image" src="{{cover.url}}" />
+            {{else}}
+              <div class="gui">
+                <i class="icon icon-placeholder"></i>
+                <span class="name">Cover</span>
+                <input class="upload cover-upload" accept="image/*" type="file">
+              </div>
+            {{/if}}
+          </div>
         </div>
 
         {{#if showIntro}}
