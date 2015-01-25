@@ -4,7 +4,7 @@ if (Meteor.isServer) {
 }
 
 Images = new FS.Collection("images", {
-  stores: [new FS.Store.FileSystem("images", {path: base+"/uploads"})]
+  stores: [new FS.Store.FileSystem("images", {path: "./uploads"})]
 });
 
 Images.allow({
