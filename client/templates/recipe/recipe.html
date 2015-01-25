@@ -39,9 +39,12 @@
 
       <div class="card rect z-1 dim-default-padding">
         <div class="remove-from-md">
-          {{> tabs recipeTabs}}
+          {{#tabs tabState=tabState}}
+            {{> tab name="Ingredients" value="ingredients"}}
+            {{> tab name="Preparation" value="preparation"}}
+          {{/tabs}}
         </div>
-        {{> recipeSections sections}}
+        {{> recipeSections sections=sections tabState=tabState}}
       </div>
     </div>
 

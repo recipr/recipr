@@ -5,6 +5,9 @@ Steps = new Mongo.Collection(null);
 
 Template.recipe.created = function(){
 
+  this.tabState = new Blaze.ReactiveVar();
+  this.tabState.set('ingredients');
+
   var self = this;
   this.init = function(){
     Sections.remove({recipeId: this.data._id});
@@ -26,7 +29,7 @@ Template.recipe.created = function(){
           recipeId: recipeId,
           name: section.name,
       });
-
+ 
       self.insertIngredients(section.ingredients, sectionId);
       self.insertSteps(section.steps, sectionId);
     });
@@ -141,12 +144,12 @@ Template.recipe.events({
     LocalRecipes.update(this._id, {$set: {intro: intro}});
   },
 
-  "click .show-ingredients": function(event){
-    Session.set('recipe-tab', 'ingredients');
+  "click .show-ingredients": function(event, template){
+    //template.tabState.set('ingredients');
   },
 
-  "click .show-preparation": function(event){
-    Session.set('recipe-tab', 'preparation');
+  "click .show-preparation": function(event, template){
+    //template.tabState.set('preparation');
   },
 
   "change .cover-upload": function(event, template){
@@ -164,10 +167,6 @@ Template.recipe.events({
 });
 
 Template.recipe.helpers({
-  recipe: function(){
-    return LocalRecipes.findOne({_id: this._id});
-  },
-
   sections: function(){
     return Sections.find({recipeId: this._id});
   },
@@ -189,27 +188,17 @@ Template.recipe.helpers({
   },
 
   showIngredients: function(){
-    var tab = Session.get('recipe-tab');
+    //var tab = Template.instance().tabState.get();
     return tab === 'ingredients' || tab === undefined;
   },
 
   showPreparation: function(){
-    return Session.get('recipe-tab') === 'preparation';
+    //var tab = Template.instance().tabState.get();
+    return tab === 'preparation';
   },
 
-  recipeTabs: {
-    group: 'recipe-tab',
-    tabs: [
-      {
-        name: 'ingredients',
-        value: 'Ingredients',
-        active: 1,
-      },
-      {
-        name: 'preparation',
-        value: 'Preparation'
-      },
-    ]
-  }
+  tabState: function(){
+    return Template.instance().tabState;
+  },
 });
 

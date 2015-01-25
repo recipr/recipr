@@ -51,11 +51,7 @@ Template.recipeSection.helpers({
     }).count() > 1;
   },
 
-  showIngredients: function(){
-    return Session.get('recipe-tab') === 'ingredients';
+  showTab: function(value){
+    return Template.parentData(2).tabState.get() === value;
   },
-
-  showPreparation: function(){
-    return Session.get('recipe-tab') === 'preparation';
-  }
 });
