@@ -5,6 +5,13 @@
   min-height: $dim-min * 20;
   margin: $dim-min * 4 0;
 
+  &.single-action {
+    min-height: 0;
+    overflow: hidden;
+    height: 40px;
+    line-height: 8px;
+  }
+
   .meta {
     padding-top: $dim-min * 2;
     display: block;
@@ -17,7 +24,6 @@
     right: 0;
     top: 0;
   }
-
 
   .action {
     width: $dim-min * 10;

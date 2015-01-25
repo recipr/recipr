@@ -12,6 +12,7 @@
   padding: 9px $dim-min * 4;
   font-family: $font-family-default;
   outline: none;
+  display: inline-block;
   @extend .z-1;
 
   &.btn-accent {
