@@ -1,11 +1,10 @@
-.recipe-ingredients,
-.recipe-preparation {
-  margin: $dim-min * 6 0;
+.recipe-ingredients {
+  margin: $dim-min * 4 0;
 
   .ingredient-list {
     display: table;
     width: 100%;
-    padding: $dim-min * 2 $dim-min;
+    padding: 0 $dim-min $dim-min * 4;
   }
 }
 
@@ -27,7 +26,7 @@
 
   .part {
     display: table-cell;
-    padding: $dim-min * 2 $dim-min * 3;
+    padding: $dim-min $dim-min * 3;
     position: relative;
   }
 
@@ -38,5 +37,17 @@
     padding: 0 $dim-min 0 0;
     position: absolute;
     right: 0;
+  }
+
+  &:last-of-type {
+    .part {
+      padding-bottom: 0;
+    }
+  }
+
+  &:forst-of-type {
+    .part {
+      padding-top: 0;
+    }
   }
 }

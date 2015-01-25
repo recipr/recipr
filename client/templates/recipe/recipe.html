@@ -1,7 +1,7 @@
 <template name="recipe">
 	<form class="recipe-form fill-content">
     <div class="has-main-action">
-      <div class="card main-card rect z-1 dim-default-padding-x">
+      <div class="card main-card rect z-0 dim-default-padding-x">
         <div class="form-row">
           <input 
             autofocus 
@@ -37,7 +37,7 @@
         {{/if}}
       </div>
 
-      <div class="card rect z-1 dim-default-padding">
+      <div class="card rect dim-default-padding">
         <div class="remove-from-md">
           {{#tabs tabState=tabState}}
             {{> tab name="Ingredients" value="ingredients"}}

@@ -1,5 +1,5 @@
 .recipe-steps {
-  margin: $dim-min * 6 0;
+  margin: $dim-min * 4 0;
 
   .add-step {
     color: $color-accent;
@@ -19,7 +19,7 @@
 .recipe-step {
   position: relative;
   min-height: $dim-min * 20;
-  margin: $dim-min * 3 0;
+  margin: $dim-min * 4 0;
 
   .order {
     float: left;
