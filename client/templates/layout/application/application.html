@@ -1,6 +1,6 @@
 <template name="ApplicationLayout">
   <div class="app">
-    <header class="recipr-header header fixed">
+    <header class="app-header fixed {{#if hideHeader}}hide{{/if}}">
       <i class="menu-toggle icon icon-hamburger"></i>
       <span class="logo">Recipr</span>
 
@@ -8,7 +8,6 @@
     </header>
 
     {{> sidebar}}
-
 
     <div class="main-content">
       {{> yield}}

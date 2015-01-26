@@ -1,5 +1,5 @@
 .anim-up {
-  animation: anim-up 1s cubic-bezier(.55,0,.1,1);
+  animation: anim-up 1s $dropIn;
 }
 
 @keyframes anim-up {
@@ -15,7 +15,7 @@
 }
 
 .anim-down {
-  animation: anim-down 1s cubic-bezier(.55,0,.1,1);
+  animation: anim-down 1s $dropIn;
 }
 
 @keyframes anim-down {

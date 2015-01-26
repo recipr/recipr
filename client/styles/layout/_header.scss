@@ -1,18 +1,4 @@
-.header {
-  position: relative;
-  width: 100%;
-  top: 0px;
-  left: 0px;
-  margin: 0;
-  padding: 0;
-  z-index: $elevation-header;
-
-  &.fixed {
-    position: fixed;
-  }
-}
-
-.recipr-header {
+.app-header {
   background-color: $color-primary;
   min-height: $dim-header-height;
   position: relative;
@@ -23,7 +9,20 @@
   font-size: $font-size-big;
   line-height: 24px;
   padding: $dim-min * 3 $dim-min * 2 $dim-min * 3 $dim-min * 8;
+  margin: 0;
+  transition: transform .3s $dropIn;
+
   z-index: $elevation-header;
+
+  &.fixed {
+    position: fixed;
+  }
+
+  @media (max-height: $breakpoint-lh) {
+    &.hide {
+      transform: translateY(-100%);
+    }
+  }
 
   .icon {
     color: $color-accent-light;

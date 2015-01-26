@@ -23,7 +23,7 @@ body {
 .main-content {
  height: 100%;
   margin: 0;
-  padding-top: $dim-min * 13;
+  padding-top: $dim-min * 12;
 
   @media (min-width: $breakpoint-ld) {
     padding-left: $dim-sidebar-width;
