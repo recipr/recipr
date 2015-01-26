@@ -163,6 +163,10 @@ Template.recipe.events({
         console.log(error);
       }
     });
+  },
+
+  "click .delete-cover": function(event, template){
+    LocalRecipes.update(template.data._id, {$set: {cover: ''}});
   }
 });
 
@@ -185,16 +189,6 @@ Template.recipe.helpers({
     }
 
     return Images.findOne(this.cover);
-  },
-
-  showIngredients: function(){
-    //var tab = Template.instance().tabState.get();
-    return tab === 'ingredients' || tab === undefined;
-  },
-
-  showPreparation: function(){
-    //var tab = Template.instance().tabState.get();
-    return tab === 'preparation';
   },
 
   tabState: function(){
