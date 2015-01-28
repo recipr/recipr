@@ -87,12 +87,6 @@ handleRecipeErrors = function(recipeId, errors){
   });
 }
 
-Template.recipe.rendered = function(){
-  tinymce.init({
-    selector: ".has-editor"
-  });
-}
-
 Template.recipe.events({
 	"submit .recipe-form": function (event) {
     var self = this;
@@ -202,3 +196,11 @@ Template.recipe.helpers({
   },
 });
 
+
+Template.recipe.rendered = function(){
+  tinymce.init({
+    selector: ".has-editor",
+    menubar: false,
+    toolbar: "bold italic alignleft aligncenter alignright"
+  });
+}

@@ -41,3 +41,4 @@ Template.ApplicationLayout.helpers({
     return Session.get('scroll-dir') == 1;
   }
 });
+
