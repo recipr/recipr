@@ -68,7 +68,7 @@ Meteor.methods({
     this.getIngredients = function(section){
       var ingredients = [];
       section.ingredients.forEach(function(ingredient){
-        var ingredientId = Meteor.call('saveIngredient', ingredient.name);
+        var ingredientId = Meteor.call('addIngredient', ingredient.name);
         ingredients.push({
           quantity: ingredient.quantity,
           unit: ingredient.unit,
