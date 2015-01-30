@@ -4,7 +4,7 @@ Template.ingredient.events({
 
     var data = {
         name: template.find('[name=name]').value,
-        description: template.find('[name=description]').value,
+        description: template.find('.description').innerHTML,
         url: template.find('[name=url]').value,
         image: this.image,
     };
