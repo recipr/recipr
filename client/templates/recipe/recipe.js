@@ -195,12 +195,3 @@ Template.recipe.helpers({
     return Template.instance().tabState;
   },
 });
-
-
-Template.recipe.rendered = function(){
-  tinymce.init({
-    selector: ".has-editor",
-    menubar: false,
-    toolbar: "bold italic alignleft aligncenter alignright"
-  });
-}
