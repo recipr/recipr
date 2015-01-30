@@ -5,12 +5,13 @@
   margin: 0;
   border-radius: $dim-border-radius;
   font-size: $font-size-default;
-  line-height: $font-line-height-default;
+  font-family: $font-family-default;
   font-weight: normal;
+  line-height: $font-line-height-default;
   text-decoration: none;
   padding: 9px $dim-min * 4;
   outline: none;
-  font-family: $font-family-default;
+  cursor: text;
   @extend .z-inset;
 
   @include transition(all, .2s, ease-out);

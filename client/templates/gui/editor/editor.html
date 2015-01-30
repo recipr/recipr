@@ -7,7 +7,10 @@
 
     </div>
 
-    <div class="{{class}} content input dim-100">
+    <div 
+      data-placeholder="{{#if empty}}{{placeholder}}{{/if}}"
+      class="{{class}} textarea content input dim-100 placeholder"
+    >
       <div>{{{content}}}</div>
     </div>
   </div>
