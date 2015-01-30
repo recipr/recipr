@@ -35,7 +35,7 @@
 
         {{#if showIntro}}
           <div class="form-row">
-            <textarea rows="3" name="intro" placeholder="Intro" class="input dim-100">{{intro}}</textarea>
+            {{> editor class="intro" content=intro placeholder="Intro"}}
           </div>
         {{/if}}
       </div>

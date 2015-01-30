@@ -139,17 +139,9 @@ Template.recipe.events({
     LocalRecipes.update(recipeId, {$set: {title: title}});
   },
 
-  "keyup [name=intro]": function(event){
-    var intro = event.target.value;
-    LocalRecipes.update(this._id, {$set: {intro: intro}});
-  },
-
-  "click .show-ingredients": function(event, template){
-    //template.tabState.set('ingredients');
-  },
-
-  "click .show-preparation": function(event, template){
-    //template.tabState.set('preparation');
+  "keyup .intro, focusout .intro": function(event, template){
+    var intro = event.target.innerHTML;
+    LocalRecipes.update(template.data._id, {$set: {intro: intro}});
   },
 
   "change .cover-upload": function(event, template){
