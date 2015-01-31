@@ -11,7 +11,7 @@
   
     {{#if showAddForm}}
       <div class="action-bar">
-        <div contenteditable="true" class="new-step textarea action-target input dim-100" placeholder="{{newPlaceholder}}"></div>
+        {{> editor class="new-step action-target" content=content placeholder=newPlaceholder}}
         <div class="actions">
           <button type="button" class="add-step action icon icon-placeholder pull-right"></button>
         </div>

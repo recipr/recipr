@@ -3,7 +3,7 @@ Template.recipeSteps.created = function(){
 };
 
 Template.recipeSteps.events({
-  "click .add-step, focusout .new-step": function(event, template){
+  "click .add-step": function(event, template){
     var $content = template.find('.new-step');
 
     if($content.innerHTML.trim().length !== 0){
