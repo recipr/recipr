@@ -22,7 +22,7 @@ Template.recipeStep.events({
     return false;
   },
 
-  "click .close-step, focusout .step-edit": function(event, template){
+  "click .close-step": function(event, template){
     Steps.update({_id: this._id}, {$set: {editMode: false}});
     Session.set('stepEditMode', false);
 
@@ -50,10 +50,5 @@ Template.recipeStep.helpers({
 
   noOtherStepIsEdited: function(){
     return !Session.get('stepEditMode');
-  },
-
-  cleanContent: function(){
-    var content = Steps.find({_id: this._id}, {reactive:false}).fetch()[0].content;
-    return content.replace(/<br\s*\/?>/mg,"\n"); 
-  },
+  }
 });

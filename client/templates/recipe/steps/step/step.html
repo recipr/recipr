@@ -2,7 +2,7 @@
   <div class="recipe-step action-bar">
     {{#if isInEditMode}}
 
-      <p contenteditable class="step-edit textarea action-target input dim-100">{{cleanContent}}</p>
+      {{> editor class="step-edit action-target" content=content}}
 
       <div class="actions">
         <button type="button" class="close-step action icon icon-placeholder">save</button>

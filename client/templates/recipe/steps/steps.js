@@ -18,7 +18,7 @@ Template.recipeSteps.events({
       });
     }
 
-    $content.innerHTML = '';
+    template.find('.new-step .ql-editor').innerHTML = '';
 
     return false;
   }
