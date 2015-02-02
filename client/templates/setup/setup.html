@@ -1,21 +1,62 @@
 <template name="setup">
-  <div class="login-box">
+  <div class="setup">
     <div class="wrap">
       <div class="card dark z-1">
-        <h1 class="logo">Recipr Setup</h1>
-        {{#if currentUser}}
-          <p>You're logged in.</p>
-        {{/if}}
         <form class="setup-form">
-          <div class="form-row">
-            <input id="register-email" type="text" class="input dim-100" placeholder="Username">
-          </div>
-          <div class="form-row">
-            <input id="register-password" type="password" class="input dim-100" placeholder="Password">
-          </div>
-          <div class="form-row">
-            <input type="submit" class="btn btn-accent dim-100" value="Login">
-          </div>
+          <section class="card-section">
+            <h1 class="logo">Recipr Setup</h1>
+          </section>
+
+          <section class="card-section">
+            <div class="form-row">
+              <label class="label">
+                What's the name of your site?
+              </label>
+              <input id="register-site" type="text" class="input dim-100" placeholder="Site name">
+            </div>
+          </section>
+
+          <section class="card-section">
+            <div class="form-row">
+              <label class="label">
+                What's your name? This is the displayed name
+              </label>
+              <input id="register-name" type="text" class="input dim-100" placeholder="Username">
+            </div>
+          </section>
+
+          <section class="card-section">
+            <div class="form-row">
+              <label class="label">
+                What's your email address? we do not show this
+              </label>
+              <input id="register-email" type="text" class="input dim-100" placeholder="E-Mail address">
+            </div>
+          </section>
+
+          <section class="card-section">
+            <div class="form-row">
+              <label class="label">
+                Choose a password that contains letters and digits.
+              </label>
+              <input id="register-password" type="password" class="input dim-100" placeholder="Password">  
+            </div>
+          </section>
+
+          <section class="card-section">
+            <div class="form-row">
+              <label class="label">
+                Please repeat your password.
+              </label>
+              <input id="register-password-repeat" type="password" class="input dim-100" placeholder="Repeat password">  
+            </div>
+          </section>
+
+          <section class="card-section">
+            <div class="form-row">
+              <input type="submit" class="btn btn-accent btn-big dim-100" value="Finish Setup">
+            </div>
+          </section>
         </form>
       </div>
     </div>
