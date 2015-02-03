@@ -26,4 +26,38 @@
     background-color: $color-primary;
     color: $color-primary-text;
   }
+
+  .card-section {
+    padding: $dim-min * 2 $dim-min * 4;
+    border-bottom: 1px solid neutral;
+
+    @media (min-width: $breakpoint-md) {
+      padding-left: $dim-min * 8;
+      padding-right: $dim-min * 8;
+    }
+
+    &.card-section-big {
+      padding-top: $dim-min * 4;
+      padding-bottom: $dim-min * 4;
+    }
+
+    &.card-title {
+      text-align: center;
+      padding-top: $dim-min * 4;
+      padding-bottom: $dim-min * 4;
+    }
+  }
+
+  &.dark .card-section {
+    border-top: 1px solid $color-divider-light;
+    border-bottom: 1px solid $color-divider-dark;
+
+    &:first-of-type {
+      border-top: none;
+    }
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
 }

@@ -1,7 +1,13 @@
 .headless {
   background-color: $color-neutral;
+  padding: $dim-min * 15 0;
 
   a {
     color: $color-accent-light;
+  }
+
+  &.app {
+    min-height: 100%;
+    height: auto;
   }
 }

@@ -15,4 +15,9 @@
 
 .form-row {
   padding: $dim-min * 2 0;
+
+  .label {
+    display: block;
+    margin-bottom: $dim-min * 3;
+  }
 }
