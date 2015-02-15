@@ -11,3 +11,5 @@ momentjs:moment
 accounts-password
 cfs:standard-packages
 cfs:filesystem
+aldeed:collection2
+aldeed:autoform
