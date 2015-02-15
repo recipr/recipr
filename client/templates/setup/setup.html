@@ -2,55 +2,64 @@
   <div class="setup-box">
     <div class="wrap">
       <div class="card dark z-1">
-        <form class="setup-form">
+        {{#autoForm id="setupForm" schema=setupSchema validation="keyup" class="setup-form" type="method" meteormethod="setup"}}
           <section class="card-section card-title">
             <h1 class="logo">Recipr Setup</h1>
             <span class="subline">Nice to meet you! Before you start, we need some data from you to create an account. </span>
           </section>
 
           <section class="card-section">
-            <div class="form-row">
-              <label class="label">
-                What's the name of your site?
-              </label>
-              <input id="register-site" type="text" class="input dim-100" placeholder="Site name">
-            </div>
+            {{> input 
+              type="text" 
+              name="profile.sitename" 
+              label="What's the name of your site?" 
+              placeholder="Site name" 
+            }}
           </section>
 
           <section class="card-section">
-            <div class="form-row">
-              <label class="label">
-                What's your name? This is the displayed name
-              </label>
-              <input id="register-name" type="text" class="input dim-100" placeholder="Username">
-            </div>
+            {{> input 
+              type="text" 
+              name="username" 
+              label="What's your name? This is the displayed name"
+              placeholder="Username" 
+            }}
           </section>
 
           <section class="card-section">
-            <div class="form-row">
-              <label class="label">
-                What's your email address? we do not show this
-              </label>
-              <input id="register-email" type="text" class="input dim-100" placeholder="E-Mail address">
-            </div>
+            {{> textarea 
+              type="textarea" 
+              name="profile.bio" 
+              label="Want to display a short biography of yourself?"
+              placeholder="Bio" 
+            }}
           </section>
 
           <section class="card-section">
-            <div class="form-row">
-              <label class="label">
-                Choose a password that contains letters and digits.
-              </label>
-              <input id="register-password" type="password" class="input dim-100" placeholder="Password">  
-            </div>
+            {{> input 
+              type="email" 
+              name="email" 
+              label="What's your email address? you need this to log in"
+              placeholder="E-Mail address" 
+            }}
           </section>
 
           <section class="card-section">
-            <div class="form-row">
-              <label class="label">
-                Please repeat your password.
-              </label>
-              <input id="register-password-repeat" type="password" class="input dim-100" placeholder="Repeat password">  
-            </div>
+            {{> input 
+              type="password" 
+              name="password" 
+              label="Choose a password that contains letters and digits"
+              placeholder="Password" 
+            }}
+          </section>
+
+          <section class="card-section">
+            {{> input 
+              type="password" 
+              name="passwordConfirm" 
+              label="Please repeat your password."
+              placeholder="Password" 
+            }}
           </section>
 
           <section class="card-section card-section-big">
@@ -58,7 +67,7 @@
               <input type="submit" class="btn btn-accent btn-big dim-100" value="Finish Setup">
             </div>
           </section>
-        </form>
+        {{/autoForm}}
       </div>
     </div>
   </div>

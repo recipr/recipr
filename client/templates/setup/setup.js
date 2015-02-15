@@ -1,12 +1,20 @@
-Template.setup.events({
-    'submit .setup-form': function(event, template){
-      event.preventDefault();
-      var emailVar = template.find('#register-email').value;
-      var passwordVar = template.find('#register-password').value;
+Template.setup.helpers({
+  setupSchema: function(){
+    return Schemes.Setup;
+  }
+})
 
-      Accounts.createUser({
-          email: emailVar,
-          password: passwordVar
+AutoForm.hooks({
+  'setupForm': {
+    onSuccess: function (insertDoc, data) {
+      Meteor.loginWithPassword(data.email, data.password, function(error){
+        if(error){
+          return;
+        }
+        Router.go('recipes');
       });
+
+      return false;
     }
+  }
 });
