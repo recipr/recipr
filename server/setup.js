@@ -9,5 +9,9 @@ Meteor.methods({
     });
 
     return data;
+  },
+
+  hasSetup: function(){
+    return Meteor.users.find().count() > 0;
   }
 });
