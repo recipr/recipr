@@ -118,12 +118,12 @@ Meteor.methods({
 
     if (title.length < 3) {
       error = new Meteor.Error("title-error",
-        "Recipe title needs at least 3 characters");
+        TAPi18n.__("recipe.title-invalid"));
     }
 
     if (title.length == 0){
       error = new Meteor.Error("title-error",
-        "Recipe title is required");
+        TAPi18n.__("recipe.title-required"));
     }
 
     if(!error){

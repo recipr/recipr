@@ -1,0 +1,17 @@
+{ 
+  "global": {
+    "recipes": "Recipes",
+    "ingredients": "Ingredients",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "recipes": {
+    "create": "Create new recipe",
+    "empty": "You didn’t create a recipe yet"
+  },
+  "recipe": {
+    "title": "Title",
+    "title-required": "Recipe title is required",
+    "title-invalid": "Recipe title needs at least 3 characters"
+  }
+} 

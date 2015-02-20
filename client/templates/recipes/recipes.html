@@ -4,7 +4,7 @@
     <div class="card rect z-1 dim-default-padding">
       <button class="add-recipe btn-add btn btn-accent btn-big dim-100">
         <i class="icon icon-placeholder"></i>
-        Create new recipe
+        {{_ "recipes.create"}}
       </button>
     </div>
 
@@ -16,7 +16,7 @@
       {{else}}
        <div class="empty-list">
           <i class="icon icon-placeholder"></i>
-          You didn’t create a recipe yet
+          {{_ "recipes.empty"}}
         </div>
       {{/if}}
     </div>

@@ -5,20 +5,20 @@
       <div class="menu">
         <a class="menu-item {{active route="recipes"}}" href="/">
           <i class="icon icon-placeholder"></i>
-          Recipes
+          {{_ "global.recipes"}}
         </a>
         <a class="menu-item {{active route="ingredients"}}" href="/ingredients">
           <i class="icon icon-placeholder"></i>
-          Ingredients
+          {{_ "global.ingredients"}}
         </a>
         <a class="menu-item {{active route="settings"}}" href="/settings">
           <i class="icon icon-placeholder"></i>
-          Settings
+          {{_ "global.settings"}}
         </a>
         {{#if currentUser}}
         <span class="menu-item logout">
           <i class="icon icon-placeholder"></i>
-          Logout
+          {{_ "global.logout"}}
         </span>
         {{/if}}
       </div>
