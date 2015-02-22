@@ -1,7 +1,7 @@
 <template name="recipeIngredients">
   <div class="recipe-ingredients">
 
-    <h2 class="remove-until-md">Ingredients</h2>
+    <h2 class="remove-until-md">{{_ "recipe.ingredients-title"}}</h2>
 
     {{#if hasIngredients}}
       <div class="ingredient-list">
@@ -15,7 +15,7 @@
       <div class="input-wrap">
          <input type="text"
           class="new-ingredient input dim-100"
-          placeholder="Add Ingredient"
+          placeholder="{{_ "recipe.add-ingredient"}}"
         />
         <button type="submit" class="add-ingredient input-icon icon icon-placeholder"></button>
       </div>

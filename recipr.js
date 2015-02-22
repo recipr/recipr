@@ -5,15 +5,15 @@ Meteor.startup(function () {
     var defaultSettings = {
       gui: {
         showIntro: {
-          niceName: 'Show Intro',
+          label: 'recipe.settings.show-intro',
           value: true,
         },
         showSections: {
-          niceName: 'Show Sections',
+          label: 'recipe.settings.show-sections',
           value: false,
         },
         showSteps: {
-          niceName: 'Show Steps',
+          label: 'recipe.settings.show-steps',
           value: false,
         },
       } 
@@ -29,7 +29,7 @@ Meteor.startup(function () {
               Settings.insert({  
                 type: type,
                 key: key,
-                niceName: setting.niceName,
+                label: setting.label,
                 value: setting.value,
               });
             }

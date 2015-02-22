@@ -1,7 +1,7 @@
 <template name="ingredients">
   <div id="ingredients">
     <div class="card rect z-1 dim-default-padding">
-      {{> search placeholder="Search ingredient"}}
+      {{> search placeholder=searchPlaceholder}}
     </div>
 
     <div class="item-list">
@@ -12,7 +12,7 @@
       {{else}}
         <div class="empty-list">
           <i class="icon icon-placeholder"></i>
-          No ingredient found
+          {{_ "ingredients.empty"}}
         </div>
       {{/if}}
     </div>

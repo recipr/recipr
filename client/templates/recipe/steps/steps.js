@@ -30,21 +30,16 @@ Template.recipeSteps.helpers({
   },
 
   newPlaceholder: function(){
-    var value;
     switch(this.count()){
       case 0:
-        value = 'first step';
+        return TAPi18n.__("recipe.steps-placeholder-first");
         break;
       case 1:
-        value = 'second step';
-        break;
-      case 2:
-        value = 'third step';
+        return TAPi18n.__("recipe.steps-placeholder-second");
         break;
       default:
-        value = 'next step';
+        return TAPi18n.__("recipe.steps-placeholder-next");
         break;
     }
-    return value;
   }
 });

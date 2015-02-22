@@ -3,15 +3,55 @@
     "recipes": "Recipes",
     "ingredients": "Ingredients",
     "settings": "Settings",
-    "logout": "Logout"
+    "logout": "Logout",
+    "date-format": "MMMM DD, YYYY",
+    "cancel-button": "cancel"
   },
   "recipes": {
     "create": "Create new recipe",
-    "empty": "You didn’t create a recipe yet"
+    "empty": "You didn’t create a recipe yet",
+    "delete-message": "Are you sure you want to delete this recipe?",
+    "delete-button": "Delete"
   },
   "recipe": {
     "title": "Title",
     "title-required": "Recipe title is required",
-    "title-invalid": "Recipe title needs at least 3 characters"
+    "title-invalid": "Recipe title needs at least 3 characters",
+    "save-button": "Save Recipe",
+    "tab-ingredients": "Ingredients",
+    "tab-preparation": "Preparation",
+    "no-cover": "upload cover image",
+    "intro-placeholder": "Intro",
+    "add-ingredient": "Add Ingredient",
+    "preparation-title": "Preparation",
+    "ingredients-title": "Ingredients",
+    "steps-title": "Steps",
+    "preparation-placeholder": "Preparation",
+    "steps-placeholder-first": "first step",
+    "steps-placeholder-second": "second step",
+    "steps-placeholder-next": "next step",
+    "add-section": "add section",
+    "remove-section": "remove section",
+    "settings": {
+      "show-intro": "Show Intro",
+      "show-sections": "Show Sections",
+      "show-steps": "Show Steps"
+    }
+  },
+  "ingredients": {
+    "search-placeholder": "Search ingredient",
+    "empty": "No ingredient found"
+  },
+  "ingredient": {
+  },
+  "login": {
+    "subline": "Hey, nice to see you!",
+    "username": "Username",
+    "password": "Password",
+    "button": "Login",
+    "forgot-pw": "Forgot your Password?"
+  },
+  "setup": {
+    
   }
 } 

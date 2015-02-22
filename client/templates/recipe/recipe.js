@@ -186,4 +186,8 @@ Template.recipe.helpers({
   tabState: function(){
     return Template.instance().tabState;
   },
+
+  introPlaceholder: function(){
+    return TAPi18n.__("recipe.intro-placeholder");
+  }
 });

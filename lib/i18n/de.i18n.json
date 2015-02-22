@@ -3,7 +3,8 @@
     "recipes": "Rezepte",
     "ingredients": "Zutaten",
     "settings": "Einstellungen",
-    "logout": "Abmelden"
+    "logout": "Abmelden",
+    "date-format": "DD.MM.YYYY"
   },
   "recipes": {
     "create": "Neues Rezept anlegen",

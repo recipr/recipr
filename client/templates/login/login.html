@@ -4,14 +4,14 @@
       <div class="{{#if show}}anim-up{{/if}}">
         <div class="card dark z-1 {{#if loginError}}login-error{{/if}}">
           <h1 class="logo">Recipr</h1>
-          <span class="slogan">Hey, nice to see you!</span>
+          <span class="slogan">{{_ "login.subline"}}</span>
 
           <form class="login-form">
             <div class="form-row">
-              <input id="login-email" type="text" class="{{#if loginError}}input-error{{/if}} input dim-100" placeholder="Username">
+              <input id="login-email" type="text" class="{{#if loginError}}input-error{{/if}} input dim-100" placeholder={{_ "login.username"}}>
             </div>
             <div class="form-row">
-              <input id="login-password" type="password" class="{{#if loginError}}input-error{{/if}} input dim-100" placeholder="Password">
+              <input id="login-password" type="password" class="{{#if loginError}}input-error{{/if}} input dim-100" placeholder={{_ "login.password"}}>
               {{#if loginError}}
                 <span class="form-error">{{loginError}}</span>
               {{/if}}
@@ -21,14 +21,13 @@
                 {{#if loggingIn}}
                   <i class="spinner icon icon-placeholder"></i>
                 {{else}}
-                  Login
+                  {{_ "login.button"}}
                 {{/if}}
               </button>
             </div>
           </form>
-          
         </div>
-        <a href="/reset-password" class="a reset">Forgot your password?</a>
+        <a href="/reset-password" class="a reset">{{_ "login.forgot-pw"}}</a>
       </div>
     </div>
   </div>

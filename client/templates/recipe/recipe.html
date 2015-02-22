@@ -26,7 +26,7 @@
             {{else}}
               <div class="gui">
                 <i class="icon icon-placeholder"></i>
-                <span class="name">Cover</span>
+                <span class="name">{{_ "recipe.no-cover"}}</span>
                 <input class="upload cover-upload" accept="image/*" type="file">
               </div>
             {{/if}}
@@ -35,7 +35,7 @@
 
         {{#if showIntro}}
           <div class="form-row">
-            {{> editor class="intro" content=intro placeholder="Intro"}}
+            {{> editor class="intro" content=intro placeholder=introPlaceholder}}
           </div>
         {{/if}}
       </div>
@@ -43,8 +43,8 @@
       <div class="card rect dim-default-padding">
         <div class="remove-from-md">
           {{#tabs tabState=tabState}}
-            {{> tab name="Ingredients" value="ingredients"}}
-            {{> tab name="Preparation" value="preparation"}}
+            {{> tab name="recipe.tab-ingredients" value="ingredients"}}
+            {{> tab name="recipe.tab-preparation" value="preparation"}}
           {{/tabs}}
         </div>
         {{> recipeSections sections=sections tabState=tabState}}
@@ -54,7 +54,7 @@
     <button 
       type="submit" 
       class="save-recipe btn btn-accent btn-big btn-middle dim-100">
-      Save Draft
+      {{_ "recipe.save-button"}}
     </button>
 
   </form>

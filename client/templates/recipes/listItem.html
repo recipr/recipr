@@ -6,7 +6,7 @@
     <div class="actions">
       <button class="edit-recipe action main"><i class="icon icon-placeholder"></i></button>
       <button class="delete-recipe action"><i class="icon icon-trashcan"></i></button>
-      {{> confirm show=showConfirm message="Are you sure you want to delete this recipe?" action="Delete"}}
+      {{> confirm show=showConfirm message=deleteMessage action=listAction}}
     </div>
   </div>
 </template>

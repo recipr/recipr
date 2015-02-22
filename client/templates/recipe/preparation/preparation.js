@@ -30,5 +30,8 @@ Template.recipePreparation.helpers({
       content = firstStep.content;
     }
     return content.replace(/<br\s*\/?>/mg,"\n"); 
+  },
+  preparationPlaceholder: function(){
+    return TAPi18n.__("recipe.preparation-placeholder");
   }
 });

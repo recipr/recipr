@@ -8,5 +8,8 @@ Template.ingredients.events({
 Template.ingredients.helpers({
   hasIngredients: function(){
     return this.count();
+  },
+  searchPlaceholder: function(){
+    return TAPi18n.__("ingredients.search-placeholder");
   }
 });
