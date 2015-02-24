@@ -73,7 +73,7 @@ Meteor.methods({
           quantity: ingredient.quantity,
           unit: ingredient.unit,
           order: ingredient.order,
-          ingredientId: ingredientId
+          name: ingredient.name
         });
       });
       return ingredients;
