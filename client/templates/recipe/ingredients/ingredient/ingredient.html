@@ -1,9 +1,22 @@
 <template name="recipeIngredient">
   <div class="recipe-ingredient">
-    <span class="part quantity">{{quantity}} {{unit}}</span>
-    <span class="part name">{{name}}</span>
-    <span class="part">
-      <button type="button" class="delete-ingredient icon icon-trashcan delete pull-right"></button>
-    </span>
+    {{#if inEditMode}}
+      <div class="part quantity edit">
+        <input class="input quantity-input" value="{{quantity}} {{unit}}">
+      </div>
+      <div class="part name edit">
+        <input class="input" value="{{name}}">
+      </div>
+      <div class="part actions">
+        <button type="button" class="save-ingredient icon icon-placeholder action pull-right"></button>
+      </div>
+    {{else}}
+      <span class="part quantity">{{quantity}} {{unit}}</span>
+      <span class="part name">{{name}}</span>
+      <span class="part actions">
+        <button type="button" class="edit-ingredient icon icon-placeholder action pull-right"></button>
+        <button type="button" class="delete-ingredient icon icon-trashcan action pull-right"></button>
+      </span>
+    {{/if}}
   </div>
 </template> 
