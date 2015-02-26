@@ -10,6 +10,7 @@ Meteor.methods({
           cover: data.cover,
           sections: [],
           dateModified: new Date(),
+          userId: Meteor.userId()
         },
         sections = [];
 

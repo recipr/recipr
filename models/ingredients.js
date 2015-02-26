@@ -12,6 +12,7 @@ Meteor.methods({
         name: name,
         createdAt: new Date(),
         modifiedAt: new Date(),
+        userId: Meteor.userId()
     });
 
     return ingredientId;
