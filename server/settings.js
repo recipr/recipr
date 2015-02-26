@@ -1,3 +1,3 @@
 Meteor.publish("Settings", function () {
-  return Settings.find();
+  return Settings.find({userId: this.userId});
 });

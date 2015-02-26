@@ -1,3 +1,3 @@
 Meteor.publish("Ingredients", function () {
-  return Ingredients.find();
+  return Ingredients.find({userId: this.userId});
 });
