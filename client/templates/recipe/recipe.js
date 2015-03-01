@@ -165,10 +165,8 @@ Template.recipe.helpers({
 
   showIntro: function(){
     var hasAlreadyIntro = this.intro ? this.intro.length : false;
-    return Settings.findOne({
-      type: 'gui',
-      key: 'showIntro',
-    }).value || hasAlreadyIntro;
+    var showIntro = Meteor.user().profile.settings.recipe.showIntro.value;
+    return showIntro | hasAlreadyIntro
   },
 
   cover: function(){

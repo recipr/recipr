@@ -2,22 +2,11 @@ Settings = new Mongo.Collection("settings");
 
 Meteor.methods({
   setSetting: function (type, key, value) {
-    Settings.upsert({
-      type: type,
-      key: key,
-    }, {
-      $set: {
-        type: type,
-        key: key,
-        value: value,
-      }
-    });
-  },
+    var key = "profile.settings." + type + "." + key + '.value';
+    var setting = {};
+    setting[key] = value;
 
-  getSetting: function (type, key) {
-    return Settings.findOne({
-      type: type,
-      key: key,
-    });
+    Meteor.users.update({_id:Meteor.user()._id}, {$set:setting});
   }
 });
+

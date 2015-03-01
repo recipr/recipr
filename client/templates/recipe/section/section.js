@@ -43,12 +43,10 @@ Template.recipeSection.helpers({
   },
 
   showSteps: function(){
-    return Settings.findOne({
-      type: 'gui',
-      key: 'showSteps',
-    }).value || Steps.find({
-      sectionId: this._id
-    }).count() > 1;
+    var hasSteps = Steps.find({sectionId: this._id}).count() > 1;
+    var showSteps = Meteor.user().profile.settings.recipe.showSteps.value;
+    
+    return showSteps | hasSteps;
   },
 
   showTab: function(value){
