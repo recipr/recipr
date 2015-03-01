@@ -1,0 +1,58 @@
+<template name="register">
+  <div class="register-box">
+    <div class="wrap">
+      <div class="{{#if show}}anim-up{{/if}}">
+        <div class="card dark z-1">
+          {{#autoForm id="registerForm" schema=registerSchema validation="keyup" class="register-form" type="method" meteormethod="register"}}
+            <section class="card-section card-title">
+              <h1 class="logo">{{_ "register.title"}}</h1>
+              <span class="subline">{{_ "register.subline"}} </span>
+            </section>
+
+            <section class="card-section">
+              {{> input 
+                type="text" 
+                name="username" 
+                label="register.username-label"
+                placeholder="register.username" 
+              }}
+            </section>
+
+            <section class="card-section">
+              {{> input 
+                type="email" 
+                name="email" 
+                label="register.email-label"
+                placeholder="register.email" 
+              }}
+            </section>
+
+            <section class="card-section">
+              {{> input 
+                type="password" 
+                name="password" 
+                label="register.password-label"
+                placeholder="register.password" 
+              }}
+            </section>
+
+            <section class="card-section">
+              {{> input 
+                type="password" 
+                name="passwordConfirm" 
+                label="register.password-confirm-label"
+                placeholder="register.password" 
+              }}
+            </section>
+
+            <section class="card-section card-section-big">
+              <div class="form-row">
+                <input type="submit" class="btn btn-accent btn-big dim-100" value="{{_ "register.submit-button"}}">
+              </div>
+            </section>
+          {{/autoForm}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

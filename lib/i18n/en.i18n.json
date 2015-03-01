@@ -64,10 +64,16 @@
   },
 
   "register": {
-    "subline": "Register and write Recipe"
-  },
-
-  "setup": {
-
+    "title": "Recipr Register",
+    "subline": "Nice to meet you! Before you start, we need some data from you to create an account.",
+    "username": "Your Username",
+    "username-label": "What's your name? This is the displayed name",
+    "email": "E-Mail address",
+    "email-label": "What's your email address? you need this to log in",
+    "password": "Password",
+    "password-label": "Choose a password that contains letters and digits",
+    "password-confirm": "Password",
+    "password-confirm-label":"Please repeat your password.",
+    "submit-button": "Register"
   }
 } 
