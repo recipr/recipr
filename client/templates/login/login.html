@@ -7,15 +7,18 @@
           <span class="slogan">{{_ "login.subline"}}</span>
 
           <form class="login-form">
+
             <div class="form-row">
               <input id="login-email" type="text" class="{{#if loginError}}input-error{{/if}} input dim-100" placeholder={{_ "login.username"}}>
             </div>
+
             <div class="form-row">
               <input id="login-password" type="password" class="{{#if loginError}}input-error{{/if}} input dim-100" placeholder={{_ "login.password"}}>
               {{#if loginError}}
                 <span class="form-error">{{loginError}}</span>
               {{/if}}
             </div>
+
             <div class="form-row">
               <button type="submit" class="btn btn-accent dim-100">
                 {{#if loggingIn}}
@@ -25,6 +28,13 @@
                 {{/if}}
               </button>
             </div>
+
+            <div class="form-row">
+              <button type="button" class="login-facebook btn btn-accent dim-100">
+                login with facebook
+              </button>
+            </div>
+            
           </form>
         </div>
         <a href="/reset-password" class="a reset">{{_ "login.forgot-pw"}}</a>

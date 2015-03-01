@@ -16,6 +16,14 @@ Template.login.events({
         Router.go('recipes');
       }
     });
+  },
+
+  'click .login-facebook': function(){
+    Meteor.loginWithFacebook({}, function(err){
+      if (err) {
+        throw new Meteor.Error("Facebook login failed");
+      }
+    });
   }
 });
 
