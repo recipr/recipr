@@ -1,0 +1,16 @@
+.menu {
+  .menu {
+    .menu-item {
+      background-color: $color-primary-dark;
+      .icon {
+        color: $color-primary-light;
+      }
+    }
+
+    recipr-menu-item:first-of-type {
+      .menu-item {
+        border-top: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.input-button {
+  display: table;
+  width: 100%;
+
+  .input-part {
+    display: table-cell;
+
+    .input {
+      width: 100%;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+}

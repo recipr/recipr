@@ -1,0 +1,61 @@
+<template name="recipe">
+	<form class="recipe-form fill-content">
+    <div class="has-main-action">
+      <div class="card main-card rect z-0 dim-default-padding-x">
+        <div class="form-row">
+          <input 
+            autofocus 
+            type="text" 
+            name="title" 
+            value="{{title}}" 
+            autocomplete="off"
+            placeholder='{{_ "recipe.title"}}'
+            class="input input-big dim-100 {{#if titleError}}input-error{{/if}}">
+          {{#if titleError}}
+            <span class="form-error">{{titleError}}</span>
+          {{/if}}
+        </div>
+
+        <div class="form-row">
+          <div class="image-upload action-bar">
+            {{#if cover}}
+              <img class="image" src="{{cover.url}}" />
+              <div class="actions">
+                <button type="button" class="delete-cover action icon icon-trashcan"></button>
+              </div>
+            {{else}}
+              <div class="gui">
+                <i class="icon icon-placeholder"></i>
+                <span class="name">{{_ "recipe.no-cover"}}</span>
+                <input class="upload cover-upload" accept="image/*" type="file">
+              </div>
+            {{/if}}
+          </div>
+        </div>
+
+        {{#if showIntro}}
+          <div class="form-row">
+            {{> editor class="intro" content=intro placeholder=introPlaceholder}}
+          </div>
+        {{/if}}
+      </div>
+
+      <div class="card rect dim-default-padding">
+        <div class="remove-from-md">
+          {{#tabs tabState=tabState}}
+            {{> tab name="recipe.tab-ingredients" value="ingredients"}}
+            {{> tab name="recipe.tab-preparation" value="preparation"}}
+          {{/tabs}}
+        </div>
+        {{> recipeSections sections=sections tabState=tabState}}
+      </div>
+    </div>
+
+    <button 
+      type="submit" 
+      class="save-recipe btn btn-accent btn-big btn-middle dim-100">
+      {{_ "recipe.save-button"}}
+    </button>
+
+  </form>
+</template>

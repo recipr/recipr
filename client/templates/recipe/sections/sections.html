@@ -1,0 +1,11 @@
+<template name="recipeSections">
+  <div class="sections {{#if showSections}}show-sections{{/if}}">
+  {{#each sections}}
+      {{> recipeSection this}}
+  {{/each}}
+
+  {{#if showSections}}
+    <button type="button" class="add-section">{{_ "recipe.add-section"}}</button>
+  {{/if}}
+  </div>
+</template>

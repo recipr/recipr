@@ -1,0 +1,22 @@
+.editor {
+  @include clear-fix;
+
+  .ql-editor {
+    box-sizing: border-box;
+    min-height: 100%;
+    outline: 0;
+    tab-size: 4;
+    white-space: pre-wrap;
+  }
+
+  .ql-container {
+    height: 100%;
+    margin: 0;
+    @extend .input; 
+  }
+
+  .content {
+    height: $dim-min * 20;
+    font-size: $font-size-default;
+  }
+}

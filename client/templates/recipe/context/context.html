@@ -1,0 +1,17 @@
+<template name="recipeContext">
+  <span class="menu-header">
+    Options <i class="pull-right icon icon-vert-dots"></i>
+  </span>
+  <div class="menu"> 
+    {{#each settings}}  
+      <label class="menu-row">
+        <input 
+          type="checkbox" 
+          data-key={{key}} 
+          checked="{{#if value}}checked{{/if}}" 
+          class="change-setting checkbox"> 
+          {{_ label}}
+      </label>
+    {{/each}}
+  </div>
+</template>

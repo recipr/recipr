@@ -1,9 +1,0 @@
-<div {{bind-attr class=":recipr-sidebar :sidebar :fixed isOpen:open"}}>
-  {{#if isOpen}}
-    <div class="cover" {{action 'closeSidebar'}}></div>
-  {{/if}}
-
-  <div class="menus z-2">
-    {{yield}}
-  </div>
-</div>

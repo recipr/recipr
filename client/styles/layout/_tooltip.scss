@@ -1,0 +1,41 @@
+.tooltip {
+  position: fixed;
+  padding: $dim-min * 4;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  opacity: 0;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in;
+  transform: translateY(50px);
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tooltip-content { 
+  background-color: $color-primary;
+  padding: $dim-min * 4;
+  color: $color-primary-text;
+  border-radius: $dim-border-radius;
+  width: 100%;
+  text-align: center;
+  @include clear-fix;
+
+  .actions {
+    float: right;
+  }
+}
+
+@media (min-width: $breakpoint-sd) {
+  .tooltip {
+  }
+
+  .tooltip-content {
+    display: inline-block;
+    width: auto;
+  }
+}

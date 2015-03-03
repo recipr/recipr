@@ -1,0 +1,24 @@
+<template name="recipeIngredients">
+  <div class="recipe-ingredients">
+
+    <h2 class="remove-until-md">{{_ "recipe.ingredients-title"}}</h2>
+
+    {{#if hasIngredients}}
+      <div class="ingredient-list">
+        {{#each this}}
+          {{> recipeIngredient this}}
+        {{/each}}
+      </div>
+    {{/if}}
+
+    <form name="ingredient-form">
+      <div class="input-wrap">
+         <input type="text"
+          class="new-ingredient input dim-100"
+          placeholder="{{_ "recipe.add-ingredient"}}"
+        />
+        <button type="submit" class="add-ingredient input-icon icon icon-placeholder"></button>
+      </div>
+    </form>
+  </div>
+</template>

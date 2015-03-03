@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: bin/sketchtool 1.2 (196) - http://www.bohemiancoding.com/sketch -->
+    <title>pen</title>
+    <desc>Created with bin/sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="pen" sketch:type="MSArtboardGroup" fill="#000000">
+            <rect id="Rectangle-7" sketch:type="MSShapeGroup" transform="translate(20.445436, 20.035534) rotate(45.000000) translate(-20.445436, -20.035534) " x="16.4454365" y="4.03553391" width="8" height="32"></rect>
+            <polygon id="Triangle-1" sketch:type="MSShapeGroup" transform="translate(5.303301, 35.177670) scale(1, -1) rotate(-45.000000) translate(-5.303301, -35.177670) " points="5.30330086 31.6776695 9.30330086 38.6776695 1.30330086 38.6776695 "></polygon>
+            <rect id="Rectangle-8" sketch:type="MSShapeGroup" transform="translate(34.587572, 5.893398) rotate(45.000000) translate(-34.587572, -5.893398) " x="30.5875721" y="3.89339828" width="8" height="4"></rect>
+        </g>
+    </g>
+</svg>

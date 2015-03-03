@@ -1,0 +1,48 @@
+.edit-item {
+  padding: $dim-min * 4;
+  padding-right: $dim-min * 14;
+  position: relative;
+  min-height: $dim-min * 20;
+  margin: $dim-min * 4 0;
+
+  &.single-action {
+    min-height: 0;
+    overflow: hidden;
+    height: 40px;
+    line-height: 8px;
+  }
+
+  .meta {
+    padding-top: $dim-min * 2;
+    display: block;
+    color: $color-neutral-dark;
+    font-size: $font-size-small;
+  }
+
+  .actions {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .action {
+    width: $dim-min * 10;
+    height: $dim-min * 10;
+    border: none;
+    background-color: transparent;
+    display: block;
+
+    .icon {
+      color: $color-neutral-dark;
+      font-size: 20px;
+    }
+
+    &.main {
+      background-color: $color-neutral;
+
+      .icon {
+        color: $color-accent;
+      }
+    }
+  }
+}

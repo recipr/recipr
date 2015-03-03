@@ -1,0 +1,42 @@
+.login-box {
+  padding: $dim-min * 4;
+  height: 100%;
+
+  .wrap {
+    position: relative;
+    top: 50%;
+    margin: 0 auto;
+    width: 100%;
+    max-width: $dim-width-box-small;
+  }
+  
+  .card {
+    padding: $dim-min * 4;
+    margin-bottom: $dim-min * 2;
+  }
+
+  .logo {
+    font-weight: 100;
+    font-size: 40px;
+    line-height: 72px;
+    margin: 0;
+    text-align: center;
+  }
+
+  .slogan {
+    text-align: center;
+    display: block; 
+    margin-bottom: $dim-min * 3;
+  }
+
+  .reset {
+    display: block;
+    text-align: center;
+    font-size: $font-size-small;
+    line-height: $font-line-height-small;
+  }
+
+  .login-facebook {
+    background-color: #3b5998;
+  }
+}

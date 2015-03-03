@@ -1,0 +1,48 @@
+.clear {
+  @include clear-fix();
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.border-radius-left {
+  border-radius: $dim-border-radius 0 0 $dim-border-radius;
+}
+
+.border-radius-right {
+  border-radius: 0 $dim-border-radius $dim-border-radius 0;
+}
+
+.border-radius-top {
+  border-radius: $dim-border-radius $dim-border-radius 0 0;
+}
+
+.border-radius-bottom {
+  border-radius: 0 0 $dim-border-radius $dim-border-radius;
+}
+
+.hidden {
+	display: none;
+}
+
+.dim-100 {
+  width: 100%;
+  display: inline-block;
+}
+
+.dim-default-padding {
+  padding: $dim-padding-default;
+}
+
+.dim-default-padding-x {
+  padding: 0 $dim-padding-default;
+}
+
+.dim-default-padding-y {
+  padding: $dim-padding-default 0;
+}

@@ -1,0 +1,12 @@
+<template name="listItem">
+  <div class="edit-item card z-1">
+    {{title}}
+    <span class="meta">{{meta}}</span>
+
+    <div class="actions">
+      <button class="edit-recipe action main"><i class="icon icon-placeholder"></i></button>
+      <button class="delete-recipe action"><i class="icon icon-trashcan"></i></button>
+      {{> confirm show=showConfirm message=deleteMessage action=listAction}}
+    </div>
+  </div>
+</template>

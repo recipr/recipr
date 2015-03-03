@@ -1,0 +1,63 @@
+.confirm {
+  pointer-events: none;
+
+  .confirm-box {
+    background-color: $color-primary;
+    padding: $dim-min * 4;
+    border-radius: $dim-border-radius;
+    width: 100%;
+    @include clear-fix;
+  }
+
+  .wrap {
+    left: 0;
+    top: 200px;
+    width: 100%;
+    padding: $dim-min * 4;
+    opacity: 0;
+    position: fixed;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in;
+    transform: translateY(50px);
+    z-index: $elevation-confirm;
+  }
+
+  .confirm-content {
+    color: $color-primary-text;
+  }
+
+  &.show {
+    pointer-events: auto;
+
+    .wrap {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .confirm-actions {
+    margin-top: $dim-min * 4; 
+    float: right;
+  }
+
+  .cancel-confirm {
+    color: $color-neutral-dark;
+  }
+
+  .cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $elevation-confirm - 1;
+  }
+}
+
+@media (min-width: $breakpoint-sd) {
+  .confirm {
+    .confirm-content {
+      display: inline-block;
+      width: auto;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+<template name="ingredient">
+  <form class="ingredient-form fill-content">
+    <div class="has-main-action">
+      <div class="card main-card dim-default-padding-x">
+        <div class="form-row">
+          <input 
+            autofocus 
+            type="text" 
+            name="name" 
+            value="{{name}}" 
+            autocomplete="off"
+            placeholder="Name *"
+            class="input input-big dim-100 {{#if nameError}}input-error{{/if}}">
+          {{#if nameError}}
+            <span class="form-error">{{nameError}}</span>
+          {{/if}}
+        </div>
+
+        <div class="form-row">
+          <div class="image-upload action-bar">
+            {{#if image}}
+              <img class="image" src="{{image.url}}" />
+              <div class="actions">
+                <button type="button" class="delete-image action icon icon-trashcan"></button>
+              </div>
+            {{else}}
+              <div class="gui">
+                <i class="icon icon-placeholder"></i>
+                <span class="name">Image</span>
+                <input class="upload image-upload" accept="image/*" type="file">
+              </div>
+            {{/if}}
+          </div>
+        </div>
+
+        <div class="form-row">
+          {{> editor class="description" content=description placeholder="Description"}}
+        </div>
+
+        <div class="form-row">
+          <input 
+            autofocus 
+            type="text" 
+            name="url" 
+            value="{{url}}" 
+            autocomplete="off"
+            placeholder="http://example.com"
+            class="input dim-100 {{#if urlError}}input-error{{/if}}">
+          {{#if urlError}}
+            <span class="form-error">{{urlError}}</span>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+
+    <button 
+      type="submit" 
+      class="save-ingredient btn btn-accent btn-big btn-middle dim-100">
+      Save Ingredient
+    </button>
+
+  </form>
+</template>

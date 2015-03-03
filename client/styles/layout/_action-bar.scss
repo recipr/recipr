@@ -1,0 +1,29 @@
+.action-bar {
+  position: relative;
+
+  .action-target {
+    padding-right: $dim-min * 13;
+  }
+
+  .actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: $dim-min * 10;
+  }
+
+  .action {
+    width: $dim-min * 10;
+    height: $dim-min * 10;
+    color: $color-neutral-dark;
+    margin: 0;
+    text-align: center;
+    font-size: $font-size-big;
+    line-height: $dim-min * 10;
+
+    &:focus {
+      outline:0;
+    }
+  }
+}

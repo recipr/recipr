@@ -1,0 +1,18 @@
+.menu-item {
+  text-decoration: none;
+  background-color: $color-primary;
+  color: $color-primary-text;
+  display: block;
+  padding: $dim-min * 3;
+  cursor: pointer;
+
+  border-top: 1px solid $color-primary-light;
+
+  .icon {
+    color: $color-primary-text;
+    font-size: 18px;
+    padding-right: $dim-min * 3;
+    position: relative;
+    top: 3px;
+  }
+}

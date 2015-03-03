@@ -1,0 +1,16 @@
+<template name="ApplicationLayout">
+  <div class="app">
+    <header class="app-header fixed {{#if hideHeader}}hide{{/if}}">
+      <i class="menu-toggle icon icon-hamburger"></i>
+      <span class="logo">Recipr</span>
+
+      {{> contextMenu}}
+    </header>
+
+    {{> sidebar}}
+
+    <div class="main-content">
+      {{> yield}}
+    </div>
+  </div>
+</template>

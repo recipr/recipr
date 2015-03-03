@@ -1,0 +1,29 @@
+.search {
+  height: 58px;
+  position: relative;
+
+  .hide {
+    display: none;
+  }
+
+  .icon {
+    display: inline-block;
+    margin: $dim-min * 4;
+    font-size: 24px;
+  }
+
+  .icon-x {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .search-field {
+    position: relative;
+    margin-right: $dim-min * 18;
+  }
+
+  .input {
+    width: 100%;
+  }
+}

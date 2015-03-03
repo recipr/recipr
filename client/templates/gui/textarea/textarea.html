@@ -1,0 +1,13 @@
+<template name="textarea">
+  <div class="form-row">
+    <label class="label">
+      {{label}}
+    </label>
+
+    {{> afFieldInput name=name placeholder=placeholder type=type class="input dim-100" rows=5}} 
+
+    {{#if afFieldIsInvalid name=name}}
+      <span class="form-error">{{afFieldMessage name=name}}</span>
+    {{/if}}
+  </div>
+</template>

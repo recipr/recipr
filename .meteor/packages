@@ -1,0 +1,18 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+iron:router
+fourseven:scss
+momentjs:moment
+accounts-password
+cfs:standard-packages
+cfs:filesystem
+aldeed:collection2
+aldeed:autoform
+tap:i18n
+accounts-facebook
+service-configuration

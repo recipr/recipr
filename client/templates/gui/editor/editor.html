@@ -1,0 +1,18 @@
+<template name="editor">
+  <div class="editor">
+    <div class="toolbar">
+      <button type="button" class="btn btn-small ql-bold">B</button>
+      <button type="button" class="btn btn-small ql-italic">I</button>
+      <button type="button" class="btn btn-small ql-underline">U</button>
+
+    </div>
+
+    <div 
+      data-placeholder="{{#if empty}}{{placeholder}}{{/if}}"
+      class="{{class}} textarea content input dim-100 placeholder"
+    >
+      <div>{{{content}}}</div>
+    </div>
+  </div>
+
+</template>

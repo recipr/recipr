@@ -1,0 +1,10 @@
+.placeholder {
+  position: relative;
+
+  &:before {
+    content: attr(data-placeholder);;
+    color: $color-neutral-dark;
+    position: absolute;
+    font-size: $font-size-default;
+  }
+}

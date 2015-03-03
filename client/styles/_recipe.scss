@@ -1,0 +1,9 @@
+@import 'recipe/_ingredients';
+@import 'recipe/_steps';
+@import 'recipe/_preparation';
+
+.recipe-form {
+  .main-card {
+    padding: $dim-min * 2 $dim-padding-default;
+  }
+}
