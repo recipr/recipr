@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
     <!-- Generator: bin/sketchtool 1.2 (196) - http://www.bohemiancoding.com/sketch -->
-    <title>placeholder</title>
+    <title>glyph28</title>
     <desc>Created with bin/sketchtool.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="placeholder" sketch:type="MSArtboardGroup" fill="#000000">
-            <polygon id="Star-1" sketch:type="MSShapeGroup" points="257 363 139.44295 424.803399 161.894348 293.901699 66.7886967 201.196601 198.221475 182.098301 257 63 315.778525 182.098301 447.211303 201.196601 352.105652 293.901699 374.55705 424.803399 "></polygon>
-        </g>
+        <g id="glyph28" sketch:type="MSArtboardGroup"></g>
     </g>
 </svg>

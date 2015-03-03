@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: bin/sketchtool 1.2 (196) - http://www.bohemiancoding.com/sketch -->
+    <title>vertical-dots</title>
+    <desc>Created with bin/sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="vertical-dots" sketch:type="MSArtboardGroup" fill="#000000">
+            <path d="M256,304 C282.509668,304 304,282.509668 304,256 C304,229.490332 282.509668,208 256,208 C229.490332,208 208,229.490332 208,256 C208,282.509668 229.490332,304 256,304 L256,304 Z M256,464 C282.509668,464 304,442.509668 304,416 C304,389.490332 282.509668,368 256,368 C229.490332,368 208,389.490332 208,416 C208,442.509668 229.490332,464 256,464 L256,464 Z M256,144 C282.509668,144 304,122.509668 304,96 C304,69.490332 282.509668,48 256,48 C229.490332,48 208,69.490332 208,96 C208,122.509668 229.490332,144 256,144 L256,144 Z" id="Path" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

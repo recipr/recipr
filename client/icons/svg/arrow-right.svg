@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
     <!-- Generator: bin/sketchtool 1.2 (196) - http://www.bohemiancoding.com/sketch -->
     <title>arrow-right</title>
     <desc>Created with bin/sketchtool.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
         <g id="arrow-right" sketch:type="MSArtboardGroup" fill="#000000">
-            <g id="arrow" sketch:type="MSLayerGroup" transform="translate(16.000000, 20.000000) rotate(-135.000000) translate(-16.000000, -20.000000) translate(6.000000, 10.000000)">
-                <rect id="Rectangle-9" sketch:type="MSShapeGroup" x="0" y="0" width="4" height="20"></rect>
-                <rect id="Rectangle-10" sketch:type="MSShapeGroup" transform="translate(10.000000, 18.000000) rotate(-90.000000) translate(-10.000000, -18.000000) " x="8" y="8" width="4" height="20"></rect>
-            </g>
+            <path d="M180.192365,71 L148,102.391961 L298.251549,255.511442 L148.581982,407.238735 L180.333819,439 L364,255.266575 L180.192365,71 L180.192365,71 Z" id="Path-290" sketch:type="MSShapeGroup"></path>
         </g>
     </g>
 </svg>

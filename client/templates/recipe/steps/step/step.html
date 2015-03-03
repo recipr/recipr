@@ -5,13 +5,13 @@
       {{> editor class="step-edit action-target" content=content}}
 
       <div class="actions">
-        <button type="button" class="close-step action icon icon-placeholder">save</button>
+        <button type="button" class="close-step action icon icon-close">save</button>
       </div>
       
     {{else}}
       {{#if noOtherStepIsEdited}}
         <div class="actions">
-          <button type="button" class="edit-step action icon icon-placeholder"></button>
+          <button type="button" class="edit-step action icon icon-pencil"></button>
           <button type="button" class="remove-step action icon icon-trashcan"></button>
         </div>
       {{/if}}

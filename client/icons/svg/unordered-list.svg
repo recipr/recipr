@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: bin/sketchtool 1.2 (196) - http://www.bohemiancoding.com/sketch -->
+    <title>unordered-list</title>
+    <desc>Created with bin/sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="unordered-list" sketch:type="MSArtboardGroup" fill="#000000">
+            <path d="M88,171 C101.254834,171 112,160.254834 112,147 C112,133.745166 101.254834,123 88,123 C74.745166,123 64,133.745166 64,147 C64,160.254834 74.745166,171 88,171 Z M88,283 C101.254834,283 112,272.254834 112,259 C112,245.745166 101.254834,235 88,235 C74.745166,235 64,245.745166 64,259 C64,272.254834 74.745166,283 88,283 Z M88,395 C101.254834,395 112,384.254834 112,371 C112,357.745166 101.254834,347 88,347 C74.745166,347 64,357.745166 64,371 C64,384.254834 74.745166,395 88,395 Z M160,123 L448,123 L448,171 L160,171 L160,123 Z M160,235 L448,235 L448,283 L160,283 L160,235 Z M160,347 L448,347 L448,395 L160,395 L160,347 Z" id="Oval-17" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

@@ -22,6 +22,8 @@
   font-style: normal;
   font-weight: normal;
   line-height: 1;
+  top: 2px;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -40,15 +42,35 @@
   text-align: center;
 }
 
-.icon-arrow-down:before { content: "\E001" }
-.icon-arrow-eft:before { content: "\E002" }
-.icon-arrow-right:before { content: "\E003" }
-.icon-arrow-up:before { content: "\E004" }
-.icon-cross:before { content: "\E005" }
-.icon-hamburger:before { content: "\E006" }
-.icon-magnifier:before { content: "\E007" }
-.icon-pen:before { content: "\E008" }
-.icon-placeholder:before { content: "\E009" }
-.icon-plus:before { content: "\E00A" }
-.icon-trashcan:before { content: "\E00B" }
-.icon-vert-dots:before { content: "\E00C" }
+.icon-align-center:before { content: "\E001" }
+.icon-align-left:before { content: "\E002" }
+.icon-align-right:before { content: "\E003" }
+.icon-arrow-down:before { content: "\E004" }
+.icon-arrow-left:before { content: "\E005" }
+.icon-arrow-right:before { content: "\E006" }
+.icon-arrow-up:before { content: "\E007" }
+.icon-bold:before { content: "\E008" }
+.icon-close:before { content: "\E009" }
+.icon-glyph23:before { content: "\E00A" }
+.icon-glyph24:before { content: "\E00B" }
+.icon-glyph25:before { content: "\E00C" }
+.icon-glyph26:before { content: "\E00D" }
+.icon-glyph27:before { content: "\E00E" }
+.icon-glyph28:before { content: "\E00F" }
+.icon-glyph29:before { content: "\E010" }
+.icon-glyph30:before { content: "\E011" }
+.icon-glyph31:before { content: "\E012" }
+.icon-glyph32:before { content: "\E013" }
+.icon-hamburger:before { content: "\E014" }
+.icon-image:before { content: "\E015" }
+.icon-italic:before { content: "\E016" }
+.icon-justified:before { content: "\E017" }
+.icon-link:before { content: "\E018" }
+.icon-ordered-list:before { content: "\E019" }
+.icon-pencil:before { content: "\E01A" }
+.icon-placeholder:before { content: "\E01B" }
+.icon-plus:before { content: "\E01C" }
+.icon-trashcan:before { content: "\E01D" }
+.icon-underline:before { content: "\E01E" }
+.icon-unordered-list:before { content: "\E01F" }
+.icon-vertical-dots:before { content: "\E020" }

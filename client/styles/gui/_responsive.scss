@@ -20,5 +20,5 @@ $breakpoints: (sd: $breakpoint-sd, md: $breakpoint-md, ld: $breakpoint-ld);
     .remove-until-#{$size} {
       display: none;
     }
-  } 
+  }   
 }
