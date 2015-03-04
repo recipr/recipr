@@ -1,9 +1,35 @@
 <template name="editor">
   <div class="editor">
-    <div class="toolbar">
-      <button type="button" class="btn btn-small ql-bold">B</button>
-      <button type="button" class="btn btn-small ql-italic">I</button>
-      <button type="button" class="btn btn-small ql-underline">U</button>
+    <div class="toolbar {{#if isVisible}}visible{{/if}}">
+      <button type="button" class="btn btn-trans btn-small ql-bold">
+        <i class="icon icon-bold"></i> 
+      </button>
+      <button type="button" class="btn btn-trans btn-small ql-italic">
+        <i class="icon icon-italic"></i> 
+      </button>
+      <button type="button" class="btn btn-trans btn-small ql-underline">
+        <i class="icon icon-underline"></i> 
+      </button>
+
+      <select title="Text Alignment" class="ql-align">
+        <option value="left" label="Left" selected=""></option>
+        <option value="center" label="Center"></option>
+        <option value="right" label="Right"></option>
+        <option value="justify" label="Justify"></option>
+      </select>
+
+      <button type="button" class="btn btn-trans btn-small ql-underline">
+        <i class="icon icon-unordered-list"></i> 
+      </button>
+      <button type="button" class="btn btn-trans btn-small ql-underline">
+        <i class="icon icon-ordered-list"></i> 
+      </button>
+      <button type="button" class="btn btn-trans btn-small ql-underline">
+        <i class="icon icon-link"></i> 
+      </button>
+      <button type="button" class="btn btn-trans btn-small ql-underline">
+        <i class="icon icon-image"></i> 
+      </button>
 
     </div>
 

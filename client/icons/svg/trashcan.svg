@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: bin/sketchtool 1.2 (196) - http://www.bohemiancoding.com/sketch -->
+    <title>trashcan</title>
+    <desc>Created with bin/sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="trashcan" sketch:type="MSArtboardGroup" fill="#000000">
+            <path d="M319.558824,89 L308.227088,63.3147339 C306.445071,59.2754945 301.418378,56 297.000223,56 L215.999777,56 C211.58182,56 206.476435,59.2375758 204.597022,63.2313279 L192.470588,89 L96,89 L96,121 L416,121 L416,89 L319.558824,89 L319.558824,89 Z M112,137 L400,137 L384.798917,441.021667 C384.357687,449.846257 376.846547,457 368.00034,457 L144.99966,457 C136.163292,457 128.620087,449.848692 128.151151,441.021667 L112,137 L112,137 Z" id="Rectangle-4" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

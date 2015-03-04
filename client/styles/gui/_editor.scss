@@ -15,6 +15,41 @@
     @extend .input; 
   }
 
+  .toolbar.ql-toolbar {
+    overflow: hidden;
+    max-height: 0;
+    border: 1px solid $color-neutral;
+    padding: 0;
+    transition: max-height .3s ease-out;
+
+    &.visible {
+      max-height: $dim-min * 8;
+    }
+
+    .btn {
+      border-right: 1px solid $color-neutral;
+      padding-left: 0;
+      padding-right: 0;
+      width: $dim-min * 8;
+      text-align: center;
+      display: block;
+      float: left;
+    }
+  }
+
+  .editor-dropdown {
+    display: inline;
+    position: relative;
+    .content {
+      position: absolute;
+      width: $dim-min * 8;
+      display: block;
+      top: $dim-min * 8;
+      left: 0;
+      z-index: 1;
+    }
+  }
+
   .content {
     height: $dim-min * 20;
     font-size: $font-size-default;
