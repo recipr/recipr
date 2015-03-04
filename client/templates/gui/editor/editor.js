@@ -17,17 +17,20 @@ Template.editor.rendered = function(){
   });
   this.quill.addModule('toolbar', { container: toolbar });
 
-  this.quill.on('selection-change', function(range) {
-    if (range !== null) {
-      self.visible.set(true);
-    }
-  });
-
   self.length.set(self.quill.getLength());
   this.quill.on('text-change', function() {
     self.length.set(self.quill.getLength());
   });
 }
+
+Template.editor.events({
+  'focus .editor': function(event, template){
+    template.visible.set(true);
+  },
+  'blur .editor': function(event, template){
+    template.visible.set(false);
+  }
+})
 
 Template.editor.helpers({
   empty: function(){
